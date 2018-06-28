@@ -1,5 +1,8 @@
 # README
 
+
+This is an application to aggregate credits by user (company) based on the transactions associated wit each credit by user.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
