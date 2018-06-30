@@ -1,0 +1,2 @@
+class Exposure < ApplicationRecord
+end
