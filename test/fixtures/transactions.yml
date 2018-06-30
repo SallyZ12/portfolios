@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  series: MyString
+  par: 1
+  exposure_id: 1
+
+two:
+  name: MyString
+  series: MyString
+  par: 1
+  exposure_id: 1
