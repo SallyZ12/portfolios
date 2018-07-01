@@ -1,4 +1,4 @@
-<h1> All Users </h1>
+<h3> All Users (logged in as <%= current_user.username %>)</h3>
 
 <% @users.order("username").each do |user| %>
 
