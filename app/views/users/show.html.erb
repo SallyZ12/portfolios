@@ -1,5 +1,7 @@
 <h2> Hello: <%= @user.username %> </h2>
 
+<labe> Are you an insurer? <%=@user.insurer ? "Yes" : "No" %> </label> <br><br>
+
 <%= link_to "All Users", users_path %> <br><br>
 
 <%= link_to "Log Out", logout_path, {method: :delete}%>
