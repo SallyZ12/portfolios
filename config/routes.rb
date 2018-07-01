@@ -6,6 +6,15 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  resources :users do
+    resources :credits, only: [:show, :index]
+  end
+
+  resources :credits do
+    resources :transactions, only: [:show, :index]
+  end
+
+
   resources :users
   resources :credits
   resources :transactions
