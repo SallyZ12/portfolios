@@ -6,4 +6,10 @@ class User < ApplicationRecord
   has_many :credits, through: :exposures
   has_many :transactions, through: :exposures
 
+  validates :username, presence: true
+  validates :password_digest, presence: true
+
+
+
+
 end
