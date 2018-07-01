@@ -1,6 +1,27 @@
-<h3> All Users (logged in as <%= current_user.username %>)</h3>
+<label> All Companies (logged in as <%= current_user.username %>)</label><br><br>
+
+<table class = "table">
+<thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody>
+
+  <tr>
+    <td> Company </td>
+    <td> Insurer </td>
+
+  </tr>
 
 <% @users.order("username").each do |user| %>
+<tr>
+ <td> <%= link_to user.username, user_path(user)%> </td>
+ <td> <%= user.insurer  ? "Yes" : "No" %> </td>
 
-<li> <%= link_to  user.username, user_path(user) %></li>
+</tr>
 <% end %>
+</tbody>
+</table>
+<br>
