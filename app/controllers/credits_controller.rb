@@ -2,6 +2,7 @@ class CreditsController < ApplicationController
 
   def index
     @credits = Credit.all
+    @user = current_user
   end
 
   def new
@@ -25,6 +26,8 @@ class CreditsController < ApplicationController
 
   def show
     @credit = set_credit
+    @user = current_user
+    @exposure = Exposure.new(user_id: @user.id, credit_id: @credit.id)
   end
 
   def edit
