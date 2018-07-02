@@ -1,6 +1,5 @@
 <label> All "<%=current_user.username%>" Credits</label><br><br>
 
-
 <table class = "table">
 <thead>
     <tr>
@@ -18,7 +17,7 @@
 
   </tr>
 
-<%= @credits.order("credit_name").each do |credit| %>
+<% @credits.order("credit_name").each do |credit| %>
 <tr>
   <td> <%= credit.credit_name %> </td>
   <td> <%= credit.sector %> </td>
