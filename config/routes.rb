@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :users do
-    resources :credits, only: [:show, :index]
+    resources :credits, only: [:new, :show, :index]
   end
 
   resources :credits do
-    resources :transactions, only: [:show, :index]
+    resources :transactions, only: [:new, :show, :index]
   end
 
 
