@@ -1,0 +1,36 @@
+<h5> Exposures Show Page </h5>
+
+<table class = "table">
+<thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody>
+
+  <tr>
+    <td> Company </td>
+    <td> Credit </td>
+    <td> Sector </td>
+    <td> Rating </td>
+    <td> State </td>
+    <td> Limit </td>
+
+  </tr>
+
+<tr>
+
+  <td> <%= @exposure.user.username %> </td>
+  <td> <%= @exposure.credit.credit_name %> </td>
+  <td> <%= @exposure.credit.sector %> </td>
+  <td> <%= @exposure.credit.rating %> </td>
+  <td> <%= @exposure.credit.state %> </td>
+  <td> <%= @exposure.limit %> </td>
+
+</tr>
+
+</tr>
+</tbody>
+</table>
+<br>

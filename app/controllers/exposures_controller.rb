@@ -1,5 +1,8 @@
 class ExposuresController < ApplicationController
 
+    def index
+      @exposure = Exposure.all
+    end
 
     def show
       @exposure = set_exposure
@@ -11,7 +14,7 @@ class ExposuresController < ApplicationController
 
 
     def create
-      @expsoure = Exposure.create(exposure_params)
+      @exposure = Exposure.create(exposure_params)
 
       redirect_to exposure_path(@exposure)
     end
