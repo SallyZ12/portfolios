@@ -17,7 +17,11 @@ class CreditsController < ApplicationController
       end
     end
 
-
+ def update
+   @credit = set_credit
+   @credit.update(credit_params)
+   redirect_to credit_path(@credit)
+ end
 
   def show
     @credit = set_credit
@@ -34,9 +38,7 @@ class CreditsController < ApplicationController
  private
 
  def set_credit
-   @credit = set_credit
-    @credit.update(credit_params)
-    redirect_to credit_path(@credit)
+    @credit = Credit.find(params[:id])
   end
 
   def credit_params
