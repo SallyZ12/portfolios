@@ -1,4 +1,4 @@
-<label> All "<%=current_user.username%>" Credits</label><br><br>
+<label> All Credits</label><br><br>
 
 <table class = "table">
 <thead>
@@ -10,19 +10,23 @@
 <tbody>
 
   <tr>
+    <td> Credit ID </td>
     <td> Name </td>
     <td> Sector </td>
     <td> Rating </td>
     <td> State </td>
+    <td> Company </td>
 
   </tr>
 
 <% @credits.order("credit_name").each do |credit| %>
 <tr>
+  <td> <%= credit.id %> </td>
   <td> <%= credit.credit_name %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.rating %> </td>
   <td> <%= credit.state %> </td>
+  <td> <%=@user.username %> </td>
 </tr>
 
 <% end %>
