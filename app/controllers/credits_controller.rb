@@ -8,7 +8,22 @@ class CreditsController < ApplicationController
     @credit = Credit.new
   end
 
+  def create
+    @credit = Credit.new(credit_params)
+      if @credit.save
+        redirect_to credit_path(@credit)
+      else
+        redirect_to '/'
+      end
+    end
+
+
+
   def show
+    @credit = set_credit
+  end
+
+  def edit
     @credit = set_credit
   end
 
