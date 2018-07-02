@@ -1,7 +1,9 @@
 class ExposuresController < ApplicationController
 
     def index
-      @exposure = Exposure.all
+      @exposures = Exposure.all
+      @users = User.all
+      @credits = Credit.all
     end
 
     def show
