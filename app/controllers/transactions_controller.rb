@@ -10,7 +10,9 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new
   end
 
-
+  def create
+    @transaction = Transaction.new (transaction_params)
+  end
 
 
 
@@ -18,7 +20,7 @@ class TransactionsController < ApplicationController
   private
 
     def transaction_params
-      params.require(:transaction).permit(:name, :series)
+      params.require(:transaction).permit(:name, :series, :par, :exposure_id)
     end
 
     def set_transaction
