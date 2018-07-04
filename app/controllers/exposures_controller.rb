@@ -16,8 +16,9 @@ class ExposuresController < ApplicationController
 
 
     def create
-      @exposure = Exposure.create(exposure_params)
-
+        @user = User.create(user_params)
+          @credit = Credit.create (credit_params)
+            @exposure = Exposure.create(exposure_params)
       redirect_to exposure_path(@exposure)
     end
 
