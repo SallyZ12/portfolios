@@ -25,8 +25,8 @@ class CreditsController < ApplicationController
 
   def show
     @credit = set_credit
-    @user = current_user
-    @exposure = Exposure.new(user_id: @user.id, credit_id: @credit.id)
+      @user = current_user
+        @exposure = Exposure.create(user_id: @user.id, credit_id: @credit.id)
   end
 
   def edit
