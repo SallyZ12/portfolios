@@ -20,7 +20,7 @@
 
   </tr>
 
-<% @exposures.each do |exposure| %>
+<% @exposures.order(:user_id).each do |exposure| %>
 <tr>
 
   <td> <%= exposure.user.username %> </td>
