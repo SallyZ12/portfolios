@@ -3,11 +3,11 @@
 
 <%= form_for (@user), url: login_path, method: 'post' do |f| %>
 
-<%= f.label :username, placeholder: "username" %>
+<%= f.label :username %>
 <%= f.collection_select(:username, User.all.order(:username), :username, :username) %> <br><br>
 
-<%= f.label :password, placeholder: "password" %>
-<%= f.password_field :password %> <br><br>
+<%= f.label :password %>
+<%= f.password_field :password, placeholder: "password" %> <br><br>
 
 
 <%= f.submit "Log In" %> <br><br>
