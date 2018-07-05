@@ -2,25 +2,18 @@ class ExposuresController < ApplicationController
 
     def index
       @exposures = Exposure.all
-      @users = User.all
-      @credits = Credit.all
     end
 
     def show
       @exposure = set_exposure
     end
 
-    def new
-      @exposure = Exposure.new
-    end
-
 
     def create
-        @user = User.create(user_params)
-          @credit = Credit.create (credit_params)
-            @exposure = Exposure.create(exposure_params)
+        @exposure = Exposure.create(exposure_params)
       redirect_to exposure_path(@exposure)
     end
+
 
 
   private

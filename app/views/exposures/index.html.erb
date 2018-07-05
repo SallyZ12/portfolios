@@ -23,7 +23,7 @@
 <% @exposures.order(:user_id).each do |exposure| %>
 <tr>
 
-  <td> <%= exposure.user.username %> </td>
+  <td> <%= link_to exposure.user.username, exposure_path(exposure) %> </td>
   <td> <%= exposure.credit.credit_name %> </td>
   <td> <%= exposure.credit.sector %> </td>
   <td> <%= exposure.credit.rating %> </td>
