@@ -8,6 +8,10 @@ class ExposuresController < ApplicationController
       @exposure = set_exposure
     end
 
+    def new
+      @exposure = Exposure.new
+    end
+
 
     def create
         @exposure = Exposure.create(exposure_params)
