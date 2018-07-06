@@ -15,13 +15,13 @@
     <td> Sector </td>
     <td> Rating </td>
     <td> State </td>
-  
+
   </tr>
 
 <% @credits.order("credit_name").each do |credit| %>
 <tr>
   <td> <%= credit.id %> </td>
-  <td> <%= credit.credit_name %> </td>
+  <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.rating %> </td>
   <td> <%= credit.state %> </td>
