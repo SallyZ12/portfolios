@@ -1,0 +1,15 @@
+
+<h4> Change Exposure Limit for: </h4>
+
+<label> User: <%= @exposure.user.username %> </label><br><br>
+<label> Credit: <%= @exposure.credit.credit_name%> </label> <br><br>
+
+
+<%= form_for @exposure do |f| %>
+
+<%= f.label :limit %>
+<%= f.number_field :limit %> <br><br>
+
+<%= f.submit "Update Exposure Limit" %>
+
+<% end %>

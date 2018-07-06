@@ -18,6 +18,16 @@ class ExposuresController < ApplicationController
       redirect_to exposure_path(@exposure)
     end
 
+    def edit
+      @exposure = set_exposure
+    end
+
+    def update
+      @exposure = set_exposure
+        @exposure.update(exposure_params)
+
+        redirect_to exposure_path(@exposure)
+    end
 
 
   private
