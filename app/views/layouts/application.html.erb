@@ -13,3 +13,20 @@
     <%= yield %>
   </body>
 </html>
+
+
+<div>
+
+  <% if current_user %>
+
+<p>  <%= link_to "Log Out", logout_path, {method: :delete} %> </p> <br> <br>
+
+  <% else %>
+
+  To  <%= link_to "Register", new_user_path %> <br> <br>
+
+  To <%= link_to "Log In", login_path %>
+
+<% end %>
+
+</div>

@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
     def show
       if logged_in?
+        # binding.pry
         @user = set_user
           render :show
         else
