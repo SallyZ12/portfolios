@@ -1,9 +1,14 @@
 <h3> Registration Form </h3>
 
-<h4 style = "color:red;" >
-<%= flash[:notice] %> </h4> <br>
+
 
 <%= form_for @user do |f| %>
+
+
+<div class = "field_with_errors">
+  <input type= "text"name= "user[username]"id="user_username"
+  value= "Error Try Again"/>
+</div>
 
 <%= f.label :username %> <br>
 <%= f.text_field :username %> <br><br>

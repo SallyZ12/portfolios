@@ -16,14 +16,13 @@ class UsersController < ApplicationController
        session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
-        flash[:notice] = "Inputs Not Valid, Try Again"
+        # flash[:notice] = "Inputs Not Valid, Try Again"
         redirect_to new_user_path
       end
     end
 
     def show
       if logged_in?
-        # binding.pry
         @user = set_user
           render :show
         else
