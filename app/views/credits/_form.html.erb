@@ -1,5 +1,11 @@
-<h4 style = "color:red;">
-	<%= flash[:notice] %> </h4><br><br>
+<% if @credit.errors.any? %>
+ <div id= "error_explanation ">
+   <ul>
+     <% @credit.errors.full_messages.each do |msg| %>
+     <li> <%= msg %> </li>
+     <% end %>
+   </div>
+   <% end %>
 
 <%= form_for @credit do |f| %>
 

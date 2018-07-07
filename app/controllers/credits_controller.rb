@@ -13,7 +13,6 @@ class CreditsController < ApplicationController
       if @credit.save
         redirect_to credit_path(@credit)
       else
-        flash[:notice] = "Error in Input - try Again"
         render :new
       end
     end
