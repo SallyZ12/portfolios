@@ -30,6 +30,8 @@ class ExposuresController < ApplicationController
     end
 
 
+
+
   private
 
     def exposure_params
