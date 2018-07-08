@@ -37,11 +37,9 @@
 
 
 
-<%= form_tag exposure_path(@exposure.id), method: "delete" %>
-<%= submit_tag "Delete #{@exposure.user.username} #{@exposure.credit.credit_name}" %><br><br>
-
-
-
 <%= link_to "Change Exposure Limit", edit_exposure_path %><br><br>
 <%= link_to "All Exposures", exposures_path %> <br><br>
-<%= link_to "#{current_user.username} Credits", credits_path %>
+<%= link_to "#{current_user.username} Credits", credits_path %><br><br>
+
+<%= form_tag exposure_path(@exposure.id), method: "delete" %>
+<%= submit_tag "Delete #{@exposure.user.username} #{@exposure.credit.credit_name}" %><br><br>

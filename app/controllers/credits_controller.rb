@@ -27,7 +27,7 @@ class CreditsController < ApplicationController
   def show
     @credit = set_credit
       @user = current_user
-        @exposure = Exposure.create(user_id: @user.id, credit_id: @credit.id)
+        @exposure = Exposure.find_or_create_by(user_id: @user.id, credit_id: @credit.id)
   end
 
   def edit
