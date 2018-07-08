@@ -6,6 +6,7 @@ class ExposuresController < ApplicationController
 
     def show
       @exposure = set_exposure
+      
     end
 
     def new

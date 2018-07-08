@@ -34,7 +34,10 @@ class CreditsController < ApplicationController
     @credit = set_credit
   end
 
-
+  def destroy
+    Credit.find(params[:id]).destroy
+    redirect_to credits_path
+  end
 
 
 
