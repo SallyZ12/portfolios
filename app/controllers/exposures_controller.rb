@@ -15,6 +15,7 @@ class ExposuresController < ApplicationController
 
     def create
         @exposure = Exposure.create(exposure_params)
+          @exposure.transactions << Transaction.create(params[:transactions])
       redirect_to exposure_path(@exposure)
     end
 

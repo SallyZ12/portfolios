@@ -12,7 +12,12 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new (transaction_params)
+      if @transaction.save
+        redirect_to transaction_path(@transaction)
+      else
+    render :new
   end
+end
 
   def update
     @transaction = set_transaction
