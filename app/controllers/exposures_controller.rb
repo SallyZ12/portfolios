@@ -40,7 +40,7 @@ class ExposuresController < ApplicationController
   private
 
     def exposure_params
-      params.require(:exposure).permit(:user_id, :credit_id, :limit)
+      params.require(:exposure).permit(:limit)
     end
 
     def set_exposure
