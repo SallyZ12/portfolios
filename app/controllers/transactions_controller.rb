@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new (transaction_params)
       if @transaction.save
-        redirect_to transaction_path(@transaction)
+        redirect_to exposures_path
       else
     render :new
   end

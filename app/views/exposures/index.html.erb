@@ -19,6 +19,7 @@
     <td> State </td>
     <td> Limit </td>
 
+
   </tr>
 
 <% @exposures.order(:user_id).each do |exposure| %>
@@ -31,6 +32,7 @@
   <td> <%= exposure.credit.state %> </td>
   <td> <%= exposure.limit %> </td>
 
+
 </tr>
 
 <% end %>
@@ -38,4 +40,4 @@
 </table>
 <br>
 
-<%= link_to "All Credits", credits_path %>
+<%= link_to "All Credits", credits_path %><br><br>
