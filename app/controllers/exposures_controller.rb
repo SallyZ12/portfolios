@@ -29,6 +29,10 @@ class ExposuresController < ApplicationController
         redirect_to exposure_path(@exposure)
     end
 
+    def destroy
+      Exposure.find(params[:id]).destroy
+      redirect_to exposures_path
+    end
 
 
 
