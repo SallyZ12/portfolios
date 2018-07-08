@@ -14,7 +14,9 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new (transaction_params)
   end
 
-
+  def update
+    @transaction = set_transaction
+  end
 
 
   private
