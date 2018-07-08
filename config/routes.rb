@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     resources :credits, only: [:new, :create, :show, :index]
   end
 
-  resources :credits do
-    resources :transactions, only: [:new, :show, :index]
+  resources :exposures do
+    resources :transactions, only: [:new, :create, :show, :index]
   end
 
 
