@@ -7,11 +7,18 @@
    </div>
    <% end %>
 
+<%= form_for @credit do |f| %>
+
+<%= f.label :credit_name %>
+<%= f.collection_select(:id, Credit.all.order(:credit_name), :credit_name, :credit_name) %><br><br>
+<%= f.submit "Add Existing Credit"%>
+
+<% end %><br><br>
+
+
 
 <%= form_for @credit do |f| %>
 
-
-<%= f.collection_select(:credit_name, Credit.all.order(credit_name), :credit_name, :credit_name) %><br><br>
 
 <%= f.label :credit_name %>
 <%= f.text_field :credit_name %> <br><br>
