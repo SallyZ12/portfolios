@@ -10,7 +10,7 @@
 <%= form_for @credit do |f| %>
 
 <%= f.label :credit_name %>
-<%= f.collection_select(:id, Credit.all.order(:credit_name), :credit_name, :credit_name) %><br><br>
+<%= f.collection_select(:id, Credit.all.order(:credit_name), :credit_name, :credit_name,{include_blank: true}) %><br><br>
 <%= f.submit "Add Existing Credit"%>
 
 <% end %><br><br>
