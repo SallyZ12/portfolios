@@ -6,4 +6,10 @@ class Transaction < ApplicationRecord
   validates :series, presence: true
 
 
+  def sum
+    
+
+  end
+
+
 end
