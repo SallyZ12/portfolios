@@ -16,6 +16,9 @@
     <td> Rating </td>
     <td> State </td>
     <td> Limit </td>
+    <td> Transaction </td>
+    <td> Series </td>
+    <td> Par </td>
 
   </tr>
 
@@ -27,6 +30,13 @@
   <td> <%= @exposure.credit.rating %> </td>
   <td> <%= @exposure.credit.state %> </td>
   <td> <%= @exposure.limit %> </td>
+
+  <% @exposure.transactions.each do |transaction| %>
+  
+    <td> <%= transaction.name %> </td>
+    <td> <%= transaction.series %> </td>
+    <td> <%= transaction.par %> </td>
+  <% end %>
 
 </tr>
 
