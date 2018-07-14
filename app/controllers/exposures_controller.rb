@@ -2,6 +2,7 @@ class ExposuresController < ApplicationController
 
     def index
         @exposures = Exposure.all
+          @user = current_user
     end
 
     def show

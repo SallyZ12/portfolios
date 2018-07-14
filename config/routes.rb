@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :exposures do
-    resources :transactions, only: [:new, :create, :show]
+    resources :transactions, only: [:new, :create, :show, :index]
   end
 
 
