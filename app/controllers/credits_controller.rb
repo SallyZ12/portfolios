@@ -12,6 +12,7 @@ class CreditsController < ApplicationController
   def create
     @credit = Credit.new(credit_params)
       if @credit.save
+        @exposure = Exposure.find_or_create_by(user_id: @user.id, credit_id: @credit.id)
         redirect_to credit_path(@credit)
       else
         render :new
@@ -21,6 +22,7 @@ class CreditsController < ApplicationController
 
   def create_exist
     @credit = Credit.find(params[:credit][:id])
+      @exposure = Exposure.find_or_create_by(user_id: @user.id, credit_id: @credit.id)
       redirect_to credit_path(@credit)
   end
 
@@ -35,7 +37,6 @@ class CreditsController < ApplicationController
   def show
     @credit = set_credit
       @user = current_user
-        @exposure = Exposure.find_or_create_by(user_id: @user.id, credit_id: @credit.id)
   end
 
   def edit
