@@ -10,9 +10,6 @@ class CreditsController < ApplicationController
   end
 
   def create
-    if @credit = Credit.find_by(params[:id])
-      redirect_to credit_path(@credit)
-    else
     @credit = Credit.new(credit_params)
       if @credit.save
         redirect_to credit_path(@credit)
@@ -20,7 +17,14 @@ class CreditsController < ApplicationController
         render :new
       end
     end
+
+
+  def create_exist
+    @credit = Credit.find(params[:credit][:id])
+      redirect_to credit_path(@credit)
   end
+
+
 
  def update
    @credit = set_credit
