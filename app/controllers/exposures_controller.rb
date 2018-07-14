@@ -6,7 +6,7 @@ class ExposuresController < ApplicationController
 
     def show
       @exposure = set_exposure
-      
+
     end
 
     def new
@@ -16,7 +16,7 @@ class ExposuresController < ApplicationController
 
     def create
         @exposure = Exposure.create(exposure_params)
-          @exposure.transactions << Transaction.create(params[:transactions])
+          @exposure.transactions.create(params[:transactions])
       redirect_to exposure_path(@exposure)
     end
 
