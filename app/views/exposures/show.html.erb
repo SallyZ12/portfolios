@@ -16,9 +16,6 @@
     <td> Rating </td>
     <td> State </td>
     <td> Limit </td>
-    <td> Transaction </td>
-    <td> Series </td>
-    <td> Par </td>
 
   </tr>
 
@@ -31,8 +28,36 @@
   <td> <%= @exposure.credit.state %> </td>
   <td> <%= @exposure.limit %> </td>
 
+
+</tr>
+
+</tr>
+</tbody>
+</table>
+<br>
+
+
+<table class = "table">
+<thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody>
+
+  <tr>
+
+    <td> Transaction </td>
+    <td> Series </td>
+    <td> Par </td>
+
+  </tr>
+
+<tr>
+
   <% @exposure.transactions.each do |transaction| %>
-  
+
     <td> <%= transaction.name %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
@@ -44,8 +69,6 @@
 </tbody>
 </table>
 <br>
-
-
 
 <%= link_to "Change Exposure Limit", edit_exposure_path %><br><br>
 <%= link_to "All Exposures", exposures_path %> <br><br>
