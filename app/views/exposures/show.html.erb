@@ -48,15 +48,14 @@
 
   <tr>
 
+
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
 
   </tr>
-
+    <% @exposure.transactions.each do |transaction| %>
 <tr>
-
-  <% @exposure.transactions.each do |transaction| %>
 
     <td> <%= transaction.name %> </td>
     <td> <%= transaction.series %> </td>
