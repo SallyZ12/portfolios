@@ -11,16 +11,14 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    if params[:exposure_id] && !Exposure.exists?(params[:exposure_id])
-      redirect_to exposures_path, alert: "Exposure Not Found"
-    else
       @transaction = Transaction.new(exposure_id: params[:exposure_id])
-    end
   end
 
   def create
     @transaction = Transaction.new (transaction_params)
-      if @transaction.save
+            @exposure = Exposure.find(current_user.id)
+              @exposure.transactions << @transaction
+                if @transaction.save
         redirect_to exposure_path(@exposure)
       else
     render :new
@@ -29,8 +27,8 @@ end
 
   def update
     @transaction = set_transaction
-    @transaction.update(params.require(:transaction))
-    redirect_to transaction_path(@transaction)
+      @transaction.update(params.require(:transaction))
+        redirect_to transaction_path(@transaction)
   end
 
   def show
