@@ -11,9 +11,12 @@ class TransactionsController < ApplicationController
 
   def show
     if params[:exposure_id]
-      @transaction = Exposure.find(params[:exposure_id]).transactions.find[:id])
+      @transaction = Exposure.find(params[:exposure_id]).transactions.find(params[:id])
     else
       @transaction = set_transaction
+    end
+  end
+
 
   def new
     if params[:exposure_id] && !Exposure.exists?(params[:exposure_id])
