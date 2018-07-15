@@ -7,16 +7,8 @@ class TransactionsController < ApplicationController
     else
       @transactions = Transaction.all
     end
+      user = current_user
   end
-
-  def show
-    if params[:exposure_id]
-      @transaction = Exposure.find(params[:exposure_id]).transactions.find(params[:id])
-    else
-      @transaction = set_transaction
-    end
-  end
-
 
   def new
     if params[:exposure_id] && !Exposure.exists?(params[:exposure_id])
@@ -39,6 +31,14 @@ end
     @transaction = set_transaction
     @transaction.update(params.require(:transaction))
     redirect_to transaction_path(@transaction)
+  end
+
+  def show
+    if params[:exposure_id]
+      @transaction = Exposure.find(params[:exposure_id]).transactions.find(params[:id])
+    else
+      @transaction = set_transaction
+    end
   end
 
 
