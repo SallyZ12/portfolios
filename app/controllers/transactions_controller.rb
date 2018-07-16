@@ -30,8 +30,9 @@ end
 
   def update
     @transaction = set_transaction
-      @transaction.update(params.require(:transaction))
-        redirect_to transaction_path(@transaction)
+      @transaction.update(transaction_params)
+        @exposure = Exposure.find(current_user.id)
+        redirect_to exposure_path(@exposure)
   end
 
   def show
@@ -41,6 +42,20 @@ end
       @transaction = set_transaction
     end
   end
+
+
+  def edit
+    @transaction = set_transaction
+      @exposure = Exposure.find(current_user.id)
+        @credit = Credit.new
+          @user = current_user
+  end
+
+  def destroy
+    Transaction.find(params[:id]).destroy
+    redirect_to exposure_path(@exposure)
+  end
+
 
 
   private

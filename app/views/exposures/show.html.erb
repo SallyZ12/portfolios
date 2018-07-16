@@ -57,7 +57,7 @@
     <% @exposure.transactions.each do |transaction| %>
 <tr>
 
-    <td> <%= transaction.name %> </td>
+    <td> <%= link_to transaction.name, edit_exposure_transaction_path(@transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
   <% end %>
@@ -71,6 +71,8 @@
 
 <%= link_to "Change Exposure Limit", edit_exposure_path %><br><br>
 <%= link_to "Add New Transaction", new_exposure_transaction_path(@exposure) %> <br><br>
+
+
 <%= link_to "All Exposures", exposures_path %> <br><br>
 <%= link_to "#{current_user.username} Credits", credits_path %><br><br>
 
