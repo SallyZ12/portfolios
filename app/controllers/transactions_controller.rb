@@ -12,6 +12,9 @@ class TransactionsController < ApplicationController
 
   def new
       @transaction = Transaction.new(exposure_id: params[:exposure_id])
+        @exposure = Exposure.find(current_user.id)
+          @credit = Credit.new
+            @user = current_user
   end
 
   def create
