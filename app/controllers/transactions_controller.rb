@@ -11,16 +11,15 @@ class TransactionsController < ApplicationController
   end
 
   def new
-      @transaction = Transaction.new(exposure_id: params[:exposure_id])
-        @exposure = Exposure.find(current_user.id)
+      @transaction = Transaction.new
+        @exposure = Exposure.find(params[:exposure_id])
           @credit = Credit.new
             @user = current_user
   end
 
   def create
-    @transaction = Transaction.new (transaction_params)
-            @exposure = Exposure.find(current_user.id)
-        
+    @transaction = Transaction.new(transaction_params)
+          @exposure = Exposure.find_by(current_user.id)
               @exposure.transactions << @transaction
                 if @transaction.save
         redirect_to exposure_path(@exposure)
