@@ -20,6 +20,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new (transaction_params)
             @exposure = Exposure.find(current_user.id)
+            binding.pry
               @exposure.transactions << @transaction
                 if @transaction.save
         redirect_to exposure_path(@exposure)
