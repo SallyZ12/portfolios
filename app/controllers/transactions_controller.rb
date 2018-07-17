@@ -47,8 +47,6 @@ end
   def edit
         @transaction = set_transaction
           @exposure = Exposure.find(params[:exposure_id])
-            @credit = Credit.new
-              @user = current_user
   end
 
   def destroy
