@@ -3,11 +3,7 @@
 <br><br><br>
 
 
-
-
-
-
-<%= form_for @transaction do |f| %>
+<%= form_for [@exposure, @transaction] do |f| %>
 
 <%= f.label :name %>
 <%= f.text_field :name %><br><br>
@@ -20,4 +16,4 @@
 
 <%= f.submit %>
 
-<% end %>
+<% end %><br><br>
