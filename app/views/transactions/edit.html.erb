@@ -1,3 +1,7 @@
 <h4> Edit the Transaction for:</h4>
 
 <%= render 'form' %>
+
+<br><br>
+<%= form_tag transaction_path(@transaction.id), method: "delete" %>
+<%= submit_tag "Delete #{@transaction.name}" %> <br><br>
