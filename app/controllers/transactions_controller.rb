@@ -46,9 +46,11 @@ end
 
 
   def edit
-        @transaction = set_transaction
-           @exposure = Exposure.find(params[:exposure_id])
+    @transaction = set_transaction
+      @exposure = Exposure.find(params[:exposure_id])
   end
+
+
 
   def destroy
     Transaction.find(params[:id]).destroy
