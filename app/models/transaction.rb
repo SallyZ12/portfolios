@@ -6,10 +6,6 @@ class Transaction < ApplicationRecord
   validates :series, presence: true
 
 
-  def self.total_par
-
-
-  end
 
 
 end
