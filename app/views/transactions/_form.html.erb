@@ -1,4 +1,14 @@
 
+<% if @transaction.errors.any? %>
+ <div id= "error_explanation ">
+   <ul>
+     <% @transaction.errors.full_messages.each do |msg| %>
+     <li> <%= msg %> </li>
+     <% end %>
+   </div>
+<% end %>
+
+
  <label> Exposure: <%= @exposure.user.username %> -- <%= @exposure.credit.credit_name %> </label>
 <br><br><br>
 

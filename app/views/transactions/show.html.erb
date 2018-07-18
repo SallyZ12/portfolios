@@ -34,5 +34,5 @@
 
 <%= link_to "Edit", edit_exposure_transaction_path(@transaction.exposure_id, @transaction) %>
 <br><br>
-<%= form_tag exposure_transaction_path(@transaction.id), method: "delete" %>
+<%= form_tag exposure_transaction_path(@transaction.exposure.id, @transaction.id), method: "delete" %>
 <%= submit_tag "Delete #{@transaction.name}"  %><br><br>
