@@ -4,8 +4,7 @@ class Transaction < ApplicationRecord
 
   validates :name, presence: true
   validates :series, presence: true
-
-
+  validates :series, uniqueness: true
 
 
 end
