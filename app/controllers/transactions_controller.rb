@@ -23,8 +23,6 @@ class TransactionsController < ApplicationController
              @exposure.transactions << @transaction
                 if @transaction.save
         redirect_to exposure_path(@exposure)
-      else
-    render :new
   end
 end
 
