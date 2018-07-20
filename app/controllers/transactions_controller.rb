@@ -46,6 +46,7 @@ end
   def edit
     @transaction = set_transaction
       @exposure = Exposure.find(params[:exposure_id])
+        @user = current_user
   end
 
 
