@@ -1,4 +1,4 @@
-<h5> Transaction Show Page </h5>
+<h5> Transaction for Exposure: <%= @transaction.exposure.user.username %> -- <%= @transaction.exposure.credit.credit_name %> </h5>
 
 
 
@@ -38,4 +38,4 @@
 
 <br><br>
 <%= form_tag exposure_transaction_path(@transaction.exposure.id, @transaction.id), method: "delete" %>
-<%= submit_tag "Delete #{@transaction.name}"  %><br><br>
+<%= submit_tag "Delete Transaction"  %><br><br>
