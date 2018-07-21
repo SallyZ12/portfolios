@@ -34,6 +34,5 @@
 <%= form_tag credit_path(@credit.id), method: "delete" %>
 <%= submit_tag "Delete #{@credit.credit_name}" %> <br><br>
 
-<%= link_to "All #{@user.username} Credits", credits_path %> <br><br>
 
 <%= link_to "Edit", edit_user_credit_path(@credit) %> <br> <br>
