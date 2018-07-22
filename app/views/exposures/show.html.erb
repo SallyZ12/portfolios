@@ -1,3 +1,5 @@
+<h4> Company: <%= current_user.username %> </h4>
+
 <h5> Exposure: <%= @exposure.user.username %> -- <%= @exposure.credit.credit_name %>  </h5>
 
 <h4 style = "color:red;">
@@ -79,7 +81,7 @@
 </table>
 <br><br><br>
 
-<%= link_to "Change Exposure Limit", edit_exposure_path %><br><br>
+<%= link_to_if(current_user.id == @exposure.user_id,  "Change Exposure Limit", edit_exposure_path){} %><br><br>
 <%= link_to_if(current_user.id == @exposure.user_id, "Add New Transaction", new_exposure_transaction_path(@exposure)){} %> <br><br>
 
 
