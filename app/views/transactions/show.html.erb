@@ -34,7 +34,7 @@
   </table>
   <br><br><br>
 
-<%= link_to_if(current_user.id == @exposure.user_id, "Edit Transaction", edit_exposure_transaction_path(@transaction.exposure_id, @transaction)) %>
+<%= link_to_if(current_user.id == @exposure.user_id, "Edit Transaction", edit_exposure_transaction_path(@transaction.exposure_id, @transaction)){} %>
 
 
 <br><br>

@@ -80,7 +80,7 @@
 <br><br><br>
 
 <%= link_to "Change Exposure Limit", edit_exposure_path %><br><br>
-<%= link_to "Add New Transaction", new_exposure_transaction_path(@exposure) %> <br><br>
+<%= link_to_if(current_user.id == @exposure.user_id, "Add New Transaction", new_exposure_transaction_path(@exposure)){} %> <br><br>
 
 
 
