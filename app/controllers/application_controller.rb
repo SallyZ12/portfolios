@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+
 private
 
   def current_user

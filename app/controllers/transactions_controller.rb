@@ -23,8 +23,8 @@ class TransactionsController < ApplicationController
              @exposure.transactions << @transaction
                 if @transaction.save
         redirect_to exposure_path(@exposure)
+      end
   end
-end
 
   def update
     @transaction = set_transaction
