@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
 
     def edit
-      @user = set_user
+        @user = set_user
     end
 
     def update

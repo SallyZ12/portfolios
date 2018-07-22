@@ -2,6 +2,9 @@
 
 <labe> Are you an insurer? <%=@user.insurer ? "Yes" : "No" %> </label> <br><br>
 
+  <h4 style = "color:red;">
+  	<%= flash[:notice] %> </h4><br><br>
+
 
 <%= link_to "Edit", edit_user_path %> <br> <br>
 
