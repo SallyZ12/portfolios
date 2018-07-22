@@ -17,25 +17,25 @@
 <tbody>
 
   <tr>
+		<td> Exposure ID </td>
     <td> Company </td>
     <td> Credit </td>
     <td> Sector </td>
     <td> Rating </td>
     <td> State </td>
     <td> Limit </td>
-    <td> Exposure ID </td>
     <td> Total Par </td>
 
   </tr>
 
 <tr>
+	<td> <%= @exposure.id %> </td>
   <td> <%= @exposure.user.username %> </td>
   <td> <%= @exposure.credit.credit_name %> </td>
   <td> <%= @exposure.credit.sector %> </td>
   <td> <%= @exposure.credit.rating %> </td>
   <td> <%= @exposure.credit.state %> </td>
   <td> <%= @exposure.limit %> </td>
-  <td> <%= @exposure.id %> </td>
   <td> <%= @exposure.t_sum %> </td>
 
 
@@ -58,20 +58,20 @@
 <tbody>
 
   <tr>
-
+		 <td> Trans ID </td>
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
-    <td> Trans ID </td>
+
 
   </tr>
     <% @exposure.transactions.each do |transaction| %>
 <tr>
-
+		<td> <%= transaction.id %> </td>
     <td> <%= link_to transaction.name, exposure_transaction_path(@exposure, transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
-    <td> <%= transaction.id %> </td>
+
   <% end %>
 
 </tr>
