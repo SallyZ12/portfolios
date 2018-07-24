@@ -34,12 +34,14 @@ class ExposuresController < ApplicationController
     end
 
     def destroy
-      if current_user.id == @exposure.user_id
-        Exposure.find(params[:id]).destroy
-        redirect_to exposures_path
-    else
-      flash[:notice] = "You are not authorized to delete this Exposure"
-      end
+      @exposure = Exposure.find(params[:id])
+        if current_user.id == @exposure.user_id
+          @exposure.destroy
+            redirect_to exposures_path
+        else
+          flash[:message] = "You are not authorized to delete this Exposure"
+            redirect_to exposure_path(@exposure)
+        end
     end
 
 
