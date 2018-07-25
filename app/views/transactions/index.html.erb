@@ -1,0 +1,39 @@
+<h5> Top 5 Transactions </h5>
+
+</tbody>
+</table>
+<br>
+
+
+<table class = "table">
+<thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody>
+
+  <tr>
+		 <td> Trans ID </td>
+    <td> Transaction </td>
+    <td> Series </td>
+    <td> Par </td>
+
+
+  </tr>
+    <% @transactions.order(:par).each do |transaction| %>
+<tr>
+		<td> <%= transaction.id %> </td>
+    <td> <%= link_to transaction.name, exposure_transaction_path(transaction.exposure_id, transaction) %> </td>
+    <td> <%= transaction.series %> </td>
+    <td> <%= transaction.par %> </td>
+
+  <% end %>
+
+</tr>
+
+</tr>
+</tbody>
+</table>
+<br><br><br>

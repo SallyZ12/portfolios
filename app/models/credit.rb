@@ -11,6 +11,8 @@ class Credit < ApplicationRecord
   validates :sector, presence: true
   validates :state, presence: true
 
+  
+
 
   CREDIT_SECTOR = ["", "excise tax", "electric", "GO", "gas", "lease", "water"]
 
