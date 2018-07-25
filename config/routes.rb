@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  post '/existing' => 'credits#create_exist'
+  
 
   resources :users do
     resources :credits, only: [:new, :create, :show, :index, :edit]
