@@ -19,6 +19,7 @@
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
+    <td> Company </td>
 
 
   </tr>
@@ -28,6 +29,7 @@
     <td> <%= link_to transaction.name, exposure_transaction_path(transaction.exposure_id, transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
+    <td> <%= transaction.exposure.user.username %> </td>
 
   <% end %>
 
