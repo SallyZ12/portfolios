@@ -23,7 +23,7 @@
 
 
   </tr>
-    <% Transaction.trans_top_ten.each do |transaction| %>
+    <% Transaction.trans_top_five.each do |transaction| %>
 <tr>
 		<td> <%= transaction.id %> </td>
     <td> <%= link_to transaction.name, exposure_transaction_path(transaction.exposure_id, transaction) %> </td>
