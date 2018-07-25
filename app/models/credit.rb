@@ -11,7 +11,8 @@ class Credit < ApplicationRecord
   validates :sector, presence: true
   validates :state, presence: true
 
-  
+  scope :credit_state, -> (arg) {}
+
 
 
   CREDIT_SECTOR = ["", "excise tax", "electric", "GO", "gas", "lease", "water"]

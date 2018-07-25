@@ -24,6 +24,7 @@
     <td> Violation </td>
 
 
+
   </tr>
 
 <% @exposures.order(:user_id).each do |exposure| %>
@@ -36,12 +37,13 @@
   <td> <%= exposure.credit.state %> </td>
   <td> <%= exposure.limit %> </td>
   <td> <%= exposure.t_sum %> </td>
-  <td> <%= exposure.limit - exposure.t_sum < 0 ? "Yes" : "No"%> </td>
-
+  <td> <%= display_violations(exposure) %> </td>
 
 </tr>
 
 <% end %>
+
+
 </tbody>
 </table>
 <br>
