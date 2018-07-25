@@ -6,5 +6,7 @@ class Transaction < ApplicationRecord
   validates :series, presence: true
   validates :series, uniqueness: true
 
+  scope :trans_top_ten, -> {order ("transactions.par DESC")}
+
 
 end
