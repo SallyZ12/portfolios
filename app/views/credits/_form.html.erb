@@ -8,13 +8,10 @@
    <% end %>
 
 
-<%= form_for (@credit), url: existing_path, method: 'post' do |f| %>
-<%= f.label :credit_name %>
-<%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
-<%= f.submit "Add Existing Credit" %>
-<% end %><br> <br>
-
 <%= form_for @credit do |f| %>
+
+<%= f.label :existing_credit %>
+<%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
 
 <%= f.label :credit_name %>
 <%= f.text_field :credit_name %> <br><br>
@@ -29,6 +26,6 @@
 <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
 
 
-<%= f.submit "Create New Credit"%>
+<%= f.submit "Submit Existing or Create New Credit"%>
 
 <% end %><br> <br>
