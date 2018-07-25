@@ -20,7 +20,8 @@
     <td> Rating </td>
     <td> State </td>
     <td> Limit </td>
-    <td> Transaction Par </td>
+    <td> Par </td>
+    <td> Violation </td>
 
 
   </tr>
@@ -35,6 +36,7 @@
   <td> <%= exposure.credit.state %> </td>
   <td> <%= exposure.limit %> </td>
   <td> <%= exposure.t_sum %> </td>
+  <td> <%= exposure.limit - exposure.t_sum < 0 ? "Yes" : "No"%> </td>
 
 
 </tr>

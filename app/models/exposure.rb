@@ -5,9 +5,8 @@ class Exposure < ApplicationRecord
   has_many :transactions
 
   def t_sum
-      transactions.sum("par")  
+      transactions.sum("par")
   end
-
 
 
 end
