@@ -1,4 +1,4 @@
-<label> <%= current_user.username%> Credits</label><br><br>
+<h4> <%= current_user.username%> Credits</h4><br>
 
 <table class = "table">
 <thead>
@@ -43,16 +43,18 @@
   </thead>
 
 
-<label> All Credits By State </label>
+<h4> All Credits By State </h4>
+
+<h5> Select State: </h5>
 
 <tbody>
   <tr>
     <td> Credit ID </td>
     <td> Name </td>
     <td> Sector </td>
-    <td> Rating </td>
     <td> State </td>
   </tr>
+
 
 
 <% Credit.state.order("credit_name").each do |credit| %>
@@ -60,7 +62,6 @@
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
   <td> <%= credit.sector %> </td>
-  <td> <%= credit.rating %> </td>
   <td> <%= credit.state %> </td>
 
 </tr>
