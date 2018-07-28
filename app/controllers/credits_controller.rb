@@ -7,7 +7,6 @@ class CreditsController < ApplicationController
 
   def new
     @credit = Credit.new
-        # @exposure = Exposure.new
   end
 
   def create

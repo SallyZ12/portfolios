@@ -45,9 +45,6 @@
 
 <h4> All Credits By State </h4>
 
-
-
-
 <tbody>
 
 <h5> Select State: <%= select_state %>
@@ -60,7 +57,6 @@
   </tr>
 
 <% Credit.scope_state(select_state).each do |credit| %>
-
 
   <tr>
   <td> <%= credit.id %> </td>
