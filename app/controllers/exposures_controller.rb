@@ -35,7 +35,7 @@ class ExposuresController < ApplicationController
 
     def destroy
       @exposure = Exposure.find(params[:id])
-        if @exposure.transactions.empty?
+        if @exposure.transactions.present?
           flash[:message] = "You Must Delete All Transactions Before Deleting Exposure and Must Be The Owner"
             redirect_to exposure_path(@exposure)
           elsif current_user.id == @exposure.user_id
