@@ -57,7 +57,7 @@
 
 
 
-<% Credit.state.order("credit_name").each do |credit| %>
+<% Credit.scope_state("CA").each do |credit| %>
   <tr>
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
