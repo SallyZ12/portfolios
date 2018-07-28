@@ -26,10 +26,6 @@ class CreditsController < ApplicationController
     end
   end
 
-  def create_exist
-
-  end
-
 
 
  def update
