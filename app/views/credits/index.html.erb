@@ -33,4 +33,38 @@
 </table>
 <br>
 
-<%= link_to "Select an Existing Credit or Create a New Credit", new_user_credit_path(@user) %> <br><br>
+<%= link_to "Select an Existing Credit or Create a New Credit", new_user_credit_path(@user) %> <br><br><br>
+
+<table class = "table">
+<thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+<label> All Credits By State </label>
+
+<tbody>
+  <tr>
+    <td> Credit ID </td>
+    <td> Name </td>
+    <td> Sector </td>
+    <td> Rating </td>
+    <td> State </td>
+  </tr>
+
+
+<% Credit.state.order("credit_name").each do |credit| %>
+  <tr>
+  <td> <%= credit.id %> </td>
+  <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
+  <td> <%= credit.sector %> </td>
+  <td> <%= credit.rating %> </td>
+  <td> <%= credit.state %> </td>
+
+</tr>
+  <% end %>
+  </tbody>
+  </table>
+  <br><br><br>

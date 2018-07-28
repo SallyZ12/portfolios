@@ -11,7 +11,7 @@ class Credit < ApplicationRecord
   validates :sector, presence: true
   validates :state, presence: true
 
-  scope :credit_state, -> (arg) {}
+  scope :state, -> {where(state: "NY")}
 
 
 
