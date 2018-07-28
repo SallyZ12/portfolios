@@ -45,9 +45,13 @@
 
 <h4> All Credits By State </h4>
 
-<h5> Select State: </h5>
+
+
 
 <tbody>
+
+<h5> Select State: <%= st = select_state %>
+  
   <tr>
     <td> Credit ID </td>
     <td> Name </td>
@@ -55,9 +59,8 @@
     <td> State </td>
   </tr>
 
+<% Credit.scope_state(st).each do |credit| %>
 
-
-<% Credit.scope_state("CA").each do |credit| %>
   <tr>
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
