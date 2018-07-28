@@ -25,6 +25,7 @@
     <td> State </td>
     <td> Limit </td>
     <td> Total Par </td>
+		<td> Violation </td>
 
   </tr>
 
@@ -37,6 +38,7 @@
   <td> <%= @exposure.credit.state %> </td>
   <td> <%= @exposure.limit %> </td>
   <td> <%= @exposure.t_sum %> </td>
+	<td> <%= display_violations(@exposure) %> </td>
 
 
 
