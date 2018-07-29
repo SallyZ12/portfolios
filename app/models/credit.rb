@@ -11,7 +11,7 @@ class Credit < ApplicationRecord
   validates :sector, presence: true
   validates :state, presence: true
 
-  scope :scope_state, -> (state){where('state = ?', state)}
+  scope :scope_state, -> (select_state){where('state = ?', select_state)}
 
 
   CREDIT_SECTOR = ["", "excise tax", "electric", "GO", "gas", "lease", "water"]

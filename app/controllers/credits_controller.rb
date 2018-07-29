@@ -5,6 +5,10 @@ class CreditsController < ApplicationController
       @user = current_user
   end
 
+  def credits_states
+      @credits = Credit.all
+  end
+
   def new
     @credit = Credit.new
   end

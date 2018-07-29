@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
-  
+
+  get '/credits_states' => 'credits#credits_states'
 
   resources :users do
     resources :credits, only: [:new, :create, :show, :index, :edit]

@@ -41,31 +41,3 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
-
-<h4> All Credits By State </h4>
-
-<tbody>
-
-<h5> Select State: <%= select_state %>
-
-  <tr>
-    <td> Credit ID </td>
-    <td> Name </td>
-    <td> Sector </td>
-    <td> State </td>
-  </tr>
-
-<% Credit.scope_state(select_state).each do |credit| %>
-
-  <tr>
-  <td> <%= credit.id %> </td>
-  <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
-  <td> <%= credit.sector %> </td>
-  <td> <%= credit.state %> </td>
-
-</tr>
-  <% end %>
-  </tbody>
-  </table>
-  <br><br><br>
