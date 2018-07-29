@@ -7,6 +7,7 @@ class CreditsController < ApplicationController
 
   def credits_states
       @credits = Credit.all
+        @credits = @credits.pick_state(params[:pick_state]) if params[:select_state].present?
   end
 
   def new

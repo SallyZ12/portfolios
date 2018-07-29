@@ -14,8 +14,8 @@
 
 <tbody>
 
-
 <h5> Select State: <%= select_state %> </h5>
+
 
   <tr>
     <td> Credit ID </td>
@@ -24,7 +24,7 @@
     <td> State </td>
   </tr>
 
-<% Credit.scope_state(select_state).each do |credit| %>
+<% Credit.pick_state(select_state).each do |credit| %>
 
   <tr>
   <td> <%= credit.id %> </td>
