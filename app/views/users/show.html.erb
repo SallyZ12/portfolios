@@ -8,4 +8,4 @@
 
 <%= link_to_if(current_user.id == @user.id, "Edit", edit_user_path){} %> <br> <br>
 
-<%= link_to_if(current_user.id == @user.id, "Select an Existing Credit or Create a New Credit", new_user_credit_path(@user)){} %> <br><br>
+ <%= link_to_if(current_user.id == @user.id, "To Add a Credit to Your Portfolio Select an Existing Credit or Create a New Credit", new_user_credit_path(@user)){} %> <br><br>
