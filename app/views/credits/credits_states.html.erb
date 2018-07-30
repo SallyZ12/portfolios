@@ -9,17 +9,19 @@
 
 <tbody>
 
-<h5> Select State: <%= select_state %> </h5>
+Select State: <%=  form_tag({}, {:method => :get}) do  %> 
+                   <%= select_state %> <br>
+                   <%= submit_tag "Select State" %><br>
+                   <% end %><br>
 
 
-  <tr>
     <td> Credit ID </td>
     <td> Name </td>
     <td> Sector </td>
     <td> State </td>
   </tr>
 
-<% Credit.pick_state(select_state).each do |credit| %>
+<% @credits.each do |credit| %>
 
   <tr>
   <td> <%= credit.id %> </td>
