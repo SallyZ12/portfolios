@@ -19,7 +19,7 @@ Select State: <%=  form_tag({}, {:method => :get}) do  %>
 <% @credits.each do |credit| %>
   <tr>
   <td> <%= credit.id %> </td>
-  <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
+  <td> <%= credit.credit_name %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.state %> </td>
 </tr>
