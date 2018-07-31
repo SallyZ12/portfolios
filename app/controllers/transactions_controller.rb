@@ -22,6 +22,7 @@ class TransactionsController < ApplicationController
          @exposure = Exposure.find(params[:exposure_id])
              @exposure.transactions << @transaction
                 if @transaction.save
+          flash[:message] = "Transaction Successfuly Created"
         redirect_to exposure_path(@exposure)
       end
   end
@@ -53,9 +54,17 @@ class TransactionsController < ApplicationController
 
 
   def destroy
-    Transaction.find(params[:id]).destroy
+    @transaction = set_transaction
       @exposure = Exposure.find(params[:exposure_id])
+
+        if current_user.id == @transaction.exposure.user_id
+          @transaction.destroy
+          flash[:message] = "Transaction Successfully Deleted"
     redirect_to exposure_path(@exposure)
+        else
+          flash[:message] = "You Are Not Authorized to Delete This Transaction"
+    redirect_to exposure_path(@exposure)
+    end
   end
 
 
