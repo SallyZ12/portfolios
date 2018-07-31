@@ -18,9 +18,6 @@
     <td> Limit </td>
     <td> Par </td>
     <td> Violation </td>
-
-
-
   </tr>
 
 <% @exposures.order(:user_id).each do |exposure| %>
@@ -33,7 +30,7 @@
   <td> <%= exposure.credit.state %> </td>
   <td> <%= exposure.limit %> </td>
   <td> <%= exposure.t_sum %> </td>
-  <td> <%= display_violations(exposure) %> </td>
+  <td><v> <%= display_violations(exposure) %></v> </td>
 
 </tr>
 
