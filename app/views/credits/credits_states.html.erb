@@ -1,19 +1,15 @@
-</tbody>
-</table>
-<br>
+
+<h4> All Credits By State </h4>
+
+Select State: <%=  form_tag({}, {:method => :get}) do  %>
+                   <%= select_state %> ---  <%= submit_tag "Submit"%><br><br>
+                   <% end %><br>
 
 
 <table class = "table">
 
-<h4> All Credits By State </h4>
-
 <tbody>
-
-Select State: <%=  form_tag({}, {:method => :get}) do  %>
-                   <%= select_state %> ---  <%= submit_tag "Submit"%><br><br>     
-                   <% end %><br>
-
-
+  <tr>
     <td> Credit ID </td>
     <td> Name </td>
     <td> Sector </td>
@@ -21,15 +17,14 @@ Select State: <%=  form_tag({}, {:method => :get}) do  %>
   </tr>
 
 <% @credits.each do |credit| %>
-
   <tr>
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.state %> </td>
-
 </tr>
   <% end %>
+
   </tbody>
   </table>
   <br><br><br>
