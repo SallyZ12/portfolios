@@ -1,8 +1,12 @@
 class CreditsController < ApplicationController
 
   def index
-    @credits = Credit.all
-      @user = current_user
+      @user = User.find(params[:user_id])
+    if @user == current_user
+      @credits = @user.credits
+    else
+      redirect_to exposures_path
+    end
   end
 
   def credits_states

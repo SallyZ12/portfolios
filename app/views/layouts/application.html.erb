@@ -24,7 +24,7 @@
 
 <p> <%= link_to "All Exposures", exposures_path %> <br>
 
-<p> <%= link_to "All #{current_user.username} Credits", credits_path %> <br>
+<p> <%= link_to "All #{current_user.username} Credits", user_credits_path(current_user) %> <br>
 
 <p> <%= link_to "All Companies", users_path %> <br><br>
 

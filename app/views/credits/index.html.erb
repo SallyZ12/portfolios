@@ -14,7 +14,7 @@
 
   </tr>
 
-<% current_user.credits.order("credit_name").each do |credit| %>
+<% @credits.order("credit_name").each do |credit| %>
 <tr>
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
