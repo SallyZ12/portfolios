@@ -10,7 +10,7 @@ class CreditsController < ApplicationController
   end
 
   def credits_states
-      @credits = Credit.all
+      @credits = Credit.none
         if params[:credit]
         @credits = Credit.pick_state(params[:credit][:state])
         end
