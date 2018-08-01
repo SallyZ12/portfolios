@@ -16,7 +16,7 @@ Select State: <%=  form_tag({}, {:method => :get}) do  %>
     <td> State </td>
   </tr>
 
-<% @credits.each do |credit| %>
+<% @credits.order("credit_name").each do |credit| %>
   <tr>
   <td> <%= credit.id %> </td>
   <td> <%= credit.credit_name %> </td>
