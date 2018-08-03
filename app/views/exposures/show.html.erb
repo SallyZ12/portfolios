@@ -61,7 +61,7 @@
     <% @exposure.transactions.each do |transaction| %>
 <tr>
 		<td> <%= transaction.id %> </td>
-    <td> <%= link_to transaction.name, exposure_transaction_path(@exposure, transaction) %> </td>
+		<td> <%= link_to transaction.name, exposure_transaction_path(@exposure, transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
 

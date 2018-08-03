@@ -48,7 +48,6 @@ class CreditsController < ApplicationController
 
   def show
     @credit = set_credit
-      @user = current_user
   end
 
   def edit
