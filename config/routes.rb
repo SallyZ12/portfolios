@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :exposures, only: [:index, :show]
 
-  resources :transactions, only: [:index]
+  resources :transactions, only: [:index, :show]
 
   resources :users
 

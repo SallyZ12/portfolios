@@ -40,7 +40,7 @@ class TransactionsController < ApplicationController
       else
         @transaction = set_transaction
       end
-        @exposure = Exposure.find(params[:exposure_id])
+       @exposure = Exposure.find(params[:exposure_id])
     end
 
 
