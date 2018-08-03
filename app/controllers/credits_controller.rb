@@ -12,12 +12,13 @@ class CreditsController < ApplicationController
   def credits_states
       @credits = Credit.none
         if params[:credit]
-        @credits = Credit.pick_state(params[:credit][:state])
+          @credits = Credit.pick_state(params[:credit][:state])
         end
   end
 
   def new
-    @credit = Credit.new
+    @user = User.find(params[:user_id])
+      @credit = Credit.new
   end
 
   def create

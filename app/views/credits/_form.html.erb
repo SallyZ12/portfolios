@@ -8,7 +8,7 @@
    <% end %>
 
 
-<%= form_for @credit do |f| %>
+<%= form_for [@user, @credit] do |f| %>
 
 <%= f.label :existing_credit %>
 <%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
