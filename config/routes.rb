@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get '/credits_states' => 'credits#credits_states'
 
   resources :users do
-    resources :credits, only: [:new, :create, :show, :index, :edit]
+    resources :credits, only: [:index, :new, :create ]
   end
+
+  resources :credits, only [:show, :edit, :update, :destroy]
 
   resources :exposures do
     resources :transactions, only: [:new, :create, :show, :index, :edit, :update, :destroy]
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :credits
+
   resources :transactions
   resources :exposures
 
