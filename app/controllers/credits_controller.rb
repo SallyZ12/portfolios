@@ -42,8 +42,8 @@ class CreditsController < ApplicationController
 
  def update
    @credit = set_credit
-   @credit.update(credit_params)
-   redirect_to credit_path(@credit)
+    @credit.update(credit_params)
+      redirect_to credit_path(@credit)
  end
 
   def show
