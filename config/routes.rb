@@ -11,18 +11,18 @@ Rails.application.routes.draw do
   resources :users do
     resources :credits, only: [:index, :new, :create ]
   end
-
   resources :credits, only: [:show, :edit, :update, :destroy]
 
   resources :exposures do
-    resources :transactions, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+    resources :transactions, only: [:new, :create, :show, :edit, :update, :destroy]
   end
+  resources :exposures, only: [:index, :show]
 
+  resources :transactions, only: [:index]
 
   resources :users
 
-  resources :transactions
-  resources :exposures
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
