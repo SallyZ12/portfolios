@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_223355) do
+ActiveRecord::Schema.define(version: 2018_08_04_172010) do
 
   create_table "credits", force: :cascade do |t|
     t.string "credit_name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_08_03_223355) do
     t.datetime "updated_at", null: false
     t.boolean "insurer", default: false
     t.string "email"
+    t.string "uid"
   end
 
 end
