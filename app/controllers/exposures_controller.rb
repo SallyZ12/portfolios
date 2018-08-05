@@ -52,7 +52,7 @@ class ExposuresController < ApplicationController
   private
 
     def exposure_params
-      params.require(:exposure).permit(:limit)
+      params.require(:exposure).permit(:limit, :rating)
     end
 
     def set_exposure

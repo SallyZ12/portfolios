@@ -10,6 +10,9 @@
 <%= f.label :limit %>
 <%= f.number_field :limit %> <br><br>
 
-<%= f.submit "Update Exposure Limit" %>
+<%= f.label :rating %>
+<%= f.select(:rating, Exposure::EXPOSURE_RATING)%><br><br>
+
+<%= f.submit "Update Exposure" %>
 
 <% end %>

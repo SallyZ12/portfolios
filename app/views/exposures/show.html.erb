@@ -17,7 +17,8 @@
     <td> Company </td>
     <td> Credit </td>
     <td> Sector </td>
-    <td> Rating </td>
+    <td> External Rating </td>
+		<td> Company Rating </td>
     <td> State </td>
     <td> Limit </td>
     <td> Total Par </td>
@@ -31,6 +32,7 @@
   <td> <%= @exposure.credit.credit_name %> </td>
   <td> <%= @exposure.credit.sector %> </td>
   <td> <%= @exposure.credit.rating %> </td>
+	<td> <%= @exposure.rating %> </td>
   <td> <%= @exposure.credit.state %> </td>
   <td> <%= @exposure.limit %> </td>
   <td> <%= @exposure.t_sum %> </td>
@@ -74,7 +76,7 @@
 </table>
 <br><br><br>
 
-<%= link_to_if(current_user.id == @exposure.user_id,  "Change Exposure Limit", edit_exposure_path){} %><br><br>
+<%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
 <%= link_to_if(current_user.id == @exposure.user_id, "Add New Transaction", new_exposure_transaction_path(@exposure)){} %> <br><br>
 
 
