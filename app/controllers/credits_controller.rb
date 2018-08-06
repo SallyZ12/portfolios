@@ -22,21 +22,21 @@ class CreditsController < ApplicationController
   end
 
   def create
-     if params[:credit][:id].present?
-       @credit = Credit.find(params[:credit][:id])
-          @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
-            redirect_to credit_path(@credit)
-              flash[:message] = "Existing Credit Successfully Added"
-      else
-        @credit = Credit.new(credit_params)
-      if @credit.save
+    if params[:credit][:id].present?
+      @credit = Credit.find(params[:credit][:id])
         @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
           redirect_to credit_path(@credit)
-            flash[:message] = "Credit Successfully Created"
-      else
-        render :new
+            flash[:message] = "Existing Credit Successfully Added"
+          else
+            @credit = Credit.new(credit_params)
+              if @credit.save
+                @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
+                  redirect_to credit_path(@credit)
+                    flash[:message] = "Credit Successfully Created"
+                  else
+                    render :new
+            end
       end
-    end
   end
 
 

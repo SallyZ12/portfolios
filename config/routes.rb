@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :credits, only: [:index, :new, :create ]
   end
-  resources :credits, only: [:show, :edit, :update]
+  resources :credits, only: [:show, :edit, :update, :index]
 
   resources :exposures do
     resources :transactions, only: [:new, :create, :show, :edit, :update, :destroy]
