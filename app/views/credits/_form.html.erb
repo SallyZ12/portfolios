@@ -4,8 +4,9 @@
      <% @credit.errors.full_messages.each do |msg| %>
      <li> <%= msg %> </li>
      <% end %>
-   </div>
-   <% end %>
+   </ul>
+  </div>
+<% end %>
 
 
 <%= form_for [@user, @credit] do |f| %>
