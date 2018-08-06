@@ -24,6 +24,8 @@ class TransactionsController < ApplicationController
                 if @transaction.save
           flash[:message] = "Transaction Successfuly Created"
         redirect_to exposure_path(@exposure)
+      else
+        render :new
       end
   end
 
