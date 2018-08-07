@@ -21,7 +21,7 @@
 <%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
 
 <%= f.label :external_rating %>
-<%= f.select(:rating, Credit::CREDIT_RATING)%><br><br>
+<%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
 
 <%= f.label :state %>
 <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
