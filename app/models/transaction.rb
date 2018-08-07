@@ -7,7 +7,7 @@ class Transaction < ApplicationRecord
   validates_uniqueness_of :series, scope: :exposure_id
 
 
-  scope :trans_top_five, -> {order("transactions.par DESC").limit(5)}
+  scope :trans_top_ten, -> {order("transactions.par DESC").limit(10)}
 
 
 end
