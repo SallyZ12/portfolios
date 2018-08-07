@@ -60,7 +60,7 @@
 
 
   </tr>
-    <% @exposure.transactions.each do |transaction| %>
+    <% @exposure.transactions.order("par DESC").each do |transaction| %>
 <tr>
 		<td> <%= transaction.id %> </td>
 		<td> <%= link_to transaction.name, exposure_transaction_path(@exposure,transaction) %> </td>
