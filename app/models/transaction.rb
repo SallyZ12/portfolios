@@ -4,7 +4,7 @@ class Transaction < ApplicationRecord
 
   validates :name, presence: true
   validates :series, presence: true
-  validates_uniqueness_of :series
+  validates_uniqueness_of :series, scope: :exposure_id
 
 
   scope :trans_top_five, -> {order("transactions.par DESC").limit(5)}
