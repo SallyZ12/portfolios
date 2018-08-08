@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   validates :password_digest, presence: true
+  
 
 
   def self.find_or_create_by_omniauth(auth_hash)
