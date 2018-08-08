@@ -14,7 +14,7 @@ class Credit < ApplicationRecord
   scope :pick_state, -> (select_state){where('state = ?', select_state)}
 
 
-  CREDIT_SECTOR = ["", "excise tax", "electric", "GO", "gas", "lease", "water"]
+  CREDIT_SECTOR = ["", "Excise Tax", "Electric", "Gas","GO", "Lease","Sewer", "Water"]
 
   CREDIT_STATE = ["","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY",
   "LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OR","PA","PR","RI","SC",
