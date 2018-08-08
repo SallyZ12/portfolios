@@ -34,31 +34,11 @@ Instructions:
 6. From this Company Exposure screen you may (1) Edit the Exposure (limit and/or rating) or select to add a new Transaction.
 7. To edit a Credit, select the link for Credits by that Company, Select the link of the Credit Name and then Edit.
 
+Things to Know:
+1. There are 2 different categories of ratings.  
 
+  External Rating : a Credit is assigned a rating that originates from a third party rating agency (external rating) and is required at the time of the Credit creation.  
 
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Company Rating: An Exposure is assigned a rating internally based on credit committee decisions and is not required at time of creation.
+  
+2. Exposure limit is internally assigned based on company guidelines.
