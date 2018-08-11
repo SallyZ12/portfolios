@@ -16,7 +16,7 @@ class Credit < ApplicationRecord
 
   CREDIT_SECTOR = ["", "Excise Tax", "Electric", "Gas","GO", "Lease","Sewer", "Water"]
 
-  CREDIT_STATE = ["","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY",
+  CREDIT_STATE = ["","AL","AK","AZ","AR","CA","CO","CT","DC","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY",
   "LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OR","PA","PR","RI","SC",
   "TN","TX", "UT", "VT","VA","VI","WA","WV","WI","WY"]
 
