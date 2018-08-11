@@ -1,3 +1,4 @@
+
 # README
 
 Welcome to the Portfolios Application.
@@ -40,5 +41,8 @@ Things to Know:
   External Rating : a Credit is assigned a rating that originates from a third party rating agency (external rating) and is required at the time of the Credit creation.  
 
   Company Rating: An Exposure is assigned a rating internally based on credit committee decisions and is not required at time of creation.
-  
+
 2. Exposure limit is internally assigned based on company guidelines.
+
+This project has been licensed under the MIT open source license.
+https://github.com/SallyZ12/portfolios/blob/master/LICENSE
