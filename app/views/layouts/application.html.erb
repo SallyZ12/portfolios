@@ -11,12 +11,9 @@
   </head>
 
   <body>
-
     <%= yield %>
   </body>
 </html>
-
- <%= image_tag "structure.jpg" %>
 
 <div>
 
@@ -39,10 +36,12 @@
 
   <%= link_to "Register", new_user_path %> <br> <br>
 
-   <%= link_to "Log In", login_path %> <br><br>
+  <%= link_to "Log In", login_path %> <br><br>
 
-   <%= link_to('Log in with Github!', '/auth/github') %> <br><br>
+  <%= link_to('Log in with Github!', '/auth/github') %> <br><br>
 
 <% end %>
 
 </div>
+
+<%= image_tag "structure.jpg" %>
