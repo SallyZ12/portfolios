@@ -1,6 +1,10 @@
 <h2> Company: <%= @user.username %> </h2>
 
-<labe> Are you an insurer? <%=@user.insurer ? "Yes" : "No" %> </label> <br><br>
+<label> Are you an insurer? <%=@user.insurer ? "Yes" : "No" %> </label> <br><br>
+
+<label> Number of Credits in Portfolio: </label> <%= @user.credits.count %> <br><br>
+
+<label> Number of Transactions in Portfolio: </label> <%= @user.transactions.count %>
 
   <h4 style = "color:red;">
   	<%= flash[:notice] %> </h4><br><br>

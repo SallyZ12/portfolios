@@ -51,7 +51,6 @@
 <tbody>
 
   <tr>
-		 <td> Trans ID </td>
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
@@ -60,7 +59,6 @@
   </tr>
     <% @exposure.transactions.order("par DESC").each do |transaction| %>
 <tr>
-		<td> <%= transaction.id %> </td>
 		<td> <%= link_to transaction.name, exposure_transaction_path(@exposure,transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
