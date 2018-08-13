@@ -44,5 +44,23 @@ Things to Know:
 
 2. Exposure limit is internally assigned based on company guidelines.
 
+
+Contribution Guide:
+Did you find a bug?
+Do not open up a GitHub issue if the bug is a security vulnerability in Rails, and instead to refer to security policy.
+
+Ensure the bug was not already reported by searching on GitHub under Issues.
+
+If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a title and clear description, as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
+
+If possible, use the relevant bug report templates to create the issue. Simply copy the content of the appropriate template into a .rb file, make the necessary changes to demonstrate the issue, and paste the content into the issue description:
+
+Active Record (models, database) issues
+Action Pack (controllers, routing) issues
+Generic template for other issues
+For more detailed information on submitting a bug report and creating an issue, visit our reporting guidelines.
+
+
+License:
 This project has been licensed under the MIT open source license.
 https://github.com/SallyZ12/portfolios/blob/master/LICENSE
