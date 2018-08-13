@@ -1,15 +1,10 @@
 <h5> All Exposures </h5>
 
-
-
-
 <table class = "table">
-
 
 <tbody>
 
   <tr>
-    <td> Exposure ID </td>
     <td> Company </td>
     <td> Credit </td>
     <td> Sector </td>
@@ -23,7 +18,6 @@
 
 <% @exposures.order(:user_id).each do |exposure| %>
 <tr>
-  <td> <%= exposure.id %> </td>
   <td> <%= link_to exposure.user.username, exposure_path(exposure) %> </td>
   <td> <%= exposure.credit.credit_name %> </td>
   <td> <%= exposure.credit.sector %> </td>
@@ -33,11 +27,8 @@
   <td> <%= exposure.limit %> </td>
   <td> <%= exposure.t_sum %> </td>
   <td><v> <%= display_violations(exposure) %></v> </td>
-
 </tr>
-
 <% end %>
-
 
 </tbody>
 </table>

@@ -10,17 +10,18 @@ Select State: <%=  form_tag({}, {:method => :get}) do  %>
 
 <tbody>
   <tr>
-    <td> Credit ID </td>
     <td> Name </td>
     <td> Sector </td>
+    <td> Ext. Rating </td>
     <td> State </td>
+
   </tr>
 
 <% @credits.order("credit_name").each do |credit| %>
   <tr>
-  <td> <%= credit.id %> </td>
   <td> <%= credit.credit_name %> </td>
   <td> <%= credit.sector %> </td>
+  <td> <%= credit.rating %> </td>
   <td> <%= credit.state %> </td>
 </tr>
   <% end %>
