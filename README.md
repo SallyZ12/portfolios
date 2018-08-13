@@ -32,7 +32,7 @@ Instructions:
 3. From the Company Page you have access to a variety of links -- the first thing you want to do is add a credit by selecting the link "Select An Existing Credit or Create A New Credit".
 4. If you do not have any credits in your Portfolio then you will enter the information required for a new Credit.
 5. Once a Credit is associated with a Company, to add a new Transaction select the Link for All Exposures. Select the link for the Company in that specific exposure and you are taken to the screen to see only that Exposure and any Transactions that exist.
-6. From this Company Exposure screen you may (1) Edit the Exposure (limit and/or rating) or select to add a new Transaction.
+6. From this Company Exposure screen you may (1) Edit the Exposure (limit and/or rating)(2) select to add a new Transaction, or (3) select the company link and be taken to the Company show page.
 7. To edit a Credit, select the link for Credits by that Company, Select the link of the Credit Name and then Edit.
 
 Things to Know:
