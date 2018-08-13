@@ -5,7 +5,7 @@ Specs:
 - [x] Include at least one has_many relationship (User has many Credits)
 - [x] Include at least one belongs_to relationship (Transaction belongs to Exposure)
 - [x] Include at least one has_many through relationship (Credit has many transactions through Exposures)
-- [x] The "through" part of the has_many through includes at least one user submittable attribute (exposure.limit)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (user.transactions.count, exposure.limit)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Credit, Transaction)
 - [x] Include a class level ActiveRecord scope method (Credit: scope :pick_state, -> (select_state){where('state = ?', select_state)} and URL: /credit_states)
 - [x] Include signup (used own authentication)
