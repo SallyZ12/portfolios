@@ -31,14 +31,16 @@ table, th, td {
 }
 
 table {
-    width: 85%;
+    width: 75%;
 }
 
 th {
     height: 50px;
 }
 
-
+ td {
+    text-align: center;
+}
 
 v {
   color:red; "Yes"
