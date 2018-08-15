@@ -1,4 +1,4 @@
-<h4> Company: <%= current_user.username %> </h4>
+<h4> <%= link_to "Company: #{current_user.username}", user_path(current_user) %> </h4> 
 
 <h4 style = "color:red;">
 	<%= flash[:message] %> </h4><br><br>
