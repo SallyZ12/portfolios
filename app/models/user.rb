@@ -12,8 +12,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
-  validates :password_digest, presence: true
-  
+  validates :password, presence: true, length: { minimum: 8 }
+  validates_confirmation_of :password
 
 
   def self.find_or_create_by_omniauth(auth_hash)
