@@ -6,7 +6,7 @@
 
 <label> Number of Transactions in Portfolio: </label> <%= @user.transactions.count %><br><br>
 
-<h3> Top Exposure </h3>
+<h3> Top Exposure By Par</h3>
 
 <% e = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
 
