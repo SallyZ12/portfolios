@@ -10,6 +10,11 @@
 
 <% e = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
 
+<% if e.blank? %>
+<h4> <%= "No Exposures Created Yet" %> <h4>
+
+<% else %>
+
 <table class = "table">
 <tbody>
 
@@ -23,6 +28,8 @@
     <td> Violation </td>
   </tr>
 
+
+
 <tr>
   <td> <%= e.credit.credit_name %> </td>
   <td> <%= e.credit.sector %> </td>
@@ -33,7 +40,7 @@
   <td><v> <%= display_violations(e) %></v> </td>
 
 </tr>
-
+<% end %>
 </tbody>
 </table>
 
