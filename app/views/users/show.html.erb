@@ -4,7 +4,40 @@
 
 <label> Number of Credits in Portfolio: </label> <%= @user.credits.count %> <br><br>
 
-<label> Number of Transactions in Portfolio: </label> <%= @user.transactions.count %>
+<label> Number of Transactions in Portfolio: </label> <%= @user.transactions.count %><br><br>
+
+<h3> Top Exposure </h3>
+
+<% e = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
+
+<table class = "table">
+<tbody>
+
+  <tr>
+    <td> Name </td>
+    <td> Sector </td>
+    <td> Ext. Rating </td>
+    <td> State </td>
+    <td> Limit </td>
+    <td> Total Par </td>
+    <td> Violation </td>
+  </tr>
+
+<tr>
+  <td> <%= e.credit.credit_name %> </td>
+  <td> <%= e.credit.sector %> </td>
+  <td> <%= e.credit.rating %> </td>
+  <td> <%= e.credit.state %> </td>
+  <td> <%= e.limit %> </td>
+  <td> <%= e.t_sum %> </td>
+  <td><v> <%= display_violations(e) %></v> </td>
+
+</tr>
+
+</tbody>
+</table>
+
+
 
   <h4 style = "color:red;">
   	<%= flash[:notice] %> </h4><br><br>
