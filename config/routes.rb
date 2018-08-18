@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
 
-  get '/credits_states' => 'credits#credits_states'
+  get 'credits/credits_states' => 'credits#credits_states'
 
   resources :users do
     resources :credits, only: [:index, :new, :create ]
