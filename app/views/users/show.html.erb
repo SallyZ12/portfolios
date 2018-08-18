@@ -8,9 +8,9 @@
 
 <h3> Top Exposure By Par</h3>
 
-<% e = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
+<% exp = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
 
-<% if e.blank? %>
+<% if exp.blank? %>
 <h4> <%= "No Exposures Created Yet" %> <h4>
 
 <% else %>
@@ -31,13 +31,13 @@
 
 
 <tr>
-  <td> <%= e.credit.credit_name %> </td>
-  <td> <%= e.credit.sector %> </td>
-  <td> <%= e.credit.rating %> </td>
-  <td> <%= e.credit.state %> </td>
-  <td> <%= e.limit %> </td>
-  <td> <%= e.t_sum %> </td>
-  <td><v> <%= display_violations(e) %></v> </td>
+  <td> <%= exp.credit.credit_name %> </td>
+  <td> <%= exp.credit.sector %> </td>
+  <td> <%= exp.credit.rating %> </td>
+  <td> <%= exp.credit.state %> </td>
+  <td> <%= exp.limit %> </td>
+  <td> <%= exp.t_sum %> </td>
+  <td><v> <%= display_violations(exp) %></v> </td>
 
 </tr>
 <% end %>
