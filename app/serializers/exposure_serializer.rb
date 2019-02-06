@@ -1,3 +1,7 @@
 class ExposureSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :credit_id, :limit, :rating
+  attributes :id, :limit, :rating
+
+  belongs_to :user
+  belongs_to :credit
+  has_many :transactions
 end
