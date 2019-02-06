@@ -7,6 +7,10 @@ class CreditsController < ApplicationController
     else
       redirect_to exposures_path
     end
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @credits}
+    end
   end
 
   def credits_states
@@ -49,6 +53,10 @@ class CreditsController < ApplicationController
 
   def show
     @credit = set_credit
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @credit}
+    end
   end
 
   def edit
