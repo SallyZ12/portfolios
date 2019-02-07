@@ -11,21 +11,42 @@
 
 <%= form_for [@user, @credit] do |f| %>
 
-<%= f.label :existing_credit %>
-<%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
+  <div class="field">
+    <%= f.label :existing_credit %>
+    <%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
+  </div>
 
-<%= f.label :credit_name %>
-<%= f.text_field :credit_name %> <br><br>
+  <div class="field">
+    <%= f.label :credit_name %>
+    <%= f.text_field :credit_name %> <br><br>
+  </div>
 
-<%= f.label :sector %>
-<%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
+  <div class="field">
+    <%= f.label :sector %>
+    <%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
+  </div>
 
-<%= f.label :external_rating %>
-<%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
+  <div class="field">
+    <%= f.label :external_rating %>
+    <%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
+  </div>
 
-<%= f.label :state %>
-<%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
+  </div>
 
-<%= f.submit "Submit Existing or Create New Credit"%>
-
+  <div class="actions">
+    <%= f.submit "Submit Existing or Create New Credit"%>
+  </div>
 <% end %><br> <br>
+
+<script type="text/javascript" charset="utf-8">
+  $(function (){
+    $('form').submit(function(event) {
+      event.preventDefault();
+        alert("make progress");
+    });
+  });
+
+</script>
