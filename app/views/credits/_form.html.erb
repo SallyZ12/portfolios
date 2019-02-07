@@ -11,43 +11,43 @@
 
 <%= form_for [@user, @credit] do |f| %>
 
-  <div class="field">
     <%= f.label :existing_credit %>
     <%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
-  </div>
 
-  <div class="field">
     <%= f.label :credit_name %>
     <%= f.text_field :credit_name %> <br><br>
-  </div>
 
-  <div class="field">
     <%= f.label :sector %>
     <%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
-  </div>
 
-  <div class="field">
     <%= f.label :external_rating %>
     <%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
-  </div>
 
-  <div class="field">
     <%= f.label :state %>
     <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
-  </div>
 
-  <div class="actions">
     <%= f.submit "Submit Existing or Create New Credit"%>
-  </div>
+
 <% end %><br> <br>
 
 <h4> AJAX </h4>
+
+
+
+
 
 <script type="text/javascript" charset="utf-8">
   $(function (){
     $('form').submit(function(event) {
       event.preventDefault();
-        alert("make progress");
+
+        const inputs = $(this).serialize();
+        const crediting = $.post('/users/1/credits', inputs);
+        crediting.done(function(data) {
+          let credit = data;
+        })
+
+        // alert("make progress");
     });
   });
 
