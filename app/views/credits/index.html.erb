@@ -6,6 +6,7 @@
 <tbody>
 
   <tr>
+    <td> ID </td>
     <td> Name </td>
     <td> Sector </td>
     <td> Ext. Rating </td>
@@ -15,6 +16,7 @@
 
 <% @credits.order("credit_name").each do |credit| %>
 <tr>
+  <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.rating %> </td>

@@ -3,6 +3,7 @@
 <table class = "table">
 
   <tr>
+    <td> ID </td>
     <td> Company </td>
     <td> Insurer </td>
 
@@ -10,6 +11,7 @@
 
 <% @users.order("username").each do |user| %>
 <tr>
+  <td> <%= user.id %> </td>
  <td> <%= link_to user.username, user_path(user)%> </td>
  <td> <%= user.insurer  ? "Yes" : "No" %> </td>
 

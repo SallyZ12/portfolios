@@ -40,14 +40,14 @@
   $(function (){
     $('form').submit(function(event) {
       event.preventDefault();
-
+        // alert("make progress");
         const inputs = $(this).serialize();
         const crediting = $.post('/users/1/credits', inputs);
         crediting.done(function(data) {
           let credit = data;
         })
 
-        // alert("make progress");
+
     });
   });
 
