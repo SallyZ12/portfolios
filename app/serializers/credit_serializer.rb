@@ -3,5 +3,5 @@ class CreditSerializer < ActiveModel::Serializer
 
   has_many :exposures
   has_many :users
-  has_many :transactions 
+  has_many :transactions
 end
