@@ -35,11 +35,11 @@ class CreditsController < ApplicationController
             @credit = Credit.new(credit_params)
               if @credit.save
                 @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
-                  redirect_to credit_path(@credit)
+                  render json: @credit, status: 201
+                  # redirect_to credit_path(@credit)
                     flash[:message] = "Credit Successfully Created"
                   else
-                    # render :new
-                    render json: @credit 
+                    render :new
             end
       end
   end
