@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_05_133946) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "insurer", default: false
+    t.boolean "insurer", default: true
     t.string "email"
     t.string "uid"
   end
