@@ -38,7 +38,8 @@ class CreditsController < ApplicationController
                   redirect_to credit_path(@credit)
                     flash[:message] = "Credit Successfully Created"
                   else
-                    render :new
+                    # render :new
+                    render json: @credit 
             end
       end
   end
