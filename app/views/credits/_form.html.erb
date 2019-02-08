@@ -30,7 +30,7 @@
 
 <% end %><br> <br>
 
-<h4> AJAX </h4>
+<h4> AJAX Response</h4>
 
 <div class="newCredit" >
 <h4 id="creditName" > </h4>
@@ -51,7 +51,10 @@
 
         addCredit.done(function(data) {
           let credit = data;
-          $("#creditName").text(credit["credit_name"]);
+          $("#creditName").text(credit.data.attributes["credit-name"]);
+          $("#creditSector").text(credit.data.attributes["sector"]);
+          $("#creditRating").text(credit.data.attributes["rating"]);
+          $("#creditState").text(credit.data.attributes["state"]);
         });
     });
   });
