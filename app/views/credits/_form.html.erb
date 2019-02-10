@@ -31,30 +31,59 @@
 <% end %><br> <br>
 
 
-<h4> AJAX Response</h4>
+<!-- <h4> AJAX Response</h4>
 
 <div class="newCredit" >
 <h4 id="creditName" >  </h5>
 <p id="creditSector">  </p>
 <p id="creditRating" > </p>
 <p id="creditState" > </p><br>
-</div>
+</div> -->
+
+<table>
+  <caption> AJAX Response </caption>
+    <thead>
+      <tr>
+      <th>Credit Name</th>
+      <th>Sector</th>
+      <th>Rating</th>
+      <th>State</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="creditName"></td>
+        <td id="creditSector"></td>
+        <td id="creditRating"></td>
+        <td id="creditState">
+      </tr>
+    </tbody>
+  </table>
+
 
 <script type="text/javascript" charset="utf-8">
   $(function (){
     $('form').submit(function(event) {
       event.preventDefault();
-        // alert("making progress");
+      
         let inputs = $(this).serialize();
         let addCredit = $.post('/credits', inputs);
 
         addCredit.done(function(data) {
           let credit = data;
-          $("#creditName").text("Name:" +  credit.data.attributes["credit-name"]);
-          $("#creditSector").text("Sector:" + credit.data.attributes["sector"]);
-          $("#creditRating").text("Rating:" +  credit.data.attributes["rating"]);
-          $("#creditState").text("State:" +  credit.data.attributes["state"]);
+          $("#creditName").text(credit.data.attributes["credit-name"]);
+          $("#creditSector").text(credit.data.attributes["sector"]);
+          $("#creditRating").text(credit.data.attributes["rating"]);
+          $("#creditState").text(credit.data.attributes["state"]);
         });
+
+        // addCredit.done(function(data) {
+        //   let credit = data;
+        //   $("#creditName").text("Name:" +  credit.data.attributes["credit-name"]);
+        //   $("#creditSector").text("Sector:" + credit.data.attributes["sector"]);
+        //   $("#creditRating").text("Rating:" +  credit.data.attributes["rating"]);
+        //   $("#creditState").text("State:" +  credit.data.attributes["state"]);
+        // });
     });
   });
 
