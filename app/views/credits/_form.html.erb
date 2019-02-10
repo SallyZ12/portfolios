@@ -41,7 +41,7 @@
 </div> -->
 
 <table>
-  <caption> AJAX Response </caption>
+  <caption> <h4> AJAX Response </h4> </caption>
     <thead>
       <tr>
       <th>Credit Name</th>
@@ -65,7 +65,7 @@
   $(function (){
     $('form').submit(function(event) {
       event.preventDefault();
-      
+
         let inputs = $(this).serialize();
         let addCredit = $.post('/credits', inputs);
 
