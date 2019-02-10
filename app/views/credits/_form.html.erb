@@ -36,7 +36,7 @@
 <h4 id="creditName" > </h4>
 <p id="creditSector" > </p>
 <p id="creditRating" > </p>
-<p id="creditState" > </p>
+<p id="creditState" > </p><br>
 </div>
 
 
@@ -51,10 +51,10 @@
 
         addCredit.done(function(data) {
           let credit = data;
-          $("#creditName").text(credit.data.attributes["credit-name"]);
-          $("#creditSector").text(credit.data.attributes["sector"]);
-          $("#creditRating").text(credit.data.attributes["rating"]);
-          $("#creditState").text(credit.data.attributes["state"]);
+          $("#creditName").text("Name:" +  credit.data.attributes["credit-name"]);
+          $("#creditSector").text("Sector:" + credit.data.attributes["sector"]);
+          $("#creditRating").text("Rating:" +  credit.data.attributes["rating"]);
+          $("#creditState").text("State:" +  credit.data.attributes["state"]);
         });
     });
   });
