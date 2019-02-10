@@ -23,7 +23,8 @@ class ExposuresController < ApplicationController
     def create
         @exposure = Exposure.create(exposure_params)
           @exposure.transactions.create(params[:transactions])
-      redirect_to exposure_path(@exposure)
+              render json: @exposure, status: 201
+      # redirect_to exposure_path(@exposure)
     end
 
     def edit

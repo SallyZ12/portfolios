@@ -4,8 +4,16 @@ class TransactionsController < ApplicationController
   def index
     if params[:exposure_id]
       @transactions = Exposure.find(params[:exposure_id]).transactions
+      respond_to do |format|
+        format.html {render :index}
+        format.json {render json: @transactions}
+      end
     else
       @transactions = Transaction.all
+      respond_to do |format|
+        format.html {render :index}
+        format.json {render json: @transactions}
+      end
     end
     user = current_user
   end
