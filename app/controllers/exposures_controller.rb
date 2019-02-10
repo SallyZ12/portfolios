@@ -8,10 +8,10 @@ class ExposuresController < ApplicationController
     def show
       @exposure = set_exposure
         @user = current_user
-        respond_to do |format|
-          format.html {render :show}
-          format.json {render json: @exposure}
-        end
+        # respond_to do |format|
+        #   format.html {render :show}
+        #   format.json {render json: @exposure}
+        # end
     end
 
     def new
