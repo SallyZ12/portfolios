@@ -56,8 +56,8 @@
         event.preventDefault();
 
           let inputs = $(this).serialize();
-          // let addTransaction = $.post(`"/exposures/" + id + "/transactions"`, inputs);
-          let addTransaction = $.post('/exposures', inputs);
+          let addTransaction = $.post(`"/exposures/" + id + "/transactions"`, inputs);
+
 
           addTransaction.done(function(data) {
             let transaction = data;
