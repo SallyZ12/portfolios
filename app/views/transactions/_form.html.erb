@@ -31,3 +31,40 @@
 <%= f.submit %>
 
 <% end %><br><br>
+
+<table>
+  <caption> <h4> AJAX Response </h4> </caption>
+    <thead>
+      <tr>
+      <th>Transaction Name</th>
+      <th>Series</th>
+      <th>Par</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="transactionName"></td>
+        <td id="transactionSeries"></td>
+        <td id="transactionPar"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="text/javascript" charset="utf-8">
+    $(function (){
+      $('form').submit(function(event) {
+        event.preventDefault();
+
+          let inputs = $(this).serialize();
+          let addTransaction = $.post(`"/exposures/" + id + "/transactions"`, inputs);
+
+          addTransaction.done(function(data) {
+            let transaction = data;
+            $("#transactionName").text(transaction.data.attributes["name"]);
+            $("#transactionSeries").text(transaction.data.attributes["series"]);
+            $("#transactionPar").text(transaction.data.attributes["par"]);
+
+          });
+        });
+      });
+    </script>
