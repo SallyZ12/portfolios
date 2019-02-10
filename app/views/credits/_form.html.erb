@@ -45,7 +45,7 @@
   $(function (){
     $('form').submit(function(event) {
       event.preventDefault();
-        // alert("make progress");
+        // alert("making progress");
         let inputs = $(this).serialize();
         let addCredit = $.post('/credits', inputs);
 
