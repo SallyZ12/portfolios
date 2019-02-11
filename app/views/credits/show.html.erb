@@ -1,4 +1,4 @@
-<h4> <%= link_to "Company: #{current_user.username}", user_path(current_user) %> </h4> 
+<h4> <%= link_to "Company: #{current_user.username}", user_path(current_user) %> </h4>
 
 <h4 style = "color:red;">
 	<%= flash[:message] %> </h4><br><br>
@@ -6,23 +6,19 @@
 <table class = "table">
 
 
-<tbody>
-
+<thead>
   <tr>
-    <td> Name </td>
-    <td> Sector </td>
-    <td> Ext. Rating </td>
-    <td> State </td>
-
+    <th> Name </th>
+    <th> Sector </th>
+    <th> Ext. Rating </th>
+    <th> State </th>
   </tr>
-
+</thead>
 <tr>
   <td> <%=@credit.credit_name %> </td>
   <td> <%=@credit.sector %> </td>
   <td> <%=@credit.rating %> </td>
   <td> <%=@credit.state %> </td>
-
-
 </tr>
 </tbody>
 </table>
