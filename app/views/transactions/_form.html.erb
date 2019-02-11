@@ -55,10 +55,12 @@
       $('form').submit(function(event) {
         event.preventDefault();
 
+          let absoluteUrl = window.location.pathname;
+          let relativeUrl = absoluteUrl.slice(0,-4);
           const inputs = $(this).serialize();
 
           // need to abstract exposure_id in path
-          const addTransaction = $.post('/exposures/id/transactions',inputs);
+          const addTransaction = $.post(relativeUrl, inputs);
 
           addTransaction.done(function(data) {
             let transaction = data;
