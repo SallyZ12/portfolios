@@ -1,29 +1,27 @@
-<h4> <%= "#{current_user.username} Credits" %> </h4> <br>
+
 
 <table class = "table">
+<caption> <h4> <%= "#{current_user.username} Credits" %> </h4> </caption>
 
-
-<tbody>
+<thead>
 
   <tr>
-    <td> ID </td>
-    <td> Name </td>
-    <td> Sector </td>
-    <td> Ext. Rating </td>
-    <td> State </td>
-
+    <th> ID </th>
+    <th> Name </th>
+    <th> Sector </th>
+    <th> Ext. Rating </th>
+    <th> State </th>
   </tr>
-
+</thead>
 <% @credits.order("credit_name").each do |credit| %>
+<tbody>
 <tr>
   <td> <%= credit.id %> </td>
   <td> <%= link_to credit.credit_name, credit_path(credit) %> </td>
   <td> <%= credit.sector %> </td>
   <td> <%= credit.rating %> </td>
   <td> <%= credit.state %> </td>
-
 </tr>
-
 <% end %>
 </tbody>
 </table>
