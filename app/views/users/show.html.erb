@@ -6,8 +6,6 @@
 
 <label> Number of Transactions in Portfolio: </label> <%= @user.transactions.count %><br><br>
 
-<h3> Top Exposure By Par</h3>
-
 <% exp = @user.exposures.sort_by {|exposure| exposure.t_sum}.last %>
 
 <% if exp.blank? %>
@@ -16,20 +14,20 @@
 <% else %>
 
 <table class = "table">
-<tbody>
-
+  <caption> <h3> Top Exposure By Par</h3> </caption>
+<thead>
   <tr>
-    <td> Name </td>
-    <td> Sector </td>
-    <td> Ext. Rating </td>
-    <td> State </td>
-    <td> Limit </td>
-    <td> Total Par </td>
-    <td> Violation </td>
+    <th> Name </th>
+    <th> Sector </th>
+    <th> Ext. Rating </th>
+    <th> State </th>
+    <th> Limit </th>
+    <th> Total Par </th>
+    <th> Violation </th>
   </tr>
+</thead>
 
-
-
+<tbody>
 <tr>
   <td> <%= exp.credit.credit_name %> </td>
   <td> <%= exp.credit.sector %> </td>
