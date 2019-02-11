@@ -31,15 +31,6 @@
 <% end %><br> <br>
 
 
-<!-- <h4> AJAX Response</h4>
-
-<div class="newCredit" >
-<h4 id="creditName" >  </h5>
-<p id="creditSector">  </p>
-<p id="creditRating" > </p>
-<p id="creditState" > </p><br>
-</div> -->
-
 <table>
   <caption> <h4> AJAX Response </h4> </caption>
     <thead>
@@ -76,14 +67,6 @@
           $("#creditRating").text(credit.data.attributes["rating"]);
           $("#creditState").text(credit.data.attributes["state"]);
         });
-
-        // addCredit.done(function(data) {
-        //   let credit = data;
-        //   $("#creditName").text("Name:" +  credit.data.attributes["credit-name"]);
-        //   $("#creditSector").text("Sector:" + credit.data.attributes["sector"]);
-        //   $("#creditRating").text("Rating:" +  credit.data.attributes["rating"]);
-        //   $("#creditState").text("State:" +  credit.data.attributes["state"]);
-        // });
     });
   });
 

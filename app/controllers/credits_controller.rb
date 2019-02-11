@@ -50,7 +50,8 @@ class CreditsController < ApplicationController
  def update
    @credit = set_credit
     @credit.update(credit_params)
-      redirect_to credit_path(@credit)
+      render json: @credit, status: 202
+      # redirect_to credit_path(@credit)
  end
 
   def show
