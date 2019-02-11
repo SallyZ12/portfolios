@@ -55,8 +55,9 @@
       $('form').submit(function(event) {
         event.preventDefault();
 
-          let inputs = $(this).serialize();
-          let addTransaction = $.post('/exposures',inputs);
+          const inputs = $(this).serialize();
+          // need to abstract exposure_id in path
+          const addTransaction = $.post('/exposures/3/transactions',inputs);
 
           addTransaction.done(function(data) {
             let transaction = data;
