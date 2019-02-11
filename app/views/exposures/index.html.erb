@@ -1,23 +1,24 @@
-<h5> All Exposures </h5>
 
 <table class = "table">
 
-<tbody>
+<caption> <h3> All Exposures </h3> </caption>
 
-  <tr>
-    <td> ID </td>
-    <td> Company </td>
-    <td> Credit </td>
-    <td> Sector </td>
-    <td> State </td>
-    <td> Co. Rating </td>
-    <td> Ext. Rating </td>
-    <td> Limit </td>
-    <td> Par </td>
-    <td> Violation </td>
+  <thead>
+    <tr>
+    <th> ID </th>
+    <th> Company </th>
+    <th> Credit </th>
+    <th> Sector </th>
+    <th> State </th>
+    <th> Co. Rating </th>
+    <th> Ext. Rating </th>
+    <th> Limit </th>
+    <th> Par </th>
+    <th> Violation </th>
   </tr>
-
+  </thead>
 <% @exposures.order(:user_id).each do |exposure| %>
+  <tbody>
 <tr>
   <td> <%= exposure.id %> </td>
   <td> <%= link_to exposure.user.username, exposure_path(exposure) %> </td>
