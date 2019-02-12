@@ -15,7 +15,6 @@ function getExposures(){
 
       console.log('response: ', response)
 
-      debugger;
     })
 
   })

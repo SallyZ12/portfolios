@@ -63,9 +63,9 @@
 
           addTransaction.done(function(data) {
             let transaction = data;
-            $("#transactionName").text(transaction.data.attributes["name"]);
-            $("#transactionSeries").text(transaction.data.attributes["series"]);
-            $("#transactionPar").text(transaction.data.attributes["par"]);
+            $("#transactionName").text(transaction["name"]);
+            $("#transactionSeries").text(transaction["series"]);
+            $("#transactionPar").text(transaction["par"]);
 
           });
         });
