@@ -3,6 +3,10 @@ class ExposuresController < ApplicationController
     def index
         @exposures = Exposure.all
           @user = current_user
+          respond_to do |format|
+            format.html {render :show}
+            format.json {render json: @exposures}
+          end
     end
 
     def show
