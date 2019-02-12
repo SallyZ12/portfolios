@@ -48,18 +48,22 @@ class TransactionsController < ApplicationController
   def show
     if params[:exposure_id]
         @transaction = Exposure.find(params[:exposure_id]).transactions.find(params[:id])
-        respond_to do |format|
-          format.html {render :show}
-          format.json {render json: @transaction}
-        end
+        # respond_to do |format|
+        #   format.html {render :show}
+        #   format.json {render json: @transaction}
+        # end
       else
         @transaction = set_transaction
-        respond_to do |format|
-          format.html {render :show}
-          format.json {render json: @transaction}
-        end
+        # respond_to do |format|
+        #   format.html {render :show}
+        #   format.json {render json: @transaction}
+        # end
       end
        @exposure = Exposure.find(params[:exposure_id])
+       respond_to do |format|
+         format.html {render :show}
+         format.json {render json: @transaction}
+       end
     end
 
 
