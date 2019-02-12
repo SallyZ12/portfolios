@@ -7,7 +7,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
   </head>
 
   <body>
@@ -19,29 +18,21 @@
 
   <% if logged_in? %>
 
-
 <p> <%= link_to "All Exposures", exposures_path %> <br>
-
 <p> <%= link_to "All #{current_user.username} Credits", user_credits_path(current_user) %> <br>
-
 <p> <%= link_to "All Companies", users_path %> <br><br>
-
 <p> <%= link_to "Top 10 Transactions", transactions_path %> <br>
-
 <p> <%= link_to "Credits By State", credits_credits_states_path %><br><br>
-
 <p>  <%= link_to "Log Out", logout_path, {method: :delete} %> </p> <br> <br>
 
   <% else %>
 
   <%= link_to "Register", new_user_path %> <br> <br>
-
   <%= link_to "Log In", login_path %> <br><br>
-
   <%= link_to('Log in with Github!', '/auth/github') %> <br><br>
 <% end %>
 </div>
 
-
+<!-- Added for JS Project -->
 <button id = "data-button">Get Data</button>
 <div id= "data"> ho ho ho </div>

@@ -1,27 +1,18 @@
 <h5> Transaction for Exposure: <%= @transaction.exposure.user.username %> -- <%= @transaction.exposure.credit.credit_name %> </h5>
 
-
-
-
 <table class = "table">
 
 <tbody>
-
   <tr>
-
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
     <td> Trans ID </td>
-
   </tr>
-
     <td> <%= @transaction.name %> </td>
     <td> <%= @transaction.series %> </td>
     <td> <%= @transaction.par %> </td>
     <td> <%= @transaction.id %> </td>
-
-
   </tr>
 
   </tr>
@@ -29,7 +20,7 @@
   </table>
   <br><br><br>
 
-<%= link_to_if(current_user.id == @exposure.user_id, "Edit Transaction", edit_exposure_transaction_path(@transaction.exposure_id, @transaction)){} %>
+<%= link_to_if(current_user.id == @transaction.exposure_id, "Edit Transaction", edit_exposure_transaction_path(@transaction.exposure_id, @transaction)){} %>
 
 
 <br><br>

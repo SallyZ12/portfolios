@@ -29,7 +29,7 @@ class Exposure{
 
 }
 
-Exposure.prot
+// Exposure.prot
 
 // create a JS Class for Exposures
 
