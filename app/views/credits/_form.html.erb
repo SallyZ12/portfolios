@@ -50,24 +50,3 @@
       </tr>
     </tbody>
   </table>
-
-
-<script type="text/javascript" charset="utf-8">
-  $(function (){
-    $('form').submit(function(event) {
-      event.preventDefault();
-
-        let inputs = $(this).serialize();
-        let addCredit = $.post('/credits', inputs);
-
-        addCredit.done(function(data) {
-          let credit = data;
-          $("#creditName").text(credit.data.attributes["credit-name"]);
-          $("#creditSector").text(credit.data.attributes["sector"]);
-          $("#creditRating").text(credit.data.attributes["rating"]);
-          $("#creditState").text(credit.data.attributes["state"]);
-        });
-    });
-  });
-
-</script>
