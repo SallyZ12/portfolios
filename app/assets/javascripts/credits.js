@@ -1,8 +1,11 @@
-// $(function(){
-//   getCredits()
+
+// $(function() {
+//   console.log("credits.js loaded")
+//   newCredit()
 // });
 //
-//   function getCredits(){
+//
+//   function newCredit(){
 //     $('form#new-credit').on('submit', (function(event){
 //       event.preventDefault();
 //
