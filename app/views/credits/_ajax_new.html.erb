@@ -27,25 +27,5 @@
     <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
 
     <%= f.submit 'Submit Existing or Create New Credit', id:'add-credit' %>
-      
-<% end %><br> <br>
 
-<table>
-  <caption> <h4> AJAX Response </h4> </caption>
-    <thead>
-      <tr>
-      <th>Credit Name</th>
-      <th>Sector</th>
-      <th>Rating</th>
-      <th>State</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id="creditName"></td>
-        <td id="creditSector"></td>
-        <td id="creditRating"></td>
-        <td id="creditState">
-      </tr>
-    </tbody>
-  </table>
+<% end %><br> <br>
