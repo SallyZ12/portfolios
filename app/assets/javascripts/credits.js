@@ -6,7 +6,7 @@
 //
 //
 //   function newCredit(){
-//     $('form#new-credit').on('submit', (function(event){
+//     $('form#add-credit').on('submit', (function(event){
 //       event.preventDefault();
 //
 //         let inputs = $(this).serialize();

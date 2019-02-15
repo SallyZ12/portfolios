@@ -26,7 +26,7 @@
     <%= f.label :state %>
     <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
 
-    <%= f.submit 'Submit Existing or Create New Credit', id:'new-credit' %>
+    <%= f.submit 'Submit Existing or Create New Credit', id:'add-credit' %>
       <!-- <%= f.submit 'Submit Existing or Create New Credit'%> -->
 <% end %><br> <br>
 
@@ -51,7 +51,7 @@
     </tbody>
   </table>
 
-<!-- <script type="text/javascript" charset="utf-8">
+<script type="text/javascript" charset="utf-8">
   $(function(){
     $('form').submit(function(event) {
       event.preventDefault();
@@ -68,4 +68,4 @@
         });
     });
   });
-</script> -->
+</script>

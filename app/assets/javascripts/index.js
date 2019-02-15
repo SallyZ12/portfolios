@@ -1,7 +1,7 @@
 $(function() {
   console.log("index.js loaded")
   getExposures()
-  newCredit()
+  // newCredit()
 });
 
 function getExposures(){
@@ -38,19 +38,19 @@ class Exposure{
 // append theml
 
 
-function newCredit(){
-  $('form#new-credit').on('submit', (function(event){
-    event.preventDefault();
-
-      let inputs = $(this).serialize();
-      let addCredit = $.post('/credits', inputs);
-
-      addCredit.done(function(data) {
-        let credit = data;
-        $("#creditName").text(credit["credit_name"]);
-        $("#creditSector").text(credit["sector"]);
-        $("#creditRating").text(credit["rating"]);
-        $("#creditState").text(credit["state"]);
-      });
-  }));
-};
+// function newCredit(){
+//   $('form#add-credit').on('submit', (function(event){
+//     event.preventDefault();
+//
+//       let inputs = $(this).serialize();
+//       let addCredit = $.post('/credits', inputs);
+//
+//       addCredit.done(function(data) {
+//         let credit = data;
+//         $("#creditName").text(credit["credit_name"]);
+//         $("#creditSector").text(credit["sector"]);
+//         $("#creditRating").text(credit["rating"]);
+//         $("#creditState").text(credit["state"]);
+//       });
+//   }));
+// };
