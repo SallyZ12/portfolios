@@ -40,7 +40,7 @@ class Exposure{
 
 
 // function newCredit(){
-//   $('form#add-credit').on('submit', (function(event){
+//   $('add-credit form').on('submit', (function(event){
 //     event.preventDefault();
 //
 //       let inputs = $(this).serialize();
