@@ -8,14 +8,15 @@ $(function() {
   function newCredit(){
     $("a#new-credit-form").on('click', function(event){
       event.preventDefault();
-      let url = this.href;
+      // const url = window.location.pathname;
+      const url = this.href
       $.ajax({
         url: url,
         method: 'get',
         dataType: 'html'
       }).done(function(response){
           $('div#ajax-credit-form').html(response);
-        console.log('response: ', response)
+        console.log('response:', response)
       })
 
 // above retrieves html form and puts on page
