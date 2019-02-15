@@ -22,11 +22,11 @@ function getExposures(){
 }
 
 class Exposure{
-  constructor(user_id, credit_id, limit, rating){
-    this.user_id = user_id;
-    this.credit_id = credit_id;
-    this.limit = limit;
-    this.rating = rating;
+  constructor(obj){
+    this.user_id = obj.user_id;
+    this.credit_id = obj.credit_id;
+    this.limit = obj.limit;
+    this.rating = obj.rating;
   }
 }
 

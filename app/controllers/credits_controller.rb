@@ -23,6 +23,7 @@ class CreditsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
       @credit = Credit.new
+          render partial: "ajax_new"
   end
 
   def create
