@@ -1,11 +1,12 @@
 
 $(function() {
   console.log("credits.js loaded")
+  formCredit()
   newCredit()
 });
 
-
-  function newCredit(){
+// retrieves html form and puts on page
+  function formCredit(){
     $("a#new-credit-form").on('click', function(event){
       event.preventDefault();
       // const url = window.location.pathname;
@@ -17,9 +18,11 @@ $(function() {
           $('div#ajax-credit-form').html(response);
         console.log('response:', response)
       })
+    });
+  };
 
-// above retrieves html form and puts on page
-// the following loads data into Rails database
+//  loads data into Rails database
+  function newCredit() {
     $('form#add-credit').on('submit', function(event){
       event.preventDefault();
 
@@ -29,10 +32,9 @@ $(function() {
         addCredit.done(function(data) {
           let credit = data;
           $("#creditName").text(credit["credit_name"]);
-          $("#creditSector").text(credit["sector"]);
-          $("#creditRating").text(credit["rating"]);
-          $("#creditState").text(credit["state"]);
+          // $("#creditSector").text(credit["sector"]);
+          // $("#creditRating").text(credit["rating"]);
+          // $("#creditState").text(credit["state"]);
         });
     });
-  });
   };

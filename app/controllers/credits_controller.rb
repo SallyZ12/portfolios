@@ -23,20 +23,20 @@ class CreditsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
       @credit = Credit.new
-          render partial: 'ajax_new'
+          # render partial: 'ajax_new'
   end
 
   def create
     if params[:credit][:id].present?
       @credit = Credit.find(params[:credit][:id])
         @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
-          render json: @credit, status: 201
+        render json: @credit, status: 201
           # redirect_to credit_path(@credit)
             flash[:message] = "Existing Credit Successfully Added"
           else
             @credit = Credit.new(credit_params)
               if @credit.save
-                @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
+                @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)            
                   render json: @credit, status: 201
                   # redirect_to credit_path(@credit)
                     flash[:message] = "Credit Successfully Created"
