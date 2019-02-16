@@ -1,9 +1,8 @@
 
 $(function() {
   console.log("credits.js loaded")
-  addCredit()
   formCredit()
-
+  addCredit()
 });
 
 // retrieves html form and puts on page
@@ -23,7 +22,7 @@ $(function() {
   };
 
 //  loads data into Rails database
-  function addCredit() {
+  function addCredit(){
     $('form#add-credit').on('submit', function(event){
       event.preventDefault();
 

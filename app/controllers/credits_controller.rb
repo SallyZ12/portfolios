@@ -7,10 +7,7 @@ class CreditsController < ApplicationController
     else
       redirect_to exposures_path
     end
-    respond_to do |format|
-      format.html {render :index}
-      format.json {render json: @credits}
-    end
+
   end
 
   def credits_states
@@ -42,8 +39,8 @@ class CreditsController < ApplicationController
                   # redirect_to credit_path(@credit)
                     flash[:message] = "Credit Successfully Created"
                   else
-                    # render :new
-                    render partial: "ajax_new"
+                    render :new
+                    # render partial: "ajax_new"
 
             end
       end

@@ -9,23 +9,23 @@
 <% end %>
 
 
-<%= form_for [@user, @credit] do |f| %>
+ <!-- <%= form_for [@user, @credit] do |f| %>
 
     <%= f.label :existing_credit %>
-    <%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
+     <%= f.collection_select(:id, Credit.all.order(:credit_name), :id, :credit_name, {include_blank: true}) %><br><br>
 
-    <%= f.label :credit_name %>
-    <%= f.text_field :credit_name %> <br><br>
+     <%= f.label :credit_name %>
+     <%= f.text_field :credit_name %> <br><br>
 
-    <%= f.label :sector %>
-    <%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
+     <%= f.label :sector %>
+     <%= f.select(:sector, Credit::CREDIT_SECTOR)%><br><br>
 
-    <%= f.label :external_rating %>
-    <%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
+     <%= f.label :external_rating %>
+     <%= f.select(:rating, ApplicationRecord::RATING)%><br><br>
 
-    <%= f.label :state %>
-    <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
+     <%= f.label :state %>
+     <%= f.select(:state, Credit::CREDIT_STATE) %> <br><br>
 
     <%= f.submit 'Submit Existing or Create New Credit', id:'add-credit' %>
-      <!-- <%= f.submit 'Submit Existing or Create New Credit'%> -->
-<% end %><br> <br>
+
+ <% end %><br> <br> -->
