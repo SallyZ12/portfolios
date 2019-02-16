@@ -1,15 +1,16 @@
 
 $(function() {
   console.log("credits.js loaded")
+  addCredit()
   formCredit()
-  newCredit()
+
 });
 
 // retrieves html form and puts on page
   function formCredit(){
     $("a#new-credit-form").on('click', function(event){
       event.preventDefault();
-      // const url = window.location.pathname;
+
       $.ajax({
         url: this.href,
         method: 'get',
@@ -22,7 +23,7 @@ $(function() {
   };
 
 //  loads data into Rails database
-  function newCredit() {
+  function addCredit() {
     $('form#add-credit').on('submit', function(event){
       event.preventDefault();
 
