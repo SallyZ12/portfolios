@@ -27,6 +27,7 @@ $(function() {
     function postCredit(){
 
       $('form#add-credit').on('submit',function(e){
+        // e.stopImmediatePropagation();
         e.preventDefault();
           alert("stop");
           let inputs = $(this).serialize();
