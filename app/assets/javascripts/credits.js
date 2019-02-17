@@ -25,6 +25,7 @@ $(function() {
 
    // loads data into Rails database
     function postCredit(){
+
       $('form#add-credit').on('submit',function(e){
         e.preventDefault();
           alert("stop");
