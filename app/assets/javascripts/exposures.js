@@ -1,7 +1,7 @@
 $(function() {
-  console.log("index.js loaded")
+  console.log("loaded: assets/javascripts/exposures.js")
   getExposures()
-  // newCredit()
+
 });
 
 function getExposures(){

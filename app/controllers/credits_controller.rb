@@ -5,7 +5,6 @@ class CreditsController < ApplicationController
     if @user == current_user
       @credits = @user.credits
     else
-      # render json: @credit, status: 201
       redirect_to exposures_path
     end
 

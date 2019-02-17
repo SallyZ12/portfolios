@@ -17,17 +17,17 @@ $(function() {
         dataType: 'html'
       }).done(function(response){
           $('div#ajax-credit-form').html(response);
-        console.log('response:', response)
+        // console.log('response:', response)
       })
-      postCredit()
     });
-  };
+};
 
-  //  loads data into Rails database
+
+   // loads data into Rails database
     function postCredit(){
       $('form#add-credit').on('submit',function(e){
         e.preventDefault();
-          // alert("stop")
+          alert("stop");
           let inputs = $(this).serialize();
           let addCredit = $.post('/credits', inputs);
 
