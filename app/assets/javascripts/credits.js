@@ -1,14 +1,15 @@
 
 $(function() {
-  console.log("credits.js loaded")
+  console.log("loaded:app/assets/javascripts/credits.js")
   formCredit()
-  addCredit()
+  postCredit()
 });
+
 
 // retrieves html form and puts on page
   function formCredit(){
-    $("a#new-credit-form").on('click', function(event){
-      event.preventDefault();
+    $('a#new-credit-form').on('click', function(e){
+      e.preventDefault();
 
       $.ajax({
         url: this.href,
@@ -21,20 +22,20 @@ $(function() {
     });
   };
 
-//  loads data into Rails database
-  function addCredit(){
-    $('form#add-credit').on('submit', function(event){
-      event.preventDefault();
+  //  loads data into Rails database
+    function postCredit(){
+      $('form#add-credit').submit(function(e){
+        e.preventDefault();
+          alert("stop")
+          let inputs = $(this).serialize();
+          let addCredit = $.post('/credits', inputs);
 
-        let inputs = $(this).serialize();
-        let addCredit = $.post('/credits', inputs);
-
-        addCredit.done(function(data) {
-          let credit = data;
-          $("#creditName").text(credit["credit_name"]);
-          // $("#creditSector").text(credit["sector"]);
-          // $("#creditRating").text(credit["rating"]);
-          // $("#creditState").text(credit["state"]);
-        });
-    });
-  };
+          addCredit.done(function(data) {
+            let credit = data;
+            $("#creditName").text(credit["credit_name"]);
+            // $("#creditSector").text(credit["sector"]);
+            // $("#creditRating").text(credit["rating"]);
+            // $("#creditState").text(credit["state"]);
+          });
+      });
+    };
