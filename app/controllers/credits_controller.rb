@@ -5,6 +5,7 @@ class CreditsController < ApplicationController
     if @user == current_user
       @credits = @user.credits
     else
+      # render json: @credit, status: 201
       redirect_to exposures_path
     end
 
@@ -28,8 +29,8 @@ class CreditsController < ApplicationController
       @credit = Credit.find(params[:credit][:id])
         @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
         render json: @credit, status: 201
-
           # redirect_to credit_path(@credit)
+
             flash[:message] = "Existing Credit Successfully Added"
           else
             @credit = Credit.new(credit_params)
@@ -37,11 +38,10 @@ class CreditsController < ApplicationController
                 @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
                   render json: @credit, status: 201
                   # redirect_to credit_path(@credit)
+
                     flash[:message] = "Credit Successfully Created"
                   else
                     render :new
-                    # render partial: "ajax_new"
-
             end
       end
   end
