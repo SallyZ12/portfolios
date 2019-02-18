@@ -71,11 +71,23 @@ class Exposure{
 
 Exposure.prototype.postHTML = function (){
   return (`
-    <div>
-     <p> Exposure ID: ${this.id} </p>
-     <p> Exposure Limit: ${this.limit} </p>
-     <p> Company Rating: ${this.rating} </p>
-    </div>
+    <table>
+      <caption> <h4> AJAX Response <h4></caption>
+        <thead>
+        <tr>
+        <th>ID</th>
+        <th>Limit</th>
+        <th>Rating</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td> ${this.id} </td>
+          <td> ${this.limit} </td>
+          <td> ${this.rating} </td>
+        </tr>
+        </tbody>
+    </table>
   `)
 };
 
