@@ -1,16 +1,16 @@
 
 $(function() {
   console.log("loaded:app/assets/javascripts/credits.js")
-  formCredit();
+
+  getCreditForm();
   postCredit();
 });
 
 
 // retrieves html form and puts on page
-  function formCredit(){
+  function getCreditForm(){
     $('a#new-credit-form').on('click', function(e){
       e.preventDefault();
-
       $.ajax({
         url: this.href,
         method: 'get',
@@ -20,7 +20,8 @@ $(function() {
         // console.log('response:', response)
       })
     });
-};
+  };
+
 
 
    // loads data into Rails database
@@ -29,7 +30,7 @@ $(function() {
       $('form#add-credit').on('submit',function(e){
         // e.stopImmediatePropagation();
         e.preventDefault();
-          alert("stop");
+          // alert("stop");
           let inputs = $(this).serialize();
           let addCredit = $.post('/credits', inputs);
 

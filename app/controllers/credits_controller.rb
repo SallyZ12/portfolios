@@ -4,6 +4,10 @@ class CreditsController < ApplicationController
       @user = User.find(params[:user_id])
     if @user == current_user
       @credits = @user.credits
+      respond_to do |format|
+        format.html {render :index}
+        format.json {render json: @credit}
+      end
     else
       redirect_to exposures_path
     end
@@ -27,6 +31,7 @@ class CreditsController < ApplicationController
     if params[:credit][:id].present?
       @credit = Credit.find(params[:credit][:id])
         @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
+
         render json: @credit, status: 201
           # redirect_to credit_path(@credit)
 
@@ -35,6 +40,7 @@ class CreditsController < ApplicationController
             @credit = Credit.new(credit_params)
               if @credit.save
                 @exposure = Exposure.find_or_create_by(user_id: current_user.id, credit_id: @credit.id)
+
                   render json: @credit, status: 201
                   # redirect_to credit_path(@credit)
 
