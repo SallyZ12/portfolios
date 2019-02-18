@@ -29,15 +29,25 @@ class Exposure{
     this.user_id = obj.user_id
     this.limit = obj.limit;
     this.rating = obj.rating;
-    // if(user){
-    //   this.userId = user.id
-    // }
-    //
-    //   setUser(user){
-    //     this.userId = user.id;
-    //   }
-    }
+  }
+
+    // credits(){
+    //   return credits.filter(
+    //     function(credit) {
+    //      return credit.objId === this.id;
+    //   }).bind(this)
+    // };
   };
+
+  // class Credit{
+  //   constructuor(obj){
+  //     this.credit_name = obj.credit_name
+  //     this.rating = obj.rating
+  //     this.sector = obj.sector
+  //     this.state = obj.state
+  //   }
+  // }
+
 
 // class User {
 //   constructor(obj) {
@@ -45,6 +55,7 @@ class Exposure{
 //   }
 // }
 //
+
 // class Transaction {
 //   constructor(obj) {
 //     this.name = obj.name
@@ -56,14 +67,7 @@ class Exposure{
 
 
 
-// class Credit{
-//   constructuor(obj){
-//     this.credit_name = obj.credit_name
-//     this.rating = obj.rating
-//     this.sector = obj.sector
-//     this.state = obj.state
-//   }
-// }
+
 
 Exposure.prototype.postHTML = function (){
   return (`
