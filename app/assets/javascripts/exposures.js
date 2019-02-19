@@ -27,40 +27,13 @@ function getExposures(){
 class Exposure{
   constructor(obj){
     this.id = obj.id
-    this.credit_id = obj.credit_id
-    this.user_id = obj.user_id
     this.limit = obj.limit;
     this.rating = obj.rating;
+    this.credit = obj.credit;
+    this.user = obj.user;
   }
+};
 
-  setCredit(credit) {
-    this.creditId = credit.id;
-  }
-
-  credit() {
-    return credits.find(
-      function(credit) {
-        return credit.id === this.creditId;
-      }).bind(this);
-    };
-  };
-
-
-  class Credit{
-    constructor(obj){
-      this.credit_name = obj.credit_name
-      this.rating = obj.rating
-      this.sector = obj.sector
-      this.state = obj.state
-    }
-  }
-
-
-class User {
-  constructor(obj) {
-    this.username = obj.username
-  }
-}
 
 
 Exposure.prototype.postHTML = function (){
@@ -69,16 +42,24 @@ Exposure.prototype.postHTML = function (){
       <caption> <h4> AJAX Response <h4></caption>
         <thead>
         <tr>
-        <th>ID</th>
+        <th>Company</th>
+        <th>Credit Name</th>
+        <th>Sector </th>
+        <th>State </th>
+        <th>Company Rating</th>
+        <th>External Rating</th>
         <th>Limit</th>
-        <th>Rating</th>
         </tr>
         </thead>
         <tbody>
           <tr>
-          <td> ${this.id} </td>
-          <td> ${this.limit} </td>
+          <td> ${this.user.username} </td>
+          <td> ${this.credit.credit_name} </td>
+          <td> ${this.credit.sector} </td>
+          <td> ${this.credit.state} </td>
           <td> ${this.rating} </td>
+          <td> ${this.credit.rating} </td>
+          <td> ${this.limit} </td>
         </tr>
         </tbody>
     </table>
