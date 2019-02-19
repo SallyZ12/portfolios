@@ -30,9 +30,9 @@ class TransactionsController < ApplicationController
          @exposure = Exposure.find(params[:exposure_id])
              @exposure.transactions << @transaction
                 if @transaction.save
-                  render json: @transaction, status: 201
+                  # render json: @transaction, status: 201
           flash[:message] = "Transaction Successfuly Created"
-        # redirect_to exposure_path(@exposure)
+        redirect_to exposure_path(@exposure)
       else
         render :new
       end
@@ -51,7 +51,7 @@ class TransactionsController < ApplicationController
 
       else
         @transaction = set_transaction
-        
+
       end
        @exposure = Exposure.find(params[:exposure_id])
        respond_to do |format|
