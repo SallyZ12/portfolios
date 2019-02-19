@@ -1,13 +1,17 @@
 $(function() {
   console.log("loaded: assets/javascripts/exposures.js")
-  getExposures()
-
+  listenForClick()
 });
 
-function getExposures(){
+function listenForClick(){
   $('button#data-button').on('click', function(event){
     event.preventDefault()
+    getExposures()
+  })
+}
 
+
+function getExposures(){
     $.ajax({
       url: 'http://localhost:3000/exposures',
       method: 'get',
@@ -17,12 +21,9 @@ function getExposures(){
       let myexposure = new Exposure(data[1])
       let myExposureHTML = myexposure.postHTML()
       document.getElementById("exposure-data").innerHTML += myExposureHTML
-        // let mycredit = new Credit(data[1]["credit"])
-        // let myCreditHTML = mycredit.postHTML()
-        // document.getElementById("exposure-data").innerHTML += myCreditHTML
     })
-  })
-}
+  }
+
 
 class Exposure{
   constructor(obj){
@@ -31,6 +32,7 @@ class Exposure{
     this.rating = obj.rating;
     this.credit = obj.credit;
     this.user = obj.user;
+    // this.transaction = obj.transaction
   }
 };
 
@@ -39,15 +41,15 @@ class Exposure{
 Exposure.prototype.postHTML = function (){
   return (`
     <table>
-      <caption> <h4> AJAX Response <h4></caption>
+      <caption> <h4> AJAX Exposure Response <h4></caption>
         <thead>
         <tr>
         <th>Company</th>
         <th>Credit Name</th>
         <th>Sector </th>
         <th>State </th>
-        <th>Company Rating</th>
-        <th>External Rating</th>
+        <th>Co Rating</th>
+        <th>Ext Rating</th>
         <th>Limit</th>
         </tr>
         </thead>
