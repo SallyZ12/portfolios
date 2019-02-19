@@ -25,6 +25,9 @@
 <p> <%= link_to "Credits By State", credits_credits_states_path %><br><br>
 <p>  <%= link_to "Log Out", logout_path, {method: :delete} %> </p> <br> <br>
 
+<button id = "data-button">Get Exposure Data</button>
+<table id= "exposure-data">
+</table>
   <% else %>
 
   <%= link_to "Register", new_user_path %> <br> <br>
