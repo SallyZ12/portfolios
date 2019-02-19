@@ -13,11 +13,13 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      console.log('response:',data)
+      console.log('response:', data)
       let myexposure = new Exposure(data[1])
       let myExposureHTML = myexposure.postHTML()
       document.getElementById("exposure-data").innerHTML += myExposureHTML
-
+        // let mycredit = new Credit(data[1]["credit"])
+        // let myCreditHTML = mycredit.postHTML()
+        // document.getElementById("exposure-data").innerHTML += myCreditHTML
     })
   })
 }
@@ -31,42 +33,34 @@ class Exposure{
     this.rating = obj.rating;
   }
 
-    // credits(){
-    //   return credits.filter(
-    //     function(credit) {
-    //      return credit.objId === this.id;
-    //   }).bind(this)
-    // };
+  setCredit(credit) {
+    this.creditId = credit.id;
+  }
+
+  credit() {
+    return credits.find(
+      function(credit) {
+        return credit.id === this.creditId;
+      }).bind(this);
+    };
   };
 
-  // class Credit{
-  //   constructuor(obj){
-  //     this.credit_name = obj.credit_name
-  //     this.rating = obj.rating
-  //     this.sector = obj.sector
-  //     this.state = obj.state
-  //   }
-  // }
+
+  class Credit{
+    constructor(obj){
+      this.credit_name = obj.credit_name
+      this.rating = obj.rating
+      this.sector = obj.sector
+      this.state = obj.state
+    }
+  }
 
 
-// class User {
-//   constructor(obj) {
-//     this.username = obj.username
-//   }
-// }
-//
-
-// class Transaction {
-//   constructor(obj) {
-//     this.name = obj.name
-//     this.series = obj.series
-//
-//   }
-// }
-
-
-
-
+class User {
+  constructor(obj) {
+    this.username = obj.username
+  }
+}
 
 
 Exposure.prototype.postHTML = function (){
