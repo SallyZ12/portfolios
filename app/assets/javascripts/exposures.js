@@ -32,7 +32,7 @@ class Exposure{
     this.rating = obj.rating;
     this.credit = obj.credit;
     this.user = obj.user;
-    // this.transaction = obj.transaction
+    this.transactions = obj.transactions;
   }
 };
 
