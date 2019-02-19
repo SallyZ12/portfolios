@@ -12,15 +12,20 @@ function listenForClick(){
 
 
 function getExposures(){
+
     $.ajax({
       url: 'http://localhost:3000/exposures',
       method: 'get',
       dataType: 'json'
     }).done(function(data){
       console.log('response:', data)
-      let myexposure = new Exposure(data[1])
-      let myExposureHTML = myexposure.postHTML()
+      // document.getElementById("exposure-data").innerHTML = header
+
+      data.map(exposure => {
+      let myexposure = new Exposure(exposure)
+      let myExposureHTML = myexposure.exposureHTML()
       document.getElementById("exposure-data").innerHTML += myExposureHTML
+        })
     })
   }
 
@@ -33,26 +38,29 @@ class Exposure{
     this.credit = obj.credit;
     this.user = obj.user;
     this.transactions = obj.transactions;
+    this.t_sum = obj.t_sum;
   }
 };
 
 
 
-Exposure.prototype.postHTML = function (){
-  return (`
+Exposure.prototype.exposureHTML = function (){
+
+return (`
     <table>
-      <caption> <h4> AJAX Exposure Response <h4></caption>
-        <thead>
-        <tr>
-        <th>Company</th>
-        <th>Credit Name</th>
-        <th>Sector </th>
-        <th>State </th>
-        <th>Co Rating</th>
-        <th>Ext Rating</th>
-        <th>Limit</th>
-        </tr>
-        </thead>
+    <h4>Exposure Response </h4>
+      <thead>
+      <tr>
+      <th>Company</th>
+      <th>Credit Name</th>
+      <th>Sector </th>
+      <th>State </th>
+      <th>Co Rating</th>
+      <th>Ext Rating</th>
+      <th>Limit</th>
+      <th>Total Par</th>
+      </tr>
+      </thead>
         <tbody>
           <tr>
           <td> ${this.user.username} </td>
@@ -62,6 +70,7 @@ Exposure.prototype.postHTML = function (){
           <td> ${this.rating} </td>
           <td> ${this.credit.rating} </td>
           <td> ${this.limit} </td>
+          <td> ${this.t_sum} </td>
         </tr>
         </tbody>
     </table>
