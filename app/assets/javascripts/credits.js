@@ -1,10 +1,9 @@
 
 $(function() {
-  console.log("loaded:app/assets/javascripts/credits.js")
-
+  console.log("loaded:assets/javascripts/credits.js")
   getCreditForm();
-  postCredit();
 });
+
 
 
 // retrieves html form and puts on page
@@ -21,7 +20,6 @@ $(function() {
       })
     });
   };
-
 
 
    // loads data into Rails database
