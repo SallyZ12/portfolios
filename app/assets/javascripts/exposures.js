@@ -19,7 +19,9 @@ function getExposures(){
       dataType: 'json'
     }).done(function(data){
       console.log('response:', data)
-      // document.getElementById("exposure-data").innerHTML = header
+
+
+      // document.getElementById("exposure-data").innerHTML =
 
       data.map(exposure => {
       let myexposure = new Exposure(exposure)
@@ -43,12 +45,11 @@ class Exposure{
 };
 
 
-
 Exposure.prototype.exposureHTML = function (){
 
 return (`
     <table>
-    <h4>Exposure Response </h4>
+    <caption> <h4>Exposure Response </h4></caption>
       <thead>
       <tr>
       <th>Company</th>
