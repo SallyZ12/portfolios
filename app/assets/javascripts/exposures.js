@@ -83,11 +83,3 @@ return (`
     </table>
   `)
 };
-
-// Exposure.prot
-
-// create a JS Class for Exposures
-
-// custom function on the prototypee of Exposure
-// create some custom HTML
-// append theml
