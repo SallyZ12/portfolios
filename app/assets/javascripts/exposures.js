@@ -18,9 +18,6 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      console.log('response:', data)
-
-
       // document.getElementById("exposure-data").innerHTML =
 
       data.map(exposure => {
@@ -53,7 +50,7 @@ Exposure.prototype.exposureHTML = function (){
 
 return (`
     <table>
-    <caption> <h4>Exposure Response </h4></caption>
+    <caption> <h4>AJAX Exposure Response </h4></caption>
       <thead>
       <tr>
       <th>Company</th>
