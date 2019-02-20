@@ -42,7 +42,11 @@ class Exposure{
     this.transactions = obj.transactions;
     this.t_sum = obj.t_sum;
   }
+  violations() {
+    return (this.limit - this.t_sum < 0) ? "Yes" : "No";
+  }
 };
+
 
 
 Exposure.prototype.exposureHTML = function (){
@@ -60,6 +64,7 @@ return (`
       <th>Ext Rating</th>
       <th>Limit</th>
       <th>Total Par</th>
+      <th>Violation</th>
       </tr>
       </thead>
         <tbody>
@@ -72,6 +77,7 @@ return (`
           <td> ${this.credit.rating} </td>
           <td> ${this.limit} </td>
           <td> ${this.t_sum} </td>
+          <td> ${this.violations()}</td>
         </tr>
         </tbody>
     </table>
