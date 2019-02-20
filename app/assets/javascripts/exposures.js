@@ -1,6 +1,7 @@
 $(function() {
   console.log("loaded: assets/javascripts/exposures.js")
   listenForClick()
+  listenForShowExpClick()
 });
 
 function listenForClick(){
@@ -10,6 +11,12 @@ function listenForClick(){
   })
 }
 
+function listenForShowExpClick(){
+  $(".js-next").on("click", function(e) {
+    e.preventDefault()
+    alert("next click")
+  })
+}
 
 function getExposures(){
 
