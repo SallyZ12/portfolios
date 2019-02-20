@@ -2,7 +2,6 @@
 $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
-  // postCredit()
 });
 
 
@@ -17,7 +16,6 @@ $(function() {
         dataType: 'html'
       }).done(function(response){
           $('div#ajax-credit-form').html(response);
-        // console.log('response:', response)
         postCredit()
       })
     });
@@ -54,10 +52,9 @@ $(function() {
 
 
     Credit.prototype.creditHTML = function (){
-
     return (`
         <table>
-        <caption> <h4>New Credit Response </h4></caption>
+        <caption> <h4>New Credit AJAX Response </h4></caption>
           <thead>
           <tr>
           <th>Credit Name</th>
