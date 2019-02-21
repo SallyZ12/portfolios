@@ -56,7 +56,7 @@ class Exposure{
 Exposure.prototype.exposureHTML = function (){
 
 return (`
-    <table>
+    <table class="table">
     <caption> <h4>AJAX Exposure Response </h4></caption>
       <thead>
       <tr>
@@ -81,7 +81,7 @@ return (`
           <td> ${this.credit.rating} </td>
           <td> ${this.limit} </td>
           <td> ${this.t_sum} </td>
-          <td> ${this.violations()}</td>
+          <td> <v>${this.violations()}</v></td>
         </tr>
         </tbody>
     </table>
