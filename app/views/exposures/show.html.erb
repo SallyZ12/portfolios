@@ -79,10 +79,10 @@
 <%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
 <%= link_to_if(current_user.id == @exposure.user_id, "Add New Transaction", new_exposure_transaction_path(@exposure), id:'new-transaction-form'){} %> <br><br>
 
+<button id = "transaction-form">Add New Transaction - AJAX </button><br>
+<div id ='ajax-transaction-form'>
+</div><br>
+
 
 <%= form_tag exposure_path(@exposure.id), method: "delete" %>
 <%= submit_tag "Delete Exposure" %><br><br>
-
-<button id = "transaction-form">New Transaction Form </button>
-<div id ='ajax-transaction-form'>
-</div>
