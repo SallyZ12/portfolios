@@ -8,8 +8,8 @@ $(function(){
 function listenForNewTransactionFormClick(){
   $('button#transaction-form').on('click', function(e){
     e.preventDefault();
-    let newTransactionForm = Transaction.newTransactionForm()
-    $('div#ajax-transaction-form').innerHTML = newTransactionHTML
+
+    Transaction.newTransactionForm()
   })
 };
 
@@ -28,6 +28,8 @@ function listenForNewTransactionFormClick(){
 
 
 // function postTransaction(){
+// let newTransactionForm = Transaction.newTransactionForm()
+// $('div#ajax-transaction-form').innerHTML =
 //
 // }
 
@@ -40,20 +42,23 @@ class Transaction{
     this.user = obj.user;
     this.credit = obj.credit;
   }
-
-static newTransactionForm() {
-  return (`
-    <strong> New Transaction Form </strong>
-    <form>
-      <input id = 'transaction' type='text' name='name'>
-      <input type='text' name = 'name'></input><br>
-      <input type='text' series = 'series'></input><br>
-      <input type='text' par = 'par'></input><br>
-      <input type='submit' />
-    </form>
-    `)
-  }
+  static newTransactionForm() {
+    return (`
+      <strong> New Transaction Form </strong>
+      <form>
+        <input id = 'transaction' type='text' name='name'>
+        <input type='text' name = 'name'></input><br>
+        <input type='text' series = 'series'></input><br>
+        <input type='text' par = 'par'></input><br>
+        <input type='submit' />
+      </form>
+      `)
+    }
 };
+
+
+
+
 
 
 Transaction.prototype.transactionHTML = function (){
