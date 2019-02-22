@@ -1,28 +1,35 @@
 
 $(function(){
   console.log("loaded:assets/javascripts/transactions.js")
+  listenForNewTransactionFormClick()
 
-  getTransactionForm()
 });
 
-
-function getTransactionForm(){
+function listenForNewTransactionFormClick(){
   $('button#transaction-form').on('click', function(e){
     e.preventDefault();
-  $.ajax({
-    url: this.href,
-    method: 'get',
-    dataType: 'html'
-  }).done(function(response){
-      $('div#ajax-transaction-form').html(response);
-    })
+    let newTransactionForm = Transaction.newTransactionForm()
+    $('div#ajax-transaction-form').innerHTML = newTransactionHTML
   })
-}
+};
 
 
-function postTransaction(){
 
-}
+// function getTransactionForm(){
+//   $.ajax({
+//     url: this.href,
+//     method: 'get',
+//     dataType: 'html'
+//   }).done(function(response){
+//       $('div#ajax-transaction-form').html(response);
+//     }
+//   }
+
+
+
+// function postTransaction(){
+//
+// }
 
 class Transaction{
   constructor(obj){
