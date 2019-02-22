@@ -17,7 +17,8 @@ function getTransactionForm(){
       $('div#ajax-transaction-form').html(response);
     })
   })
-};
+}
+
 
 function postTransaction(){
 
