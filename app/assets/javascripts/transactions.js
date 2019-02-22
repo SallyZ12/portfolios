@@ -6,11 +6,11 @@ $(function(){
 });
 
 function listenForNewTransactionFormClick(){
-  $('button#transaction-form').on('click', function(e){
+  $('button#ajax-new-transaction').on('click', function(e){
     e.preventDefault();
 
     let newTransactionForm = Transaction.newTransactionForm()
-    $('div#ajax-transaction-form').innerHTML = newTransactionForm
+    document.querySelector('div#ajax-transaction-form').innerHTML = newTransactionForm
   })
 };
 
@@ -36,10 +36,13 @@ class Transaction{
     return (`
       <strong> New Transaction Form </strong>
       <form>
-        <input id = 'transaction' type='text' name='name'>
-        <input type='text' name = 'name'></input><br>
-        <input type='text' series = 'series'></input><br>
-        <input type='text' par = 'par'></input><br>
+        <input id ='new-transaction', type='text' </input><br>
+        <label> Name </label>
+        <input type='text', name = 'name'></input><br>
+        <label> Series </label>
+        <input type='text', series = 'series'></input><br>
+        <label> Par </label>
+        <input type='text', par = 'par'></input><br>
         <input type='submit' />
       </form>
       `)
