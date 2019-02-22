@@ -11,17 +11,26 @@ function listenForNewTransactionFormClick(){
 
     let newTransactionForm = Transaction.newTransactionForm()
     document.querySelector('div#ajax-transaction-form').innerHTML = newTransactionForm
+    postTransaction()
   })
 };
 
 
 
 
-// function postTransaction(){
-//
-//
-//
-// }
+function postTransaction(){
+  $('form#new-transaction').on('submit', function(e){
+    e.preventDefault();
+    let inputs = $(this).serialize();
+    let addTransaction = $.post('/exposures/3/transactions', inputs);
+
+    addTransaction.done(function(data){
+      let myTransaction = new Transaction(data)
+      let myTransactionHTML = mytransaction.transactionHTML()
+      document.getElementById('new-transaction').innerHTML += myTransactionHTML
+    })
+  })
+}
 
 class Transaction{
   constructor(obj){
@@ -35,15 +44,15 @@ class Transaction{
   static newTransactionForm() {
     return (`
       <strong> New Transaction Form </strong>
-      <form>
-        <input id ='new-transaction', type='text' </input><br>
-        <label> Name </label>
-        <input type='text', name = 'name'></input><br>
-        <label> Series </label>
-        <input type='text', series = 'series'></input><br>
-        <label> Par </label>
-        <input type='text', par = 'par'></input><br>
-        <input type='submit' />
+      <form id="new-transaction"> <br>
+      
+        Name: <input type='text' name='name'></input><br>
+
+        Series: <input type='text' series='series'></input><br>
+
+        Par: <input type='text' par='par'></input><br>
+
+        <input type='submit' value = "Create AJAX Transaction">
       </form>
       `)
     }
