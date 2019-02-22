@@ -9,27 +9,17 @@ function listenForNewTransactionFormClick(){
   $('button#transaction-form').on('click', function(e){
     e.preventDefault();
 
-    Transaction.newTransactionForm()
+    let newTransactionForm = Transaction.newTransactionForm()
+    $('div#ajax-transaction-form').innerHTML = newTransactionForm
   })
 };
 
 
 
-// function getTransactionForm(){
-//   $.ajax({
-//     url: this.href,
-//     method: 'get',
-//     dataType: 'html'
-//   }).done(function(response){
-//       $('div#ajax-transaction-form').html(response);
-//     }
-//   }
-
-
 
 // function postTransaction(){
-// let newTransactionForm = Transaction.newTransactionForm()
-// $('div#ajax-transaction-form').innerHTML =
+//
+//
 //
 // }
 
