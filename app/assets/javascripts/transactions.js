@@ -22,7 +22,7 @@ function postTransaction(){
   $('form#new-transaction').on('submit', function(e){
     e.preventDefault();
     let inputs = $(this).serialize();
-    let addTransaction = $.post('/transactions', inputs);
+    let addTransaction = $.post('/exposures/4/transactions', inputs);
 
     addTransaction.done(function(data){
       let myTransaction = new Transaction(data)
@@ -46,11 +46,9 @@ class Transaction{
       <strong> New Transaction Form </strong>
       <form id="new-transaction"> <br>
 
-        Name: <input type='text' name='transaction_name'></input><br>
-
-        Series: <input type='text' series='transaction_series'></input><br>
-
-        Par: <input type='text' par='transaction_par'></input><br>
+        Name: <input type='text' name= "name"> <br>
+        Series: <input type='text' name="series"> <br>
+        Par: <input type='text' name="par"><br>
 
         <input type='submit' value = "Create AJAX Transaction">
       </form>
