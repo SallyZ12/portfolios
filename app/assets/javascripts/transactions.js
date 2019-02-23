@@ -46,11 +46,15 @@ class Transaction{
       <strong> New Transaction Form </strong>
       <form id="new-transaction"> <br>
 
+        <input name="utf8" type="hidden">
+        <input name="authenticity_token" type="hidden">
+
         Name: <input type='text' name= "name"> <br>
         Series: <input type='text' name="series"> <br>
         Par: <input type='text' name="par"><br>
 
-        <input type='submit' value = "Create AJAX Transaction">
+        <input type='submit' value = "Create AJAX
+         Transaction">
       </form>
       `)
     }
