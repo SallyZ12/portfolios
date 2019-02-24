@@ -40,6 +40,7 @@ class Transaction{
     this.name = obj.name;
     this.series = obj.series;
     this.par = obj.par;
+    this.exposure = obj.exposure;
   }
 };
 
