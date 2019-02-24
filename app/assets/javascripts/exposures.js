@@ -44,7 +44,6 @@ class Exposure{
 };
 
 Exposure.prototype.exposureHTML = function (){
-
 return (`
     <table class="table">
     <caption> <h4>AJAX Exposure Response </h4></caption>
