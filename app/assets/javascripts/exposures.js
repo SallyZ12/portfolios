@@ -18,7 +18,25 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-
+      let headerHTML = function(){
+        return (`
+        <table> <caption> AJAX Response Header </caption>
+        <thead>
+        <tr>
+        <th>Company</th>
+        <th>Credit Name</th>
+        <th>Sector </th>
+        <th>State </th>
+        <th>Co Rating</th>
+        <th>Ext Rating</th>
+        <th>Limit</th>
+        <th>Total Par</th>
+        <th>Violation</th>
+        </tr>
+        </thead>
+      `)
+      };
+        document.getElementById("exposure-data").innerHTML += headerHTML
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
       let myExposureHTML = myExposure.exposureHTML()
@@ -46,20 +64,6 @@ class Exposure{
 Exposure.prototype.exposureHTML = function (){
 return (`
     <table class="table">
-    <caption> <h4>AJAX Exposure Response </h4></caption>
-      <thead>
-      <tr>
-      <th>Company</th>
-      <th>Credit Name</th>
-      <th>Sector </th>
-      <th>State </th>
-      <th>Co Rating</th>
-      <th>Ext Rating</th>
-      <th>Limit</th>
-      <th>Total Par</th>
-      <th>Violation</th>
-      </tr>
-      </thead>
         <tbody>
           <tr>
           <td> ${this.user.username} </td>
@@ -76,3 +80,39 @@ return (`
     </table>
   `)
 };
+
+
+
+// Exposure.prototype.exposureHTML = function (){
+// return (`
+//     <table class="table">
+//     <caption> <h4>AJAX Exposure Response </h4></caption>
+//       <thead>
+//       <tr>
+//       <th>Company</th>
+//       <th>Credit Name</th>
+//       <th>Sector </th>
+//       <th>State </th>
+//       <th>Co Rating</th>
+//       <th>Ext Rating</th>
+//       <th>Limit</th>
+//       <th>Total Par</th>
+//       <th>Violation</th>
+//       </tr>
+//       </thead>
+//         <tbody>
+//           <tr>
+//           <td> ${this.user.username} </td>
+//           <td> ${this.credit.credit_name} </td>
+//           <td> ${this.credit.sector} </td>
+//           <td> ${this.credit.state} </td>
+//           <td> ${this.rating} </td>
+//           <td> ${this.credit.rating} </td>
+//           <td> ${this.limit} </td>
+//           <td> ${this.t_sum} </td>
+//           <td> <v>${this.violations()}</v></td>
+//         </tr>
+//         </tbody>
+//     </table>
+//   `)
+// };
