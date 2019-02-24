@@ -4,5 +4,5 @@ class ExposureSerializer < ActiveModel::Serializer
   belongs_to :user
   belongs_to :credit
   has_many :transactions
-  # has_many :transactions, serializer: TransactionExposureSerializer
+  
 end
