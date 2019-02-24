@@ -13,7 +13,7 @@ function getTransactionForm(){
       dataType: 'html'
     }).done(function(response){
         $('div#ajax-transaction-form').html(response);
-      // postTransaction()
+      postTransaction()
     })
   })
 }
@@ -22,11 +22,13 @@ function postTransaction(){
   $('form#new_transaction').on('submit', function(e){
     e.preventDefault();
     let inputs = $(this).serialize();
-    let addTransaction = $.post(this.href, inputs);
+    let expUrl = window.location.pathname;
+    let transUrl = expUrl + '/transactions'
+    let addTransaction = $.post(transUrl, inputs);
 
     addTransaction.done(function(data){
       let myTransaction = new Transaction(data)
-      let meTransactionHTML = myTransaction.transactionHTML()
+      let myTransactionHTML = myTransaction.transactionHTML()
       document.getElementById("new_transaction").innerHTML += myTransactionHTML
     })
   })
@@ -38,8 +40,7 @@ class Transaction{
     this.name = obj.name;
     this.series = obj.series
     this.par = obj.par
-    this.user = obj.user;
-    this.credit = obj.credit;
+    this.exposure = obj.exposure
   }
 };
 
@@ -49,13 +50,14 @@ Transaction.prototype.transactionHTML = function (){
     <caption> <h4>New Transaction AJAX Response </h4></caption>
       <thead>
       <tr>
-      <th>Name</th>
-      <th>Series </th>
-      <th>Par </th>
+      <th> Exposure ID </th>
+      <th> Name</th>
+      <th> Series </th>
+      <th> Par </th>
       </tr>
       </thead>
         <tbody>
-          <tr>
+          <td> ${this.exposure.id}
           <td> ${this.name} </td>
           <td> ${this.series} </td>
           <td> ${this.par} </td>
