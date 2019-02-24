@@ -1,11 +1,69 @@
 
 $(function (){
   console.log("loaded: javascripts/transctions.js")
+  getTransactionForm()
 });
 
+function getTransactionForm(){
+  $('a#new-transaction-form').on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+      url: this.href,
+      method: 'get',
+      dataType: 'html'
+    }).done(function(response){
+        $('div#ajax-transaction-form').html(response);
+      // postTransaction()
+    })
+  })
+}
 
+function postTransaction(){
+  $('form#new_transaction').on('submit', function(e){
+    e.preventDefault();
+    let inputs = $(this).serialize();
+    let addTransaction = $.post(this.href, inputs);
 
+    addTransaction.done(function(data){
+      let myTransaction = new Transaction(data)
+      let meTransactionHTML = myTransaction.transactionHTML()
+      document.getElementById("new_transaction").innerHTML += myTransactionHTML
+    })
+  })
+};
 
+class Transaction{
+  constructor(obj){
+    this.id = obj.id;
+    this.name = obj.name;
+    this.series = obj.series
+    this.par = obj.par
+    this.user = obj.user;
+    this.credit = obj.credit;
+  }
+};
+
+Transaction.prototype.transactionHTML = function (){
+  return (`
+    <table>
+    <caption> <h4>New Transaction AJAX Response </h4></caption>
+      <thead>
+      <tr>
+      <th>Name</th>
+      <th>Series </th>
+      <th>Par </th>
+      </tr>
+      </thead>
+        <tbody>
+          <tr>
+          <td> ${this.name} </td>
+          <td> ${this.series} </td>
+          <td> ${this.par} </td>
+        </tr>
+        </tbody>
+    </table>
+    `)
+  };
 
 // $(function(){
 //   console.log("loaded:assets/javascripts/transactions.js")
