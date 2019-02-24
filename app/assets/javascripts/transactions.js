@@ -50,7 +50,7 @@ Transaction.prototype.transactionHTML = function (){
     <caption> <h4>New Transaction AJAX Response </h4></caption>
       <thead>
       <tr>
-  
+
       <th> Exposure ID </th>
       <th> Name</th>
       <th> Series </th>
