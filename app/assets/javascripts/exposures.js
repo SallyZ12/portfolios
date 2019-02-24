@@ -18,11 +18,10 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      // document.getElementById("exposure-data").innerHTML =
 
       data.map(exposure => {
-      let myexposure = new Exposure(exposure)
-      let myExposureHTML = myexposure.exposureHTML()
+      let myExposure = new Exposure(exposure)
+      let myExposureHTML = myExposure.exposureHTML()
       document.getElementById("exposure-data").innerHTML += myExposureHTML
         })
     })
@@ -43,8 +42,6 @@ class Exposure{
     return (this.limit - this.t_sum < 0) ? "Yes" : "No";
   }
 };
-
-
 
 Exposure.prototype.exposureHTML = function (){
 
