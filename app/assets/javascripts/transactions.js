@@ -24,10 +24,17 @@ function postTransaction(){
     e.preventDefault();
 
     // let headers = {'authenticity_token': $('meta[name="csrf-token"]').attr('content')}
+  //   $.ajaxSetup({
+  // headers: {
+  //      'authenticity_token': $('meta[name="csrf-token"]').attr('content'),
+  //      'charset':'utf-8'
+  // }
+  // });
+
     let inputs = $(this).serialize()
     // let allInputs = inputs + "authenticity_token" + "=" + headers["authenticity_token"]
-    let addTransaction = $.post('/exposures/4/transactions', inputs);
-
+    // let addTransaction = $.post('/exposures/4/transactions', inputs);
+  let addTransaction = $.post(this.action + '/transactions', inputs);
     // let addTransaction = $.ajax({
     //   url: '/exposures/4/transactions',
     //   headers: {'authenticity_token': $('meta[name="csrf-token"]').attr('content')},
