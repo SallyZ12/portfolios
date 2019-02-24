@@ -38,9 +38,8 @@ class Transaction{
   constructor(obj){
     this.id = obj.id;
     this.name = obj.name;
-    this.series = obj.series
-    this.par = obj.par
-    this.exposure = obj.exposure
+    this.series = obj.series;
+    this.par = obj.par;
   }
 };
 
