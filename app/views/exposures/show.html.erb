@@ -67,7 +67,9 @@
 <br><br><br>
 
 <%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
+
 <div> ____________________________________________________</div>
+<div><strong> AJAX Response Section</strong> </div><br>
 <%= link_to_if(current_user.id == @exposure.user_id, "AJAX - Add New Transaction", new_exposure_transaction_path(@exposure), id:'new-transaction-form'){} %> <br><br>
 <!-- <button id = "ajax-new-transaction"><strong> AJAX - Add New Transaction </strong> </button><br> -->
 <div id ='ajax-transaction-form'>[form] </div><br>
