@@ -23,7 +23,7 @@ class TransactionsController < ApplicationController
         @transaction = Transaction.new
           @credit = Credit.new
             @user = current_user
-             render partial: "ajax_new_trans"
+             render partial: "ajax_new"
   end
 
   def create
