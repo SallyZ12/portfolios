@@ -61,6 +61,7 @@ class Exposure{
   }
 };
 
+// use with headerHTML function above
 Exposure.prototype.exposureHTML = function (){
 return (`
     <table class="table">
