@@ -49,37 +49,29 @@
 
 
 <table class = "table">
-
 <tbody>
-
   <tr>
     <td> Transaction </td>
     <td> Series </td>
     <td> Par </td>
-
-
   </tr>
     <% @exposure.transactions.order("par DESC").each do |transaction| %>
 <tr>
 		<td> <%= link_to transaction.name, exposure_transaction_path(@exposure,transaction) %> </td>
     <td> <%= transaction.series %> </td>
     <td> <%= transaction.par %> </td>
-
   <% end %>
-
-</tr>
-
 </tr>
 </tbody>
 </table>
 <br><br><br>
 
 <%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
-
+<div> ____________________________________________________</div>
 <%= link_to_if(current_user.id == @exposure.user_id, "AJAX - Add New Transaction", new_exposure_transaction_path(@exposure), id:'new-transaction-form'){} %> <br><br>
 <!-- <button id = "ajax-new-transaction"><strong> AJAX - Add New Transaction </strong> </button><br> -->
 <div id ='ajax-transaction-form'>[form] </div><br>
-
+<div> _____________________________________________________</div>
 
 <%= form_tag exposure_path(@exposure.id), method: "delete" %>
 <%= submit_tag "Delete Exposure" %><br><br>
