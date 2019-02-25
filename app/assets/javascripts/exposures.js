@@ -20,7 +20,7 @@ function getExposures(){
     }).done(function(data){
       let headerHTML = function(){
         return (`
-        <table id = "js-table"> <caption> AJAX Response Header </caption>
+        <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
         <thead>
         <tr>
         <th>Company</th>
