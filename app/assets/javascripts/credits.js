@@ -4,7 +4,13 @@ $(function() {
   getCreditForm()
 });
 
-
+function listenForClick(){
+  $('button#new-credit-form').on('click', function(event){
+    event.preventDefault()
+    alert("stop");
+    getCreditForm()
+  })
+}
 
 // retrieves html form and puts on page
   function getCreditForm(){
@@ -18,7 +24,7 @@ $(function() {
           $('div#ajax-credit-form').html(response);
         postCredit()
       })
-    });
+    })
   };
 
 
