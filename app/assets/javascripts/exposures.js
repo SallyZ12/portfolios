@@ -20,7 +20,7 @@ function getExposures(){
     }).done(function(data){
       let headerHTML = function(){
         return (`
-        <table> <caption> AJAX Response Header </caption>
+        <table id = "js-table"> <caption> AJAX Response Header </caption>
         <thead>
         <tr>
         <th>Company</th>
@@ -34,6 +34,7 @@ function getExposures(){
         <th>Violation</th>
         </tr>
         </thead>
+        </table>
       `)
       };
         document.getElementById("exposure-data").innerHTML += headerHTML
@@ -64,7 +65,7 @@ class Exposure{
 // use with headerHTML function above
 Exposure.prototype.exposureHTML = function (){
 return (`
-    <table class="table">
+    <table id="js-table">
         <tbody>
           <tr>
           <td> ${this.user.username} </td>
