@@ -50,10 +50,4 @@
 
 <%= link_to_if(current_user.id == @user.id, "Edit", edit_user_path){} %> <br> <br>
 
- <%= link_to_if(current_user.id == @user.id, "Submit Existing or Create New Credit",new_user_credit_path(@user)){} %> <br><br>
-
-<div> <h4> For AJAX Response </h4> </div>
-
- <button id = "data-button">Get Exposure Data</button>
- <div id= "exposure-data">
- </div>
+<%= link_to_if(current_user.id == @user.id, "Submit Existing or Create New Credit",new_user_credit_path(@user)){} %> <br><br>
