@@ -45,3 +45,30 @@ th {
 v {
   color:red; "Yes"
 }
+
+/* formatting for ajax response table */
+#js-table {
+   border-collapse: collapse;
+}
+
+#js-table, th, td {
+   border: 1px solid black;
+}
+
+#js-table {
+   table-layout: fixed;
+   width: 75%;
+}
+
+#js-table th {
+   height: 50px;
+}
+
+#js-table td {
+   text-align: center;
+
+}
+
+#js-table v {
+ color:red; "Yes"
+}
