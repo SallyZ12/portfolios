@@ -2,6 +2,7 @@ $(function() {
   console.log("loaded: assets/javascripts/exposures.js")
   listenForClick()
   listenForAnotherClick()
+  listenForListClick()
 });
 
 function listenForClick(){
@@ -16,6 +17,14 @@ $('button#clear-button').on('click', function() {
   $("div").empty("#exposure-data");
 })
 };
+
+function listenForListClick(){
+  $('button#list-transactions').on('click', function(e){
+    event.preventDefault()
+    getTransactionList()
+  })
+}
+
 
 function getExposures(){
 
@@ -86,5 +95,52 @@ return (`
         </tr>
         </tbody>
     </table>
+  `)
+};
+
+
+function getTransactionList(){
+  $.ajax({
+    url: this.href,
+    method: 'get',
+    dataType: 'json',
+  }).done(function(data){
+    let transHeaderHTML =
+    (`
+      <table id = "js-table">
+      <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
+        <thead>
+        <tr>
+        <th> Name</th>
+        <th> Series </th>
+        <th> Par </th>
+        </tr>
+        </thead>
+        </table>
+        `)
+        $('#transaction-list').innerHTML += transHeaderHTML
+
+          // need to revisit this
+          const dataTrans = data.transactions
+
+          dataTrans.map(transaction=> {
+          let myTransaction = new Exposure(transaction)
+          let myExpTransactionHTML = myTransaction.myExpTransactionHTML()
+          $('#transaction-list').innerHTML += myExpTransactionHTML
+        })
+  })
+};
+
+Exposure.prototype.myExpTransactionHTML = function(){
+  return (`
+    <table id = "js-table">
+  <tbody>
+  <tr>
+  <td> ${this.transaction.name}) </td>
+  <td> ${this.transaction.series} </td>
+  <td> ${this.transaction.par} </td>
+  </tr>
+  </tbody>
+  </table>
   `)
 };
