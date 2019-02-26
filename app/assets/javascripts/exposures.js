@@ -18,8 +18,8 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      let headerHTML = function(){
-        return (`
+      let headerHTML = 
+        (`
         <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
         <thead>
         <tr>
@@ -36,7 +36,7 @@ function getExposures(){
         </thead>
         </table>
       `)
-      };
+
         document.getElementById("exposure-data").innerHTML += headerHTML
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
