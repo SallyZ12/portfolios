@@ -121,24 +121,28 @@ function getTransactionList(){
         $('#transaction-list').innerHTML += transHeaderHTML
 
           // need to revisit this
-          const dataTrans = data.transactions
+          // const dataTrans = data.transactions
 
-          dataTrans.map(transaction=> {
-          let myTransaction = new Exposure(transaction)
-          let myExpTransactionHTML = myTransaction.myExpTransactionHTML()
-          $('#transaction-list').innerHTML += myExpTransactionHTML
+          // dataTrans.map(transactions => {
+          let myExposure = new Exposure(data)
+          // let myTransactions = myExposure.transactions
+
+            myExposure.transactions.map(transaction => {
+              let myExpTransactionHTML = myExposure.myExpTransactionHTML()
+                $('#transaction-list').innerHTML += myExpTransactionHTML
+          })
         })
-  })
-};
+      };
+
 
 Exposure.prototype.myExpTransactionHTML = function(){
   return (`
     <table id = "js-table">
   <tbody>
   <tr>
-  <td> ${this.transaction.name}) </td>
-  <td> ${this.transaction.series} </td>
-  <td> ${this.transaction.par} </td>
+  <td> ${this.name} </td>
+  <td> ${this.series} </td>
+  <td> ${this.par} </td>
   </tr>
   </tbody>
   </table>
