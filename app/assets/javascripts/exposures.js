@@ -1,6 +1,7 @@
 $(function() {
   console.log("loaded: assets/javascripts/exposures.js")
   listenForClick()
+  listenForAnotherClick()
 });
 
 function listenForClick(){
@@ -10,6 +11,11 @@ function listenForClick(){
   })
 }
 
+function listenForAnotherClick(){
+$('button#clear-button').on('click', function() {
+  $("div").empty("#exposure-data");
+})
+};
 
 function getExposures(){
 
@@ -18,7 +24,7 @@ function getExposures(){
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      let headerHTML = 
+      let headerHTML =
         (`
         <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
         <thead>
