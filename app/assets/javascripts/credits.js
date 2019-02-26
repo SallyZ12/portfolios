@@ -2,15 +2,21 @@
 $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
+  listenForClearCreditClick()
 });
 
 function listenForClick(){
   $('button#new-credit-form').on('click', function(event){
     event.preventDefault()
-    alert("stop");
     getCreditForm()
   })
 }
+
+function listenForClearCreditClick(){
+  $('button#clear-credit').on('click', function(){
+    $("div").empty("#ajax-credit-form");
+  })
+};
 
 // retrieves html form and puts on page
   function getCreditForm(){
