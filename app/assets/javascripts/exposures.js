@@ -111,40 +111,41 @@ function getTransactionList(){
       <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
         <thead>
         <tr>
-        <th> Name</th>
+        <th> Transaction Name </th>
         <th> Series </th>
         <th> Par </th>
         </tr>
         </thead>
         </table>
         `)
-        $('#transaction-list').innerHTML += transHeaderHTML
+        document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
           // need to revisit this
-          // const dataTrans = data.transactions
 
-          // dataTrans.map(transactions => {
           let myExposure = new Exposure(data)
           // let myTransactions = myExposure.transactions
 
-            myExposure.transactions.map(transaction => {
+            // myTransactions.map(transaction => {
               let myExpTransactionHTML = myExposure.myExpTransactionHTML()
-                $('#transaction-list').innerHTML += myExpTransactionHTML
+                document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
           })
-        })
+
       };
 
 
 Exposure.prototype.myExpTransactionHTML = function(){
+  let expTransactions = this.transactions.map(transaction => {
+
   return (`
     <table id = "js-table">
   <tbody>
   <tr>
-  <td> ${this.name} </td>
-  <td> ${this.series} </td>
-  <td> ${this.par} </td>
+  <td> ${transaction.name} </td>
+  <td> series </td>
+  <td> par </th>
   </tr>
   </tbody>
   </table>
   `)
+})
 };
