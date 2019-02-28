@@ -120,22 +120,16 @@ function getTransactionList(){
         `)
         document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
-          // need to revisit this
 
           let myExposure = new Exposure(data)
-          // let myTransactions = myExposure.transactions
-
-            // myTransactions.map(transaction => {
-              let myExpTransactionHTML = myExposure.myExpTransactionHTML()
-                document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
+          let myExpTransactionHTML = myExposure.myExpTransactionHTML()
+          document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
           })
-
       };
 
 
 Exposure.prototype.myExpTransactionHTML = function(){
   let expTransactions = this.transactions.map(transaction => {
-
   return (`
     <table id = "js-table">
   <tbody>
