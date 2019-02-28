@@ -118,14 +118,16 @@ function getTransactionList(){
         </thead>
         </table>
         `)
-        document.getElementById("transaction-list").innerHTML += transHeaderHTML
+      document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
 
-          let myExposure = new Exposure(data)
-          let myExpTransactionHTML = myExposure.myExpTransactionHTML()
-          document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
-          })
-      };
+      let myExposure = new Exposure(data)
+      let myExpTransactionHTML = myExposure.myExpTransactionHTML()
+        // let myExposureTrans = myExposure.transactions
+        // let myExpTransactionHTML = myExposureTrans.myExpTransactionHTML()
+      document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
+    })
+  };
 
 
 Exposure.prototype.myExpTransactionHTML = function(){
