@@ -3,6 +3,7 @@ $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
   listenForClearCreditClick()
+  listenForNextClick()
 });
 
 function listenForClick(){
@@ -17,6 +18,15 @@ function listenForClearCreditClick(){
     $("div").empty("#ajax-credit-form");
   })
 };
+
+function listenForNextClick(){
+  $('button#next-credit').on('click', function(e){
+    e.preventDefault()
+    alert("stop here")
+  })
+}
+
+
 
 // retrieves html form and puts on page
   function getCreditForm(){
