@@ -3,7 +3,7 @@ $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
   listenForClearCreditClick()
-  listenForNextClick()
+  listenForShowClick()
 });
 
 function listenForClick(){
@@ -19,8 +19,8 @@ function listenForClearCreditClick(){
   })
 };
 
-function listenForNextClick(){
-  $('button#next-credit').on('click', function(e){
+function listenForShowClick(){
+  $('button#show-credit').on('click', function(e){
     e.preventDefault()
     alert("stop here")
   })
