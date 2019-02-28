@@ -22,7 +22,7 @@ function listenForClearCreditClick(){
 function listenForShowClick(){
   $('button#show-credit').on('click', function(e){
     e.preventDefault()
-    alert("stop here")
+    showCredit()
   })
 }
 
@@ -62,6 +62,19 @@ function listenForShowClick(){
           };
 
 
+    function showCredit(){
+        $.ajax({
+          url: this.href,
+          method: 'get',
+          dataType: 'json',
+        }).done(function(data){
+          let showCredit = new Credit(data)
+          let showCreditHTML = showCredit.creditHTML()
+        document.getElementById("ajax-show-credit").innerHTML = showCreditHTML
+        })
+      }
+
+
     class Credit{
       constructor(obj){
         this.id = obj.id;
@@ -76,7 +89,7 @@ function listenForShowClick(){
     Credit.prototype.creditHTML = function (){
     return (`
         <table>
-        <caption> <h4>New Credit AJAX Response </h4></caption>
+        <caption> <h4>Credit AJAX Response </h4></caption>
           <thead>
           <tr>
           <th>Credit Name</th>
