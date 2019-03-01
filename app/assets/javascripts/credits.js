@@ -3,7 +3,7 @@ $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
   listenForClearCreditClick()
-  listenForShowClick()
+  // listenForShowClick()
 });
 
 function listenForClick(){
@@ -19,12 +19,12 @@ function listenForClearCreditClick(){
   })
 };
 
-function listenForShowClick(){
-  $('button#show-credit').on('click', function(e){
-    e.preventDefault()
-    showCredit()
-  })
-}
+// function listenForShowClick(){
+//   $('button#show-credit').on('click', function(e){
+//     e.preventDefault()
+//     showCredit()
+//   })
+// }
 
 
 
@@ -62,17 +62,32 @@ function listenForShowClick(){
           };
 
 
-    function showCredit(){
-        $.ajax({
-          url: this.href,
-          method: 'get',
-          dataType: 'json',
-        }).done(function(data){
-          let showCredit = new Credit(data)
-          let showCreditHTML = showCredit.creditHTML()
-        document.getElementById("ajax-show-credit").innerHTML = showCreditHTML
-        })
-      }
+    // function showCredit(){
+    //     $.ajax({
+    //       url: this.href,
+    //       method: 'get',
+    //       dataType: 'json',
+    //     }).done(function(data){
+    //       let showCredit = new Credit(data)
+    //       let showCreditHTML = showCredit.creditHTML()
+    //     document.getElementById("ajax-show-credit").innerHTML = showCreditHTML
+    //     })
+    //   }
+
+      $(function () {
+        $("#js-next").on("click", function(e){
+        e.preventDefault()
+      const nextId = parseInt($("#js-next").attr("data-id")) + 1;
+
+      $.get('/credits/' + nextId + ".json", function(data) {
+          const credit = data;
+          let myCredit = new Credit(data)
+          let myCreditHTML = myCredit.creditHTML()
+          document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
+          $("#js-next").attr("data-id", credit["id"]);
+      })
+    })
+  })
 
 
     class Credit{
