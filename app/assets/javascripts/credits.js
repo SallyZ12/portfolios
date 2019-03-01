@@ -74,17 +74,19 @@ function listenForClearCreditClick(){
     //     })
     //   }
 
+    // ajax response for next Credit on show page
       $(function () {
         $("#js-next").on("click", function(e){
         e.preventDefault()
       const nextId = parseInt($("#js-next").attr("data-id")) + 1;
 
       $.get('/credits/' + nextId + ".json", function(data) {
-          const credit = data;
+
           let myCredit = new Credit(data)
           let myCreditHTML = myCredit.creditHTML()
           document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
-          $("#js-next").attr("data-id", credit["id"]);
+
+          $("#js-next").attr("data-id", data["id"]);
       })
     })
   })
