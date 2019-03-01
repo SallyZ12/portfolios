@@ -87,10 +87,10 @@ function listenForClearCreditClick(){
           document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
 
           $("#js-next").attr("data-id", data["id"]);
-      })
-    })
-  })
 
+        })
+      })
+    });
 
     class Credit{
       constructor(obj){
