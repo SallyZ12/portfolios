@@ -109,6 +109,7 @@ function listenForClearCreditClick(){
         <caption> <h4>Credit AJAX Response </h4></caption>
           <thead>
           <tr>
+          <th> Credit ID </td>
           <th>Credit Name</th>
           <th>Sector </th>
           <th>State </th>
@@ -117,6 +118,7 @@ function listenForClearCreditClick(){
           </thead>
             <tbody>
               <tr>
+              <td> ${this.id} </td>
               <td> ${this.credit_name} </td>
               <td> ${this.sector} </td>
               <td> ${this.state} </td>
