@@ -122,10 +122,10 @@ function getTransactionList(){
 
 
       let myExposure = new Exposure(data)
-      let myExpTransactionHTML = myExposure.myExpTransactionHTML()
+      let expTransactionHTML = myExposure.myExpTransactionHTML()
         // let myExposureTrans = myExposure.transactions
         // let myExpTransactionHTML = myExposureTrans.myExpTransactionHTML()
-      document.getElementById("transaction-list").innerHTML += myExpTransactionHTML
+      document.getElementById("transaction-list").innerHTML += expTransactionHTML
     })
   };
 
@@ -137,8 +137,8 @@ Exposure.prototype.myExpTransactionHTML = function(){
   <tbody>
   <tr>
   <td> ${transaction.name} </td>
-  <td> series </td>
-  <td> par </th>
+  <td> ${transaction.series} </td>
+  <td> ${transaction.par} </td>
   </tr>
   </tbody>
   </table>
