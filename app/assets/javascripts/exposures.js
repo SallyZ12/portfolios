@@ -51,8 +51,8 @@ function getExposures(){
         </thead>
         </table>
       `)
-
       document.getElementById("exposure-data").innerHTML += headerHTML
+
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
       let myExposureHTML = myExposure.exposureHTML()
@@ -98,7 +98,6 @@ return (`
   `)
 };
 
-
 function getTransactionList(){
   $.ajax({
     url: this.href,
@@ -120,25 +119,27 @@ function getTransactionList(){
         `)
       document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
-
       let myExposure = new Exposure(data)
-      let expTransactionHTML = myExposure.myExpTransactionHTML()
-        // let myExposureTrans = myExposure.transactions
-        // let myExpTransactionHTML = myExposureTrans.myExpTransactionHTML()
-      document.getElementById("transaction-list").innerHTML += expTransactionHTML
+      let myTransactionListHTML = myExposure.expTransactionHTML()
+      document.getElementById("transaction-list").innerHTML += myTransactionListHTML
     })
   };
 
 
-Exposure.prototype.myExpTransactionHTML = function(){
-  let expTransactions = this.transactions.map(transaction => {
-  return (`
+Exposure.prototype.expTransactionHTML = function (){
+
+  this.transactions.map(transaction => {
+    let name = `${transaction.name}`
+    let series = `${transaction.series}`
+    let par = `${transaction.par}`
+
+return (`
     <table id = "js-table">
   <tbody>
   <tr>
-  <td> ${transaction.name} </td>
-  <td> ${transaction.series} </td>
-  <td> ${transaction.par} </td>
+  <td> ${name} </td>
+  <td> ${series} </td>
+  <td> ${par} </td>
   </tr>
   </tbody>
   </table>
