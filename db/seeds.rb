@@ -27,3 +27,4 @@ Transaction.create(id: 3, exposure_id: 2, name: "Brooklyn Gen Ob Bonds", series:
 Transaction.create(id: 4, exposure_id: 3, name: "Brooklyn Gen Ob Bonds", series: "2018B", par: 25)
 Transaction.create(id: 5, exposure_id: 4, name: "Phoenix Electric Revenue Bonds", series: "2016D", par: 25)
 Transaction.create(id: 6, exposure_id: 4, name: "Phoenix Electric Revenue Bonds", series: "2018", par: 25)
+Transaction.create(id: 7, exposure_id: 2, name: "Brooklyn Gen Ob Bonds", series: "2009A", par: 50)
