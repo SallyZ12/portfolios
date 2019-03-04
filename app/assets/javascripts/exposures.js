@@ -38,6 +38,7 @@ function getExposures(){
         <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
         <thead>
         <tr>
+        <th>Exposure ID </th>
         <th>Company</th>
         <th>Credit Name</th>
         <th>Sector </th>
@@ -79,11 +80,15 @@ class Exposure{
 
 // use with headerHTML function above
 Exposure.prototype.exposureHTML = function (){
+  let baseUrl = 'http://localhost:3000/exposures';
+  let exp_id = this.id;
+  let showExpUrl = baseUrl + '/' + exp_id
 return (`
     <table id="js-table">
         <tbody>
           <tr>
-          <td> ${this.user.username} </td>
+          <td> ${this.id} </td>
+          <td> <a href=${showExpUrl}">${this.user.username} </td>
           <td> ${this.credit.credit_name} </td>
           <td> ${this.credit.sector} </td>
           <td> ${this.credit.state} </td>
