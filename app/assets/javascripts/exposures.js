@@ -136,10 +136,7 @@ function getTransactionList(){
 Exposure.prototype.expTransactionHTML = function (){
 
   return this.transactions.map(transaction => {
-    // let name = `${transaction.name}`
-    // let series = `${transaction.series}`
-    // let par = `${transaction.par}`
-
+    
       return (`
           <table id = "js-table">
             <tbody>
