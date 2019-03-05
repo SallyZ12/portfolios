@@ -105,8 +105,9 @@ return (`
 };
 
 function getTransactionList(){
+
   $.ajax({
-    url: this.href,
+    url: this.url,
     method: 'get',
     dataType: 'json',
   }).done(function(data){
