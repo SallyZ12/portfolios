@@ -89,7 +89,7 @@ return (`
         <tbody>
           <tr>
           <td> ${this.id} </td>
-          <td> <a href=${showExpUrl}">${this.user.username} </td>
+          <td> <a href=${showExpUrl}>${this.user.username} </td>
           <td> ${this.credit.credit_name} </td>
           <td> ${this.credit.sector} </td>
           <td> ${this.credit.state} </td>
