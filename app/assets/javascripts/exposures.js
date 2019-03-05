@@ -82,8 +82,8 @@ function getExposures(){
 // use with headerHTML function above
 Exposure.prototype.exposureHTML = function (){
   let baseUrl = 'http://localhost:3000/exposures';
-  let exp_id = this.id;
-  let showExpUrl = baseUrl + '/' + exp_id
+  let expId = this.id;
+  let showExpUrl = baseUrl + '/' + expId
 return (`
     <table id="js-table">
         <tbody>
@@ -135,21 +135,21 @@ function getTransactionList(){
 
 Exposure.prototype.expTransactionHTML = function (){
 
-  this.transactions.map(transaction => {
-    let name = `${transaction.name}`
-    let series = `${transaction.series}`
-    let par = `${transaction.par}`
+  return this.transactions.map(transaction => {
+    // let name = `${transaction.name}`
+    // let series = `${transaction.series}`
+    // let par = `${transaction.par}`
 
-return (`
-    <table id = "js-table">
-  <tbody>
-  <tr>
-  <td> ${name} </td>
-  <td> ${series} </td>
-  <td> ${par} </td>
-  </tr>
-  </tbody>
-  </table>
-  `)
-})
-};
+      return (`
+          <table id = "js-table">
+            <tbody>
+              <tr>
+                <td> ${transaction.name} </td>
+                <td> ${transaction.series} </td>
+                <td> ${transaction.par} </td>
+              </tr>
+            </tbody>
+          </table>
+      `)
+    }).join("")
+}
