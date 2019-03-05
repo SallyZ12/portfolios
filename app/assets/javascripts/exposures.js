@@ -25,6 +25,21 @@ function listenForListClick(){
   })
 }
 
+class Exposure{
+  constructor(obj){
+    this.id = obj.id
+    this.limit = obj.limit;
+    this.rating = obj.rating;
+    this.credit = obj.credit;
+    this.user = obj.user;
+    this.transactions = obj.transactions;
+    this.t_sum = obj.t_sum;
+  }
+  violations() {
+    return (this.limit - this.t_sum < 0) ? "Yes" : "No";
+  }
+};
+
 
 function getExposures(){
 
@@ -63,20 +78,6 @@ function getExposures(){
   };
 
 
-class Exposure{
-  constructor(obj){
-    this.id = obj.id
-    this.limit = obj.limit;
-    this.rating = obj.rating;
-    this.credit = obj.credit;
-    this.user = obj.user;
-    this.transactions = obj.transactions;
-    this.t_sum = obj.t_sum;
-  }
-  violations() {
-    return (this.limit - this.t_sum < 0) ? "Yes" : "No";
-  }
-};
 
 // use with headerHTML function above
 Exposure.prototype.exposureHTML = function (){
