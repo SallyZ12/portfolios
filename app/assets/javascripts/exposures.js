@@ -1,8 +1,9 @@
 $(function() {
   console.log("loaded: assets/javascripts/exposures.js")
   listenForClick()
-  listenForAnotherClick()
   listenForListClick()
+  listenForShowClick()
+  listenForClearClick()
 });
 
 function listenForClick(){
@@ -12,18 +13,27 @@ function listenForClick(){
   })
 }
 
-function listenForAnotherClick(){
-$('button#clear-button').on('click', function() {
-  $("div").empty("#exposure-data");
-})
-};
-
 function listenForListClick(){
   $('button#list-transactions').on('click', function(e){
     event.preventDefault()
     getTransactionList()
   })
 }
+
+function listenForShowClick(){
+  $('button#show-exposure').on('click', function(e){
+    event.preventDefault()
+    showExposure()
+})
+}
+
+function listenForClearClick(){
+$('button#clear-button').on('click', function() {
+  $("div").empty("#exposure-data");
+})
+};
+
+
 
 class Exposure{
   constructor(obj){
@@ -104,6 +114,44 @@ return (`
   `)
 };
 
+function showExposure(){
+  $.ajax({
+    url: this.action,
+    method: 'get',
+    dataType: 'json'
+  }).done(function(data){
+    let headerHTML =
+      (`
+      <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
+      <thead>
+      <tr>
+      <th>Exposure ID </th>
+      <th>Company</th>
+      <th>Credit Name</th>
+      <th>Sector </th>
+      <th>State </th>
+      <th>Co Rating</th>
+      <th>Ext Rating</th>
+      <th>Limit</th>
+      <th>Total Par</th>
+      <th>Violation</th>
+      </tr>
+      </thead>
+      </table>
+    `)
+    document.getElementById("ajax-show-exposure").innerHTML += headerHTML
+
+    let myExposure = new Exposure(data)
+    let myExposureHTML = myExposure.exposureHTML()
+    document.getElementById("ajax-show-exposure").innerHTML += myExposureHTML
+
+})
+}
+
+
+
+
+
 function getTransactionList(){
 
   $.ajax({
@@ -117,6 +165,7 @@ function getTransactionList(){
       <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
         <thead>
         <tr>
+        <th> Exposure ID </th>
         <th> Transaction Name </th>
         <th> Series </th>
         <th> Par </th>
@@ -141,6 +190,7 @@ Exposure.prototype.expTransactionHTML = function (){
           <table id = "js-table">
             <tbody>
               <tr>
+                <td> ${this.id} </td>
                 <td> ${transaction.name} </td>
                 <td> ${transaction.series} </td>
                 <td> ${transaction.par} </td>
