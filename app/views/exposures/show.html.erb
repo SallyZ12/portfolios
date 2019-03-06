@@ -7,13 +7,8 @@
 <h4 style = "color:red;">
 	<%= flash[:message] %> </h4><br><br>
 
-
-
 <table class = "table">
-
-
 <tbody>
-
   <tr>
     <td> Company </td>
     <td> Credit </td>
@@ -24,7 +19,6 @@
     <td> Limit </td>
     <td> Total Par </td>
 		<td> Violation </td>
-
   </tr>
 
 <tr>
@@ -37,9 +31,6 @@
   <td> <%= @exposure.limit %> </td>
   <td> <%= @exposure.t_sum %> </td>
 	<td> <v> <%= display_violations(@exposure) %> </v></td>
-
-
-
 </tr>
 
 </tr>
@@ -47,7 +38,7 @@
 </table>
 <br>
 
-
+<!-- Rails section commented out. -->
 <!-- <table class = "table">
 <tbody>
   <tr>
@@ -71,13 +62,18 @@
 <div> ____________________________________________________</div>
 <div><strong> AJAX Response Section</strong> </div><br>
 
-<%= link_to_if(current_user.id == @exposure.user_id, "AJAX - Add New Transaction", new_exposure_transaction_path(@exposure), id:'new-transaction-form'){} %> <br><br>
-
-<div id ='ajax-transaction-form'>[form] </div><br>
-<button id = "clear-transaction"><strong> Clear New Transaction </strong> </button><br><br>
+<button id = 'show-exposure'><strong> Show Exposure </strong> </button><br><br>
+<div id ='ajax-show-exposure'> </div> <br>
 
 <button id = "list-transactions"><strong> Exposure Transaction List </strong> </button>
 <div id = "transaction-list"> </div><br>
+
+<%= link_to_if(current_user.id == @exposure.user_id, "AJAX - Add New Transaction", new_exposure_transaction_path(@exposure), id:'new-transaction-form'){} %> <br><br>
+<div id ='ajax-transaction-form'> </div><br>
+
+<button id = "clear-transaction"><strong> Clear New Transaction </strong> </button><br><br>
+
+
 <div> _____________________________________________________</div>
 
 <%= form_tag exposure_path(@exposure.id), method: "delete" %>
