@@ -4,6 +4,7 @@ $(function() {
   listenForListClick()
   listenForShowClick()
   listenForClearClick()
+
 });
 
 function listenForClick(){
@@ -27,11 +28,11 @@ function listenForShowClick(){
 })
 }
 
-function listenForClearClick(){
-$('button#clear-button').on('click', function() {
-  $("div").empty("#exposure-data");
-})
-};
+// function listenForClearClick(){
+// $('button#clear-button').on('click', function() {
+//   $("div").empty("#exposure-data");
+// })
+// };
 
 
 
