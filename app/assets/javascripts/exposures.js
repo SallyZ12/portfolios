@@ -3,8 +3,7 @@ $(function() {
   listenForClick()
   listenForListClick()
   listenForShowClick()
-  listenForClearClick()
-
+  // listenForClearClick()
 });
 
 function listenForClick(){
