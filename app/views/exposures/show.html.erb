@@ -6,8 +6,8 @@
 
 <h4 style = "color:red;">
 	<%= flash[:message] %> </h4><br><br>
-
-<table class = "table">
+<!-- Commented out Rails Section -->
+<!-- <table class = "table">
 <tbody>
   <tr>
     <td> Company </td>
@@ -36,7 +36,7 @@
 </tr>
 </tbody>
 </table>
-<br>
+<br> -->
 
 <!-- Rails section commented out. -->
 <!-- <table class = "table">
@@ -57,7 +57,6 @@
 </table>
 <br><br><br> -->
 
-<%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
 
 <div> ____________________________________________________</div>
 <div><strong> AJAX Response Section</strong> </div><br>
@@ -75,6 +74,8 @@
 
 
 <div> _____________________________________________________</div>
+<h4> RAILS SECTION: </h4>
+<%= link_to_if(current_user.id == @exposure.user_id,  "Edit Exposure", edit_exposure_path){} %><br><br>
 
 <%= form_tag exposure_path(@exposure.id), method: "delete" %>
 <%= submit_tag "Delete Exposure" %><br><br>
