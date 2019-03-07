@@ -52,11 +52,11 @@ function listenForAllCredits(){
               document.getElementById("new_credit").innerHTML += myCreditHTML
             })
             allCredits();
-            })
-          };
+        })
+      };
 
 
-
+      // AJAX Response List of All Credits By User
     function allCredits(){
       $.ajax({
         url: this.href,
@@ -113,7 +113,7 @@ function listenForAllCredits(){
       }
     };
 
-
+    // Used with Show Credit Ajax Response
     Credit.prototype.creditHTML = function (){
     return (`
         <table>
@@ -140,13 +140,17 @@ function listenForAllCredits(){
       `)
     };
 
+    // Used with List of Credits Due to Contraints on Table
     Credit.prototype.allCreditsHTML = function (){
+      let baseUrl = 'http://localhost:3000/credits'
+      let creditId = this.id
+      let showCreditId = baseUrl + '/' + creditId
       return (`
         <table id="js-table">
             <tbody>
               <tr>
               <td> ${this.id} </td>
-              <td> ${this.credit_name} </td>
+              <td> <a href = ${showCreditId}>${this.credit_name} </td>
               <td> ${this.sector} </td>
               <td> ${this.state} </td>
               <td> ${this.rating} </td>
