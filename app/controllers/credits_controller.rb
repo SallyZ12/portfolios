@@ -6,7 +6,7 @@ class CreditsController < ApplicationController
       @credits = @user.credits
       respond_to do |format|
         format.html {render :index}
-        format.json {render json: @credit}
+        format.json {render json: @credits}
       end
     else
       redirect_to exposures_path
