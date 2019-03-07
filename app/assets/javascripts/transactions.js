@@ -39,6 +39,7 @@ function postTransaction(){
       let myTransactionHTML = myTransaction.transactionHTML()
       document.getElementById("new_transaction").innerHTML += myTransactionHTML
     })
+    getTransactionList();
   })
 };
 
