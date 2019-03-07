@@ -82,6 +82,7 @@ function getExposures(){
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
       let myExposureHTML = myExposure.exposureHTML()
+        
       document.getElementById("exposure-data").innerHTML += myExposureHTML
         })
     })
