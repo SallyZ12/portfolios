@@ -166,7 +166,7 @@ function getTransactionList(){
       <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
         <thead>
         <tr>
-        <th> Exposure ID </th>
+        <th> Transaction ID </th>
         <th> Transaction Name </th>
         <th> Series </th>
         <th> Par </th>
@@ -192,7 +192,7 @@ Exposure.prototype.expTransactionHTML = function (){
           <table id = "js-table">
             <tbody>
               <tr>
-                <td> ${this.id} </td>
+                <td> ${transaction.id} </td>
                 <td> ${transaction.name} </td>
                 <td> ${transaction.series} </td>
                 <td> ${transaction.par} </td>
