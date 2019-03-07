@@ -173,6 +173,7 @@ function getTransactionList(){
         </thead>
         </table>
         `)
+      document.getElementById("transaction-list").innerHTML = ''
       document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
       let myExposure = new Exposure(data)
