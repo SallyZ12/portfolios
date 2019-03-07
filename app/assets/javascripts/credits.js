@@ -2,8 +2,8 @@
 $(function() {
   console.log("loaded:assets/javascripts/credits.js")
   getCreditForm()
-  listenForClearCreditClick()
-  // listenForShowClick()
+  listenForClick()
+  listenForAllCredits()
 });
 
 function listenForClick(){
@@ -13,19 +13,12 @@ function listenForClick(){
   })
 }
 
-function listenForClearCreditClick(){
-  $('button#clear-credit').on('click', function(){
-    $("div").empty("#ajax-credit-form");
-  })
-};
-
-// function listenForShowClick(){
-//   $('button#show-credit').on('click', function(e){
-//     e.preventDefault()
-//     showCredit()
-//   })
-// }
-
+function listenForAllCredits(){
+  $('button#all-credits').on('click', function(event){
+    event.preventDefault()
+    alert("all credits");
+})
+}
 
 
 // retrieves html form and puts on page
@@ -62,17 +55,19 @@ function listenForClearCreditClick(){
           };
 
 
-    // function showCredit(){
-    //     $.ajax({
-    //       url: this.href,
-    //       method: 'get',
-    //       dataType: 'json',
-    //     }).done(function(data){
-    //       let showCredit = new Credit(data)
-    //       let showCreditHTML = showCredit.creditHTML()
-    //     document.getElementById("ajax-show-credit").innerHTML = showCreditHTML
-    //     })
-    //   }
+
+    function allCredits(){
+      $.ajax({
+        url: this.action,
+        method: 'get',
+        dataType: 'json'
+      }).done(function(data)
+    }
+
+
+
+
+
 
     // ajax response for next Credit on show page
       $(function () {
