@@ -40,6 +40,7 @@ function postTransaction(){
       document.getElementById("new_transaction").innerHTML += myTransactionHTML
     })
     getTransactionList();
+    showExposure();
   })
 };
 
