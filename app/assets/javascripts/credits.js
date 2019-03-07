@@ -16,7 +16,7 @@ function listenForClick(){
 function listenForAllCredits(){
   $('button#all-credits').on('click', function(event){
     event.preventDefault()
-    alert("all credits");
+    allCredits()
 })
 }
 
@@ -51,6 +51,7 @@ function listenForAllCredits(){
               let myCreditHTML = mycredit.creditHTML()
               document.getElementById("new_credit").innerHTML += myCreditHTML
             })
+            allCredits();
             })
           };
 
@@ -58,15 +59,31 @@ function listenForAllCredits(){
 
     function allCredits(){
       $.ajax({
-        url: this.action,
+        url: this.href,
         method: 'get',
         dataType: 'json'
-      }).done(function(data)
-    }
-
-
-
-
+      }).done(function(data){
+        let headerHTML =
+        (`<table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
+        <thead>
+        <th>Credit ID </td>
+        <th>Credit Name</th>
+        <th>Sector </th>
+        <th>State </th>
+        <th>Ext Rating</th>
+        </tr>
+        </thead>
+        </table>
+        `)
+        document.getElementById("credit-index").innerHTML = " "
+        document.getElementById("credit-index").innerHTML += headerHTML
+        data.map(credit => {
+          let myCredit = new Credit(credit)
+          let myCreditAllHTML = myCredit.allCreditsHTML()
+          document.getElementById("credit-index").innerHTML += myCreditAllHTML
+        })
+    })
+  };
 
 
     // ajax response for next Credit on show page
@@ -103,7 +120,7 @@ function listenForAllCredits(){
         <caption> <h4>Credit AJAX Response </h4></caption>
           <thead>
           <tr>
-          <th> Credit ID </td>
+          <th>Credit ID </td>
           <th>Credit Name</th>
           <th>Sector </th>
           <th>State </th>
@@ -121,4 +138,20 @@ function listenForAllCredits(){
             </tbody>
         </table>
       `)
+    };
+
+    Credit.prototype.allCreditsHTML = function (){
+      return (`
+        <table id="js-table">
+            <tbody>
+              <tr>
+              <td> ${this.id} </td>
+              <td> ${this.credit_name} </td>
+              <td> ${this.sector} </td>
+              <td> ${this.state} </td>
+              <td> ${this.rating} </td>
+            </tr>
+            </tbody>
+        </table>
+        `)
     };
