@@ -139,7 +139,8 @@ function showExposure(){
       </thead>
       </table>
     `)
-    document.getElementById("ajax-show-exposure").innerHTML += headerHTML
+      document.getElementById("ajax-show-exposure").innerHTML = ''
+      document.getElementById("ajax-show-exposure").innerHTML += headerHTML
 
     let myExposure = new Exposure(data)
     let myExposureHTML = myExposure.exposureHTML()
