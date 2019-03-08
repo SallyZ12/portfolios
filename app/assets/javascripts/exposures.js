@@ -14,14 +14,14 @@ function listenForClick(){
 }
 
 function listenForListClick(){
-  $('button#list-transactions').on('click', function(e){
+  $('button#list-transactions').on('click', function(event){
     event.preventDefault()
     getTransactionList()
   })
 }
 
 function listenForShowClick(){
-  $('button#show-exposure').on('click', function(e){
+  $('button#show-exposure').on('click', function(event){
     event.preventDefault()
     showExposure()
 })
@@ -71,6 +71,7 @@ function getExposures(){
         </thead>
         </table>
       `)
+      document.getElementById("exposure-data").innerHTML = ""
       document.getElementById("exposure-data").innerHTML += headerHTML
 
       data.map(exposure => {
@@ -137,9 +138,9 @@ function showExposure(){
       document.getElementById("ajax-show-exposure").innerHTML = ''
       document.getElementById("ajax-show-exposure").innerHTML += headerHTML
 
-    let myExposure = new Exposure(data)
-    let myExposureHTML = myExposure.exposureHTML()
-    document.getElementById("ajax-show-exposure").innerHTML += myExposureHTML
+    let showExposure = new Exposure(data)
+    let showExposureHTML = showExposure.exposureHTML()
+    document.getElementById("ajax-show-exposure").innerHTML += showExposureHTML
 
 })
 }
