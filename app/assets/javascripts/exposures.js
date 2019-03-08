@@ -3,7 +3,7 @@ $(function() {
   listenForClick()
   listenForListClick()
   listenForShowClick()
-  // listenForClearClick()
+
 });
 
 function listenForClick(){
@@ -26,12 +26,6 @@ function listenForShowClick(){
     showExposure()
 })
 }
-
-// function listenForClearClick(){
-// $('button#clear-button').on('click', function() {
-//   $("div").empty("#exposure-data");
-// })
-// };
 
 
 
@@ -82,7 +76,7 @@ function getExposures(){
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
       let myExposureHTML = myExposure.exposureHTML()
-        
+
       document.getElementById("exposure-data").innerHTML += myExposureHTML
         })
     })
