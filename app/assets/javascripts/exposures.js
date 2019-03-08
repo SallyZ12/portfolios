@@ -85,7 +85,7 @@ function getExposures(){
 
 
 
-// use with headerHTML function above
+// use with getExposures function above
 Exposure.prototype.exposureHTML = function (){
   let baseUrl = 'http://localhost:3000/exposures';
   let expId = this.id;
@@ -142,11 +142,8 @@ function showExposure(){
     let showExposureHTML = showExposure.exposureHTML()
     document.getElementById("ajax-show-exposure").innerHTML += showExposureHTML
 
-})
-}
-
-
-
+  })
+};
 
 
 function getTransactionList(){
@@ -179,7 +176,7 @@ function getTransactionList(){
     })
   };
 
-
+// Use with getTransactionList()
 Exposure.prototype.expTransactionHTML = function (){
 
   return this.transactions.map(transaction => {
