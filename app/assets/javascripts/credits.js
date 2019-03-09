@@ -43,17 +43,16 @@ function listenForAllCredits(){
       $('form#new_credit').on('submit',function(e){
         e.preventDefault();
           let inputs = $(this).serialize();
-          let addCredit = $.post('/credits', inputs);
+            let addCredit = $.post('/credits', inputs);
 
-          addCredit.done(function(data) {
+          addCredit.done(function(data){
             // use Credit Class here
               let mycredit = new Credit(data)
-              let myCreditHTML = mycredit.creditHTML()
-              document.getElementById("new_credit").innerHTML += myCreditHTML
-            })
-            allCredits();
-        })
-      };
+                let myCreditHTML = mycredit.creditHTML()
+                  document.getElementById("new_credit").innerHTML += myCreditHTML
+          })
+      })
+    };
 
 
       // AJAX Response List of All Credits By User
