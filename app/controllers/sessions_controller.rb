@@ -15,8 +15,9 @@ class SessionsController < ApplicationController
              if user && user.authenticate(params[:user][:password])
                session[:user_id] = user.id
                # for use in js project
-                  # redirect_to exposures_path
-                 redirect_to user_path(user)
+                  redirect_to exposures_path
+                  # for Rails Project
+                 # redirect_to user_path(user)
                else
                  flash[:notice] = "Log In Failed- Try Again or Register"
                   redirect_to '/'
