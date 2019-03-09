@@ -2,14 +2,14 @@
 $(function (){
   console.log("loaded: javascripts/transctions.js")
   getTransactionForm()
-  listenForClearClick()
+  // listenForClearClick()
 });
 
-function listenForClearClick(){
-  $('button#clear-transaction').on('click', function() {
-    $("div").empty("#ajax-transaction-form");
-  })
-}
+// function listenForClearClick(){
+//   $('button#clear-transaction').on('click', function() {
+//     $("div").empty("#ajax-transaction-form");
+//   })
+// }
 
 
 function getTransactionForm(){
