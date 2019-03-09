@@ -71,14 +71,23 @@ function getExposures(){
         </thead>
         </table>
       `)
-      document.getElementById("exposure-data").innerHTML = ""
-      document.getElementById("exposure-data").innerHTML += headerHTML
+      // js version returns HTML DOM object
+      // document.getElementById("exposure-data").innerHTML = ""
+      // document.getElementById("exposure-data").innerHTML += headerHTML
+
+      // jquery version without [0] returns jquery object not HTML DOM object
+      $("#exposure-data")[0].innerHTML = ""
+      $("#exposure-data")[0].innerHTML = headerHTML
 
       data.map(exposure => {
       let myExposure = new Exposure(exposure)
       let myExposureHTML = myExposure.exposureHTML()
 
-      document.getElementById("exposure-data").innerHTML += myExposureHTML
+      // js version returns HTML object
+      // document.getElementById("exposure-data").innerHTML += myExposureHTML
+
+      // jquery version without [0] returns jquery object not HTML DOM object
+      $("#exposure-data")[0].innerHTML += myExposureHTML
         })
     })
   };
