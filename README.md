@@ -1,17 +1,22 @@
 
 # README
 
-Welcome to the Portfolios Application.
+Welcome to the Portfolios/JS Application.
+
+This project was created to satisfy the FlatIron School's Rails/Javascript Project requirements.
 
 This is an application to display portfolios of municpal bonds by Company (user) based on the Transactions associated with each Credit by Company.  A Company/Credit pairing is referred to as an Exposure.
 
+This application primarily uses Ruby on Rails as well as Javascript.  Javascript is used with Exposures, Credits and Transactions in the exposure index and show pages and credit index and show pages.
+
 To use this app:
 
-1. clone portfolios from Github
-2. change directory (cd) into the directory portfolios,
+1. clone the branch portfolios-js from Github from the portfolios repository.
+2. change directory (cd) into the directory portfolios and change then "git checkout portfolios-js" the branch with the js code added to the Project,
 3. run bundle install,
 4. run rake db:migrate
-5. If you choose to delete the database and start fresh run rake db:reset and then rake db:migrate.
+5. run db:seed to initially populate the db in a development/test environment.  You do not want to use the seed file in production as the secure_passwords for a Company would be exposed. Take note of the passwords by company to login.
+
 
 Overview:
 
@@ -26,14 +31,25 @@ A Transaction can only be edited/deleted by the Company for which it is associat
 You will be able to see the top 10 Transactions by Par among all Companies.
 You will be able to select all Credits in a specific State regardless of Company.
 
-Instructions:
-1. Register and if previously registered, Log In.  You many also Log In using your Github credentials.
-2. Once registered/logged in you are taken to your Company page where you can Edit your information.
-3. From the Company Page you have access to a variety of links -- the first thing you want to do is add a credit by selecting the link "Select An Existing Credit or Create A New Credit".
-4. If you do not have any credits in your Portfolio then you will enter the information required for a new Credit.
-5. Once a Credit is associated with a Company, to add a new Transaction select the Link for All Exposures. Select the link for the Company in that specific exposure and you are taken to the screen to see only that Exposure and any Transactions that exist.
-6. From this Company Exposure screen you may (1) Edit the Exposure (limit and/or rating)(2) select to add a new Transaction, or (3) select the company link and be taken to the Company show page.
-7. To edit a Credit, select the link for Credits by that Company, Select the link of the Credit Name and then Edit.
+Instructions for the Javascript Components only (JS sections are identified with AJAX or AJAX Response):
+
+1. Register and if previously registered, Log In.  You may also Log In using your Github credentials.
+2. Once registered/logged in you are taken to your Exposure Index page.
+3. To see a list of exposures, select "Select For All Exposures"
+4. Select a Company Link to be taken to Exposure Show Page, where you can select:
+
+  a. Show Exposure,
+  b. Exposure Transaction List, and
+  c. AJAX - Add New Transaction
+
+5. To Create a New Credit associated with an Exposure, Select "All [company] Credits Link", you'll be taken to the Credit Index page and select "AJAX - Add Existing or Create a New Credit" link.  Follow the form.
+
+6. You may also select "All Credits" to see the AJAX response of all Credits.
+7. To navigate to Credit Show page, select the "Credit Name" link.
+8. To use the power of JS and to scroll through all Credits while staying on the same page, select "AJAX- Next Credit All Companies" link.  
+
+The instructions above complete the added Javascript to the Rails application.
+
 
 Things to Know:
 1. There are 2 different categories of ratings.  
