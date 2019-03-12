@@ -12,7 +12,7 @@ This application primarily uses Ruby on Rails as well as Javascript.  Javascript
 To use this app:
 
 1. fork and clone the branch portfolios-js from Github from the portfolios repository.
-2. change directory (cd) into the directory portfolios and change then "git checkout portfolios-js" the branch with the js code added to the Project,
+2. change directory (cd) into the directory "portfolios" and then "git checkout portfolios-js" the branch with the js code added to the Project,
 3. run bundle install,
 4. run rake db:migrate
 5. run db:seed to initially populate the db in a development/test environment.  You do not want to use the seed file in production as the secure_passwords for a Company would be exposed. Take note of the passwords by company to login.
