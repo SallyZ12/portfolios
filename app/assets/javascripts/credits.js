@@ -139,7 +139,7 @@ function listenForAllCredits(){
       `)
     };
 
-    // Used with List of Credits Due to Contraints on Table
+    // Used with List of Credits Due to Constraints on Table
     Credit.prototype.allCreditsHTML = function (){
       let baseUrl = 'http://localhost:3000/credits'
       let creditId = this.id
