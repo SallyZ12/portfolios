@@ -8,15 +8,15 @@ $(function() {
 
 function listenForClick(){
   $('button#new-credit-form').on('click', function(event){
-    event.preventDefault()
-    getCreditForm()
+      event.preventDefault()
+        getCreditForm()
   })
 }
 
 function listenForAllCredits(){
   $('button#all-credits').on('click', function(event){
-    event.preventDefault()
-    allCredits()
+      event.preventDefault()
+        allCredits()
 })
 }
 
@@ -31,7 +31,7 @@ function listenForAllCredits(){
         dataType: 'html'
       }).done(function(response){
           $('div#ajax-credit-form').html(response);
-        postCredit()
+            postCredit()
       })
     })
   };
@@ -75,11 +75,11 @@ function listenForAllCredits(){
         </table>
         `)
         document.getElementById("credit-index").innerHTML = " "
-        document.getElementById("credit-index").innerHTML += headerHTML
-        data.map(credit => {
-          let myCredit = new Credit(credit)
-          let myCreditAllHTML = myCredit.allCreditsHTML()
-          document.getElementById("credit-index").innerHTML += myCreditAllHTML
+          document.getElementById("credit-index").innerHTML += headerHTML
+            data.map(credit => {
+              let myCredit = new Credit(credit)
+                let myCreditAllHTML = myCredit.allCreditsHTML()
+                  document.getElementById("credit-index").innerHTML += myCreditAllHTML
         })
     })
   };
@@ -88,16 +88,16 @@ function listenForAllCredits(){
     // ajax response for next Credit on show page
       $(function () {
         $("#js-next").on("click", function(e){
-        e.preventDefault()
-      const nextId = parseInt($("#js-next").attr("data-id")) + 1;
+          e.preventDefault()
+            const nextId = parseInt($("#js-next").attr("data-id")) + 1;
 
       $.get('/credits/' + nextId + ".json", function(data) {
 
           let myCredit = new Credit(data)
-          let myCreditHTML = myCredit.creditHTML()
-          document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
+            let myCreditHTML = myCredit.creditHTML()
+              document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
 
-          $("#js-next").attr("data-id", data["id"]);
+              $("#js-next").attr("data-id", data["id"]);
         })
       })
     });
@@ -142,8 +142,8 @@ function listenForAllCredits(){
     // Used with List of Credits Due to Constraints on Table
     Credit.prototype.allCreditsHTML = function (){
       let baseUrl = 'http://localhost:3000/credits'
-      let creditId = this.id
-      let showCreditId = baseUrl + '/' + creditId
+        let creditId = this.id
+          let showCreditId = baseUrl + '/' + creditId
       return (`
         <table id="js-table">
             <tbody>
