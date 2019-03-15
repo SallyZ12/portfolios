@@ -2,7 +2,6 @@
 $(function (){
   console.log("loaded: javascripts/transctions.js")
   getTransactionForm()
-  // listenForClearClick()
 });
 
 
@@ -24,14 +23,14 @@ function postTransaction(){
   $('form#new_transaction').on('submit', function(e){
     e.preventDefault();
     let inputs = $(this).serialize();
-    let expUrl = window.location.pathname;
-    let transUrl = expUrl + '/transactions'
-    let addTransaction = $.post(transUrl, inputs);
+      let expUrl = window.location.pathname;
+        let transUrl = expUrl + '/transactions'
+          let addTransaction = $.post(transUrl, inputs);
 
     addTransaction.done(function(data){
       let myTransaction = new Transaction(data)
-      let myTransactionHTML = myTransaction.transactionHTML()
-      document.getElementById("new_transaction").innerHTML += myTransactionHTML
+        let myTransactionHTML = myTransaction.transactionHTML()
+          document.getElementById("new_transaction").innerHTML += myTransactionHTML
     })
     getTransactionList();
     showExposure();
