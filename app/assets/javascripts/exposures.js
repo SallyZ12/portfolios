@@ -8,22 +8,22 @@ $(function() {
 
 function listenForClick(){
   $('button#data-button').on('click', function(event){
-    event.preventDefault()
-    getExposures()
+      event.preventDefault()
+        getExposures()
   })
 }
 
 function listenForListClick(){
   $('button#list-transactions').on('click', function(event){
-    event.preventDefault()
-    getTransactionList()
+      event.preventDefault()
+        getTransactionList()
   })
 }
 
 function listenForShowClick(){
   $('button#show-exposure').on('click', function(event){
-    event.preventDefault()
-    showExposure()
+      event.preventDefault()
+        showExposure()
 })
 }
 
@@ -76,18 +76,18 @@ function getExposures(){
       // document.getElementById("exposure-data").innerHTML += headerHTML
 
       // jquery version without [0] returns jquery object not HTML DOM object
-      $("#exposure-data")[0].innerHTML = ""
-      $("#exposure-data")[0].innerHTML = headerHTML
+        $("#exposure-data")[0].innerHTML = ""
+          $("#exposure-data")[0].innerHTML = headerHTML
 
       data.map(exposure => {
-      let myExposure = new Exposure(exposure)
-      let myExposureHTML = myExposure.exposureHTML()
+        let myExposure = new Exposure(exposure)
+          let myExposureHTML = myExposure.exposureHTML()
 
       // js version returns HTML object
       // document.getElementById("exposure-data").innerHTML += myExposureHTML
 
       // jquery version without [0] returns jquery object not HTML DOM object
-      $("#exposure-data")[0].innerHTML += myExposureHTML
+          $("#exposure-data")[0].innerHTML += myExposureHTML
         })
     })
   };
@@ -97,8 +97,8 @@ function getExposures(){
 // use with getExposures function above
 Exposure.prototype.exposureHTML = function (){
   let baseUrl = 'http://localhost:3000/exposures';
-  let expId = this.id;
-  let showExpUrl = baseUrl + '/' + expId
+    let expId = this.id;
+      let showExpUrl = baseUrl + '/' + expId
 return (`
     <table id="js-table">
         <tbody>
@@ -145,11 +145,11 @@ function showExposure(){
       </table>
     `)
       document.getElementById("ajax-show-exposure").innerHTML = ''
-      document.getElementById("ajax-show-exposure").innerHTML += headerHTML
+        document.getElementById("ajax-show-exposure").innerHTML += headerHTML
 
     let showExposure = new Exposure(data)
-    let showExposureHTML = showExposure.exposureHTML()
-    document.getElementById("ajax-show-exposure").innerHTML += showExposureHTML
+      let showExposureHTML = showExposure.exposureHTML()
+        document.getElementById("ajax-show-exposure").innerHTML += showExposureHTML
 
   })
 };
@@ -177,11 +177,11 @@ function getTransactionList(){
         </table>
         `)
       document.getElementById("transaction-list").innerHTML = ''
-      document.getElementById("transaction-list").innerHTML += transHeaderHTML
+        document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
       let myExposure = new Exposure(data)
-      let myTransactionListHTML = myExposure.expTransactionHTML()
-      document.getElementById("transaction-list").innerHTML += myTransactionListHTML
+        let myTransactionListHTML = myExposure.expTransactionHTML()
+          document.getElementById("transaction-list").innerHTML += myTransactionListHTML
     })
   };
 
