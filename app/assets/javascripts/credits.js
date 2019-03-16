@@ -62,20 +62,9 @@ function listenForAllCredits(){
         method: 'get',
         dataType: 'json'
       }).done(function(data){
-        let headerHTML =
-        (`<table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
-        <thead>
-        <th>Credit ID </td>
-        <th>Credit Name</th>
-        <th>Sector </th>
-        <th>State </th>
-        <th>Ext Rating</th>
-        </tr>
-        </thead>
-        </table>
-        `)
+
         document.getElementById("credit-index").innerHTML = " "
-          document.getElementById("credit-index").innerHTML += headerHTML
+          document.getElementById("credit-index").innerHTML += Credit.headerHTML
             data.map(credit => {
               let myCredit = new Credit(credit)
                 let myCreditAllHTML = myCredit.allCreditsHTML()
@@ -91,15 +80,13 @@ function listenForAllCredits(){
           e.preventDefault()
             const nextId = parseInt($("#js-next").attr("data-id")) + 1;
 
-      $.get('/credits/' + nextId + ".json", function(data) {
-
-          let myCredit = new Credit(data)
-            let myCreditHTML = myCredit.creditHTML()
-              document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
-
-              $("#js-next").attr("data-id", data["id"]);
-        })
-      })
+            $.get('/credits/' + nextId + ".json", function(data) {
+                let myCredit = new Credit(data)
+                  let myCreditHTML = myCredit.creditHTML()
+                    document.getElementById("ajax-next-credit").innerHTML = myCreditHTML
+                      $("#js-next").attr("data-id", data["id"]);
+            })
+       })
     });
 
     class Credit{
@@ -112,28 +99,44 @@ function listenForAllCredits(){
       }
     };
 
-    // Used with Show Credit Ajax Response
+    Credit.headerHTML =
+    (`<table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
+      <thead>
+      <tr>
+        <th>Credit ID </td>
+        <th>Credit Name</th>
+        <th>Sector </th>
+        <th>State </th>
+        <th>Ext Rating</th>
+    </tr>
+    </thead>
+    </table>
+    `)
+
+
+
+    // Used with Post Credit Ajax Response
     Credit.prototype.creditHTML = function (){
     return (`
         <table>
         <caption> <h4>Credit AJAX Response </h4></caption>
           <thead>
-          <tr>
-          <th>Credit ID </td>
-          <th>Credit Name</th>
-          <th>Sector </th>
-          <th>State </th>
-          <th>Ext Rating</th>
-          </tr>
+            <tr>
+              <th>Credit ID </td>
+              <th>Credit Name</th>
+              <th>Sector </th>
+              <th>State </th>
+              <th>Ext Rating</th>
+              </tr>
           </thead>
             <tbody>
               <tr>
-              <td> ${this.id} </td>
-              <td> ${this.credit_name} </td>
-              <td> ${this.sector} </td>
-              <td> ${this.state} </td>
-              <td> ${this.rating} </td>
-            </tr>
+                <td> ${this.id} </td>
+                <td> ${this.credit_name} </td>
+                <td> ${this.sector} </td>
+                <td> ${this.state} </td>
+                <td> ${this.rating} </td>
+              </tr>
             </tbody>
         </table>
       `)
