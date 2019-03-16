@@ -22,6 +22,7 @@ function getTransactionForm(){
 function postTransaction(){
   $('form#new_transaction').on('submit', function(e){
     e.preventDefault();
+    // this is a DOM object, $(this) is a jQuery Object, serialize() jQuery method
     let inputs = $(this).serialize();
       let expUrl = window.location.pathname;
         let transUrl = expUrl + '/transactions'
