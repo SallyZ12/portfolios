@@ -37,22 +37,15 @@ function sortButton(){
 
 function setUpSortByCompany(){
   getExposures(true);
-  // sortByCompany();
 }
 
-// function sortByCompany(data){
-//   let sorted = Object.values(data).sort((a,b) => a.user.username - b.user.username)
-//     return sorted
-//   console.log("sort", sorted)
-// }
 
 function sortByCompany(data){
-let sorted = data.sort(function(a,b) {
-    let idA = a.id
-      let idB = b.id
-        return idB - idA;
-})
-console.log("Sort",sorted);
+  data.sort(function(a,b){
+    let attributeA = a.user.username
+     let attributeB = b.user.username
+      return attributeA.localeCompare(attributeB);
+    })
 };
 
 
