@@ -88,10 +88,6 @@ function getExposures(sort = false){
         let myExposure = new Exposure(exposure)
           let myExposureHTML = myExposure.exposureHTML()
 
-      // js version returns HTML object
-      // document.getElementById("exposure-data").innerHTML += myExposureHTML
-
-      // jquery version without [0] returns jquery object not HTML DOM object
           $("#exposure-data")[0].innerHTML += myExposureHTML
         })
     })
