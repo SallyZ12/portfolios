@@ -41,8 +41,10 @@ function setUpSortByCompany(){
 }
 
 function sortByCompany(data){
-  data.sort(function(objectA,objectB) {
-    return objectA.user.username < objectB.user.username;
+return data.sort(function(a,b) {
+    let companyA = a.user.username
+      let companyB = b.user.username
+        return companyA < companyB;
 })
 };
 
