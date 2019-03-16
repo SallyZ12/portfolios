@@ -128,7 +128,7 @@ function listenForAllCredits(){
               <th>Sector </th>
               <th>State </th>
               <th>Ext Rating</th>
-              </tr>
+            </tr>
           </thead>
             <tbody>
               <tr>
@@ -152,12 +152,12 @@ function listenForAllCredits(){
         <table id="js-table">
             <tbody>
               <tr>
-              <td> ${this.id} </td>
-              <td> <a href = ${showCreditId}>${this.credit_name} </td>
-              <td> ${this.sector} </td>
-              <td> ${this.state} </td>
-              <td> ${this.rating} </td>
-            </tr>
+                <td> ${this.id} </td>
+                <td> <a href = ${showCreditId}>${this.credit_name} </td>
+                <td> ${this.sector} </td>
+                <td> ${this.state} </td>
+                <td> ${this.rating} </td>
+              </tr>
             </tbody>
         </table>
         `)
