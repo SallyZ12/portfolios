@@ -99,6 +99,7 @@ function listenForAllCredits(){
       }
     };
 
+    // used with allCredits()
     Credit.headerHTML =
     (`<table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
       <thead>
