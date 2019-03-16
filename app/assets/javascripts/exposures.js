@@ -3,6 +3,7 @@ $(function() {
   listenForClick()
   listenForListClick()
   listenForShowClick()
+  sortButton()
 
 });
 
@@ -27,6 +28,23 @@ function listenForShowClick(){
 })
 }
 
+function sortButton(){
+  $('button#sort-button').on('click', function(event){
+    event.preventDefault()
+      setUpSortByCompany()
+})
+}
+
+function setUpSortByCompany(){
+  getExposures(true);
+  // sortByCompany();
+}
+
+function sortByCompany(data){
+  data.sort(function(objectA,objectB) {
+    return objectA.user.username < objectB.user.username;
+})
+};
 
 
 class Exposure{
@@ -45,39 +63,24 @@ class Exposure{
 };
 
 
-function getExposures(){
+function getExposures(sort = false){
 
     $.ajax({
       url: 'http://localhost:3000/exposures',
       method: 'get',
       dataType: 'json'
     }).done(function(data){
-      let headerHTML =
-        (`
-        <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
-        <thead>
-        <tr>
-        <th>Exposure ID </th>
-        <th>Company</th>
-        <th>Credit Name</th>
-        <th>Sector </th>
-        <th>State </th>
-        <th>Co Rating</th>
-        <th>Ext Rating</th>
-        <th>Limit</th>
-        <th>Total Par</th>
-        <th>Violation</th>
-        </tr>
-        </thead>
-        </table>
-      `)
+      if (sort){
+        sortByCompany(data)
+      }
+
       // js version returns HTML DOM object
       // document.getElementById("exposure-data").innerHTML = ""
       // document.getElementById("exposure-data").innerHTML += headerHTML
 
       // jquery version without [0] returns jquery object not HTML DOM object
         $("#exposure-data")[0].innerHTML = ""
-          $("#exposure-data")[0].innerHTML = headerHTML
+          $("#exposure-data")[0].innerHTML = Exposure.headerHTML
 
       data.map(exposure => {
         let myExposure = new Exposure(exposure)
@@ -91,6 +94,28 @@ function getExposures(){
         })
     })
   };
+
+  Exposure.headerHTML =
+    (`
+    <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
+    <thead>
+    <tr>
+    <th>Exposure ID </th>
+    <th>Company</th>
+    <th>Credit Name</th>
+    <th>Sector </th>
+    <th>State </th>
+    <th>Co Rating</th>
+    <th>Ext Rating</th>
+    <th>Limit</th>
+    <th>Total Par</th>
+    <th>Violation</th>
+    </tr>
+    </thead>
+    </table>
+  `)
+
+
 
 
 
