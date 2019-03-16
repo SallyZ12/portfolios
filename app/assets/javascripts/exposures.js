@@ -40,12 +40,19 @@ function setUpSortByCompany(){
   // sortByCompany();
 }
 
+// function sortByCompany(data){
+//   let sorted = Object.values(data).sort((a,b) => a.user.username - b.user.username)
+//     return sorted
+//   console.log("sort", sorted)
+// }
+
 function sortByCompany(data){
-return data.sort(function(a,b) {
-    let companyA = a.user.username
-      let companyB = b.user.username
-        return companyA < companyB;
+let sorted = data.sort(function(a,b) {
+    let idA = a.id
+      let idB = b.id
+        return idB - idA;
 })
+console.log("Sort",sorted);
 };
 
 
