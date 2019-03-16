@@ -88,7 +88,7 @@ function getExposures(sort = false){
         let myExposure = new Exposure(exposure)
           let myExposureHTML = myExposure.exposureHTML()
 
-          $("#exposure-data")[0].innerHTML += myExposureHTML
+            $("#exposure-data")[0].innerHTML += myExposureHTML
         })
     })
   };
@@ -112,9 +112,6 @@ function getExposures(sort = false){
     </thead>
     </table>
   `)
-
-
-
 
 
 // use with getExposures function above
@@ -148,32 +145,13 @@ function showExposure(){
     method: 'get',
     dataType: 'json'
   }).done(function(data){
-    let headerHTML =
-      (`
-      <table id = "js-table"> <caption> <strong> AJAX Response </strong> </caption>
-      <thead>
-      <tr>
-      <th>Exposure ID </th>
-      <th>Company</th>
-      <th>Credit Name</th>
-      <th>Sector </th>
-      <th>State </th>
-      <th>Co Rating</th>
-      <th>Ext Rating</th>
-      <th>Limit</th>
-      <th>Total Par</th>
-      <th>Violation</th>
-      </tr>
-      </thead>
-      </table>
-    `)
-      document.getElementById("ajax-show-exposure").innerHTML = ''
-        document.getElementById("ajax-show-exposure").innerHTML += headerHTML
+
+    document.getElementById("ajax-show-exposure").innerHTML = ''
+      document.getElementById("ajax-show-exposure").innerHTML += Exposure.headerHTML
 
     let showExposure = new Exposure(data)
       let showExposureHTML = showExposure.exposureHTML()
         document.getElementById("ajax-show-exposure").innerHTML += showExposureHTML
-
   })
 };
 
@@ -185,28 +163,31 @@ function getTransactionList(){
     method: 'get',
     dataType: 'json',
   }).done(function(data){
-    let transHeaderHTML =
-    (`
-      <table id = "js-table">
-      <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
-        <thead>
-        <tr>
-        <th> Transaction ID </th>
-        <th> Transaction Name </th>
-        <th> Series </th>
-        <th> Par </th>
-        </tr>
-        </thead>
-        </table>
-        `)
-      document.getElementById("transaction-list").innerHTML = ''
-        document.getElementById("transaction-list").innerHTML += transHeaderHTML
 
-      let myExposure = new Exposure(data)
-        let myTransactionListHTML = myExposure.expTransactionHTML()
-          document.getElementById("transaction-list").innerHTML += myTransactionListHTML
+        document.getElementById("transaction-list").innerHTML = ''
+          document.getElementById("transaction-list").innerHTML += Exposure.transHeaderHTML
+
+        let myExposure = new Exposure(data)
+          let myTransactionListHTML = myExposure.expTransactionHTML()
+            document.getElementById("transaction-list").innerHTML += myTransactionListHTML
     })
   };
+
+  Exposure.transHeaderHTML =
+  (`
+    <table id = "js-table">
+    <caption> <h4>Exposure Transaction List AJAX Response </h4></caption>
+      <thead>
+      <tr>
+      <th> Transaction ID </th>
+      <th> Transaction Name </th>
+      <th> Series </th>
+      <th> Par </th>
+      </tr>
+      </thead>
+      </table>
+      `)
+
 
 // Use with getTransactionList()
 Exposure.prototype.expTransactionHTML = function (){
