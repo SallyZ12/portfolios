@@ -31,20 +31,16 @@ function listenForShowClick(){
 function sortButton(){
   $('button#sort-button').on('click', function(event){
     event.preventDefault()
-      setUpSortByCompany()
+      getExposures(true)
 })
-}
-
-function setUpSortByCompany(){
-  getExposures(true);
 }
 
 
 function sortByCompany(data){
   data.sort(function(a,b){
-    let attributeA = a.user.username
-     let attributeB = b.user.username
-      return attributeA.localeCompare(attributeB);
+    let companyA = a.user.username
+     let companyB = b.user.username
+      return companyA.localeCompare(companyB);
     })
 };
 
