@@ -40,7 +40,10 @@ function sortByCompany(data){
   data.sort(function(a,b){
     let companyA = a.user.username
      let companyB = b.user.username
-      return companyA.localeCompare(companyB);
+     let sectorA = a.credit.credit_name
+     let sectorB = b.credit.credit_name
+     let companySort =  companyA.localeCompare(companyB)
+     return companySort ? companySort : sectorA.localeCompare(sectorB)
     })
 };
 
