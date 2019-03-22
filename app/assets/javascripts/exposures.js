@@ -45,12 +45,12 @@ function sortByCompany(data){
      let sectorA = a.credit.sector
      let sectorB = b.credit.sector
      let companySort =  companyA.localeCompare(companyB)
-     let creditNameSort = creditNameA.localeCompare(creditNameB)
+     // let creditNameSort = creditNameA.localeCompare(creditNameB)
      let sectorSort = sectorA.localeCompare(sectorB)
 
      // terniary works for 2 sorts, but not if need more use "if"
      // return companySort ? companySort : creditNameSort
-     
+
       if (companySort != 0){
         return companySort
       }
