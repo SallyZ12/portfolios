@@ -40,10 +40,26 @@ function sortByCompany(data){
   data.sort(function(a,b){
     let companyA = a.user.username
      let companyB = b.user.username
-     let sectorA = a.credit.credit_name
-     let sectorB = b.credit.credit_name
+     // let creditNameA = a.credit.credit_name
+     // let creditNameB = b.credit.credit_name
+     let sectorA = a.credit.sector
+     let sectorB = b.credit.sector
      let companySort =  companyA.localeCompare(companyB)
-     return companySort ? companySort : sectorA.localeCompare(sectorB)
+     let creditNameSort = creditNameA.localeCompare(creditNameB)
+     let sectorSort = sectorA.localeCompare(sectorB)
+
+     // terniary works for 2 sorts, but not if need more use "if"
+     // return companySort ? companySort : creditNameSort
+     
+      if (companySort != 0){
+        return companySort
+      }
+      // if (creditNameSort != 0){
+      //   return creditNameSort
+      // }
+       if (sectorSort != 0){
+         return sectorSort
+       }
     })
 };
 
