@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
 
+gem 'activesupport', '~>5.2.2'
+
 gem 'active_model_serializers', '0.10.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
